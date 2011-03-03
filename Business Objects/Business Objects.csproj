@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Business Rules\BusinessRule.cs" />
     <Compile Include="BusinessObject.cs" />
+    <Compile Include="MapImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
