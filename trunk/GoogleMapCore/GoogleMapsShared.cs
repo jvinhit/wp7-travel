@@ -13,7 +13,7 @@ namespace GoogleMapCore
         private static double Latitude;
         private static double Longitude;
         private static int Zoom;
-        private static const string URLGoogle = "http://maps.google.com/maps/api/staticmap?center={0},{1}&zoom={2}&size={3}x{4}&maptype=roadmap&{5}&sensor=false";
+        private const string URLGoogle = "http://maps.google.com/maps/api/staticmap?center={0},{1}&zoom={2}&size={3}x{4}&maptype=roadmap&{5}&sensor=false";
         private static Size Size;
         private static string getMaker = "markers=color:red|label:0|10.771550,106.698330";
 
