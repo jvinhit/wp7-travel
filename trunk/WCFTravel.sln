@@ -13,15 +13,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Business Layer", "4. Bus
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Data Layer", "5. Data Layer", "{34C93A95-D245-424E-B431-614A4B08D93B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{57F5C55D-4B43-45A9-B3FB-C3C77C50DF01}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Objects", "Data Objects\Data Objects.csproj", "{27143BBB-6508-41D7-9529-B5721E6F8E57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business Objects", "Business Objects\Business Objects.csproj", "{20AE9ED2-C0D9-4490-AEF0-879AA3270BB9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main Service", "Main Service\Main Service.csproj", "{FA487E9A-E8D2-4491-95EE-67D64D702B92}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GoogleMapsAPI", "GoogleMapsAPI", "{E68983A4-260B-45B1-9E90-EAE61B8AD0AD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{57806351-9876-4339-9E80-E6C67B7AA67D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GoogleMapsAPI", "GoogleMapsAPI", "{6AD660E1-F4F4-43B0-8C95-9E6721CAA302}"
+	ProjectSection(SolutionItems) = preProject
+		Framework\GoogleMapsAPI\MercatorProjection.cs = Framework\GoogleMapsAPI\MercatorProjection.cs
+		Framework\GoogleMapsAPI\PointLatLng.cs = Framework\GoogleMapsAPI\PointLatLng.cs
+		Framework\GoogleMapsAPI\PureProjection.cs = Framework\GoogleMapsAPI\PureProjection.cs
+		Framework\GoogleMapsAPI\RectLatLng.cs = Framework\GoogleMapsAPI\RectLatLng.cs
+		Framework\GoogleMapsAPI\SizeLatLng.cs = Framework\GoogleMapsAPI\SizeLatLng.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,7 +61,7 @@ Global
 		{FA487E9A-E8D2-4491-95EE-67D64D702B92} = {6D5AEB83-13A6-4843-973C-260FBEC1C607}
 		{20AE9ED2-C0D9-4490-AEF0-879AA3270BB9} = {59D38A43-1FE5-481A-A06C-7E6650ED9378}
 		{27143BBB-6508-41D7-9529-B5721E6F8E57} = {34C93A95-D245-424E-B431-614A4B08D93B}
-		{E68983A4-260B-45B1-9E90-EAE61B8AD0AD} = {57F5C55D-4B43-45A9-B3FB-C3C77C50DF01}
+		{6AD660E1-F4F4-43B0-8C95-9E6721CAA302} = {57806351-9876-4339-9E80-E6C67B7AA67D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .
