@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using System.Globalization;
 using System.Drawing;
+using Business_Objects.Business_Rules;
 
 namespace Business_Objects
 {
@@ -15,15 +16,38 @@ namespace Business_Objects
         private double m_Longitude;
         private double m_Latitude;
         private int m_Zoom;
-        private const string URLGoogle = "http://maps.google.com/maps/api/staticmap?center={0},{1}&zoom={2}&size={3}x{3}&maptype=roadmap&{4}&sensor=false";
-        private static String GetMaker()
-        {
-            String maker = "markers=color:red|label:0|10.771550,106.698330";
-            return maker;
-        }
+
+        private Size m_Size;
+        private string getMaker = "markers=color:red|label:0|10.771550,106.698330";
+        private Bitmap m_bitmapMaps;
+
+
         #endregion
 
         #region  2.Properties
+        //private static String GetMaker()
+        //{
+        //    String maker = ;
+        //    return maker;
+        //}
+        public Bitmap BitmapMaps
+        {
+            get { return m_bitmapMaps; }
+            set { m_bitmapMaps = value; }
+        }
+
+
+        public string GetMaker
+        {
+            get { return getMaker; }
+            set { getMaker = value; }
+        }
+
+        public Size Size
+        {
+            get { return m_Size; }
+            set { m_Size = value; }
+        }
         public double Longitude
         {
             get { return m_Longitude; }
@@ -44,41 +68,33 @@ namespace Business_Objects
         #region 3.Constructor
         public MapImage()
         {
-            this.m_Latitude = 0;
-            this.m_Longitude = 0;
+            AddRule(new ValidateRange("Latitude", -90, 90, ValidationDataType.Double));
+            AddRule(new ValidateRange("Longitude", -180, 180, ValidationDataType.Double));
+            AddRule(new ValidateRange("Zoom", 0, 21, ValidationDataType.Integer));
+
+            this.m_Latitude = 40.714728;
+            this.m_Longitude = -73.998672;
             this.m_Zoom = 0;
+            this.Size = new Size(480, 800);
+            this.BitmapMaps = new Bitmap(this.Size.Width, this.Size.Height);
+        }
+        public MapImage(double lat, double lng, int zoom, Size size)
+        {
+            this.Latitude = lat;
+            this.Longitude = lng;
+            this.Zoom = zoom;
+            this.Size = size;
+            this.BitmapMaps = new Bitmap(this.Size.Width, this.Size.Height);
+        }
+        public MapImage(double lat, double lng, int zoom, Size size, String maker)
+            : this(lat, lng, zoom, size)
+        {
+
+            if (maker != null)
+                this.getMaker = maker;
+
         }
         #endregion
 
-        #region 4.Methods
-        //Method Load Maps 1
-        public static Bitmap GetMapImage(double lat, double lng, int zoom, int size)
-        {
-            StringBuilder sb = new StringBuilder();
-            String maker = GetMaker();
-            sb.AppendFormat(URLGoogle, lat.ToString("f6", new CultureInfo("en-US")), lng.ToString("f6", new CultureInfo("en-US")), zoom, size, maker);
-            
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(sb.ToString());
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            return new Bitmap(response.GetResponseStream());
-        }
-
-        //Method Load Maps 2
-        public static Bitmap GetMapImage(double lat, double lng, int zoom, int size,String maker)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendFormat(URLGoogle, lat.ToString("f6", new CultureInfo("en-US")), lng.ToString("f6", new CultureInfo("en-US")), zoom, size, maker);
-
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(sb.ToString());
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            return new Bitmap(response.GetResponseStream());
-        }
-
-        ////Method Save Maps To Cache
-        //public static Bitmap GetCacheImage(double lat, double lng, int zoom, int size)
-        //{
-        //    return new Bitmap(1,1);
-        //}
-        #endregion
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace GoogleMaps.Projection
+namespace GoogleMapCore
 {
    public struct RectLatLng
    {

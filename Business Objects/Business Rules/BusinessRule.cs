@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Business_Objects.Business_Rules
 {
-    abstract class BusinessRule
+    public abstract class BusinessRule
     {
         private string _propertyName;
 

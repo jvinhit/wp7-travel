@@ -6,7 +6,7 @@ using Business_Objects.Business_Rules;
 
 namespace Business_Objects
 {
-    class BusinessObject
+    public class BusinessObject
     {
         private List<BusinessRule> _businessRules = new List<BusinessRule>();
         private List<string> _validationErrors = new List<string>();

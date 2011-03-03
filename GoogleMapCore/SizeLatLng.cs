@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace GoogleMaps.Projection
+namespace GoogleMapCore
 {
    public struct SizeLatLng
    {

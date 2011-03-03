@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 
 
-namespace GoogleMaps.Projection
+namespace GoogleMapCore
 {
 
    public abstract class PureProjection
