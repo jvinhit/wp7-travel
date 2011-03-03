@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace GoogleMaps.Projection
+namespace GoogleMapCore
 {
    public class MercatorProjection : PureProjection
    {

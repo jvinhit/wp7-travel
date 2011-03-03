@@ -8,43 +8,43 @@ namespace Business_Objects.Business_Rules
     public class ValidateRange : BusinessRule
     {
         private ValidationDataType DataType { get; set; }
-        private ValidationOperator Operator { get; set; }
+        
 
         private object Min { get; set; }
         private object Max { get; set; }
 
-        public ValidateRange(string propertyName, object min, object max,
-            ValidationOperator @operator, ValidationDataType dataType)
+        public ValidateRange(string propertyName, object min, object max
+            , ValidationDataType dataType)
             : base(propertyName)
         {
             Min = min;
             Max = max;
 
-            Operator = @operator;
+            
             DataType = dataType;
 
-            ErrorMessage = propertyName + " must be between " + Min + " and " + Max;
+            ErrorMessage = String.Format("{0} must be between {1} and {2}", propertyName, Min, Max);
         }
 
         public ValidateRange(string propertyName, string errorMessage, object min, object max,
-            ValidationOperator @operator, ValidationDataType dataType)
-            : this(propertyName, min, max, @operator, dataType)
+            ValidationDataType dataType)
+            : this(propertyName, min, max, dataType)
         {
             ErrorMessage = errorMessage;
         }
         public ValidateRange(string propertyName)
             : base(propertyName)
         {
-            
+
         }
         public ValidateRange(string propertyName, string errorMessage)
             : base(propertyName, errorMessage)
         {
             
         }
-         
 
-        public override bool Validate(BusinessObject businessObject)
+
+        public override bool ValidProperty(BusinessObject businessObject)
         {
             try
             {
