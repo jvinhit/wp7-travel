@@ -35,6 +35,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +48,18 @@
     <Compile Include="DataTranferObjects\MapImageDTO.cs" />
     <Compile Include="IMainService.cs" />
     <Compile Include="MainService.cs" />
+    <Compile Include="MessageBase\AcknowledgeType.cs" />
+    <Compile Include="MessageBase\PersistType.cs" />
+    <Compile Include="MessageBase\RequestBase.cs" />
+    <Compile Include="MessageBase\ResponseBase.cs" />
+    <Compile Include="Messages\LoginRequest.cs" />
+    <Compile Include="Messages\LoginResponse.cs" />
+    <Compile Include="Messages\LogoutResponse.cs" />
+    <Compile Include="Messages\LogoutRequest.cs" />
+    <Compile Include="Messages\MapImageRequest.cs" />
+    <Compile Include="Messages\MapImageResponse.cs" />
+    <Compile Include="Messages\TokenRequest.cs" />
+    <Compile Include="Messages\TokenResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,11 +67,12 @@
       <Project>{20AE9ED2-C0D9-4490-AEF0-879AA3270BB9}</Project>
       <Name>Business Objects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data Objects\Data Objects.csproj">
+      <Project>{27143BBB-6508-41D7-9529-B5721E6F8E57}</Project>
+      <Name>Data Objects</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MessageBase\" />
-    <Folder Include="Messages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

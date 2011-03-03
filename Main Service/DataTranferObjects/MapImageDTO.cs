@@ -7,8 +7,8 @@ using System.Drawing;
 
 namespace Main_Service.DataTranferObjects
 {
-    [DataContract(Name = "MapImage", Namespace = "http://www.yourcompany.com/types/")]
-    class MapImageDTO
+    [DataContract(Name = "MapImage", Namespace = "http://www.tannguyen.com/types/")]
+    public class MapImageDTO
     {
         [DataMember]
         public Bitmap BitmapMaps;
