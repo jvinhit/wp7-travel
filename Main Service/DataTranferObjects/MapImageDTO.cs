@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 using System.Drawing;
+using System.IO;
 
 namespace Main_Service.DataTranferObjects
 {
-    [DataContract(Name = "MapImage", Namespace = "http://www.tannguyen.com/types/")]
+    [DataContract(Name="MapImageDTO",Namespace = "http://www.tannguyen.com/types/")]
     public class MapImageDTO
     {
         [DataMember]
-        public Bitmap BitmapMaps;
+        public MemoryStream BitmapMapsStream;
 
         [DataMember]
         public string GetMaker;
 
         [DataMember]
-        public Size Size;
+        public System.Windows.Size Size;
         [DataMember]
         public double Longitude;
         [DataMember]

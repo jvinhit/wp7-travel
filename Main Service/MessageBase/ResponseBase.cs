@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Main_Service.MessageBase
 {
-    [DataContract(Namespace = "http://www.tannguyen.com/types/")]
+   [DataContract(Namespace = "http://www.tannguyen.com/types/")]
     public class ResponseBase
     {
          /// <summary>

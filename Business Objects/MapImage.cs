@@ -6,6 +6,7 @@ using System.Net;
 using System.Globalization;
 using System.Drawing;
 using Business_Objects.Business_Rules;
+using System.IO;
 
 namespace Business_Objects
 {
@@ -17,9 +18,9 @@ namespace Business_Objects
         private double m_Latitude;
         private int m_Zoom;
 
-        private Size m_Size;
+        private System.Windows.Size m_Size;
         private string getMaker = "markers=color:red|label:0|10.771550,106.698330";
-        private Bitmap m_bitmapMaps;
+        private MemoryStream m_bitmapMapsStream;
 
 
         #endregion
@@ -30,10 +31,10 @@ namespace Business_Objects
         //    String maker = ;
         //    return maker;
         //}
-        public Bitmap BitmapMaps
+        public MemoryStream BitmapMapsStream
         {
-            get { return m_bitmapMaps; }
-            set { m_bitmapMaps = value; }
+            get { return m_bitmapMapsStream; }
+            set { m_bitmapMapsStream = value; }
         }
 
 
@@ -43,7 +44,7 @@ namespace Business_Objects
             set { getMaker = value; }
         }
 
-        public Size Size
+        public System.Windows.Size Size
         {
             get { return m_Size; }
             set { m_Size = value; }
@@ -75,18 +76,20 @@ namespace Business_Objects
             this.m_Latitude = 40.714728;
             this.m_Longitude = -73.998672;
             this.m_Zoom = 0;
-            this.Size = new Size(480, 800);
-            this.BitmapMaps = new Bitmap(this.Size.Width, this.Size.Height);
+            this.Size = new System.Windows.Size(480, 800);
+            //this.BitmapMaps = new Bitmap(this.Size.Width, this.Size.Height);
+            this.BitmapMapsStream = new MemoryStream();
         }
-        public MapImage(double lat, double lng, int zoom, Size size)
+        public MapImage(double lat, double lng, int zoom,System.Windows.Size size)
         {
             this.Latitude = lat;
             this.Longitude = lng;
             this.Zoom = zoom;
             this.Size = size;
-            this.BitmapMaps = new Bitmap(this.Size.Width, this.Size.Height);
+            //this.BitmapMaps = new Bitmap(this.Size.Width, this.Size.Height);
+            this.BitmapMapsStream = new MemoryStream();
         }
-        public MapImage(double lat, double lng, int zoom, Size size, String maker)
+        public MapImage(double lat, double lng, int zoom,System.Windows.Size size, String maker)
             : this(lat, lng, zoom, size)
         {
 

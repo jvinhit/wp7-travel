@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Data_Objects.ADO.NET.SqlServer
 {
-    class SQLDaoFactories:IDaoFactory
+    class SQLDaoFactories : IDaoFactory
     {
         public IMapImage MapImage
         {
