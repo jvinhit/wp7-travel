@@ -7,7 +7,7 @@ using Main_Service.Messages;
 
 namespace Main_Service
 {
-    [ServiceContract(SessionMode = SessionMode.Required)]
+    [ServiceContract]
     public interface IMainService
     {
         [OperationContract]
@@ -18,5 +18,8 @@ namespace Main_Service
 
         [OperationContract]
         LogoutResponse Logout(LogoutRequest request);
+
+        [OperationContract]
+        MapImageResponse GetMapGoogle(MapImageRequest request);
     }
 }

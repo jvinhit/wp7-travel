@@ -10,6 +10,7 @@ namespace Main_Service.Messages
     [DataContract(Namespace = "http://www.tannguyen.com/types/")]
     public class LoginResponse : ResponseBase
     {
+
         /// <summary>
         /// Default Constructor for LoginResponse.
         /// </summary>

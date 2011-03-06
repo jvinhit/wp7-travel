@@ -11,12 +11,12 @@ namespace Main_Service.DataMapper
     {
         public static MapImageDTO ToObjectDTOTranfer(MapImage mapImage)
         {
-            return new MapImageDTO { BitmapMaps = mapImage.BitmapMaps, 
+            return new MapImageDTO { BitmapMapsStream = mapImage.BitmapMapsStream, 
                                        Latitude = mapImage.Latitude, 
                                        Longitude = mapImage.Longitude, 
                                        GetMaker = mapImage.GetMaker, 
                                        Zoom = mapImage.Zoom, 
-                                       Size = mapImage.Size };
+                                      Size= mapImage.Size };
         }
     }
 }

@@ -14,12 +14,12 @@ namespace GoogleMapCore
         private static double Longitude;
         private static int Zoom;
         private const string URLGoogle = "http://maps.google.com/maps/api/staticmap?center={0},{1}&zoom={2}&size={3}x{4}&maptype=roadmap&{5}&sensor=false";
-        private static Size Size;
+        private static System.Windows.Size Size;
         private static string getMaker = "markers=color:red|label:0|10.771550,106.698330";
 
         #region Methods
         //Method Load Maps 1
-        public static Bitmap GetMapImage(double lat, double lng, int zoom, Size size)
+        public static Bitmap GetMapImage(double lat, double lng, int zoom, System.Windows.Size size)
         {
 
             Latitude = lat;
@@ -30,7 +30,7 @@ namespace GoogleMapCore
         }
 
         //Method Load Maps 2
-        public static Bitmap GetMapImage(double lat, double lng, int zoom, Size size, String maker)
+        public static Bitmap GetMapImage(double lat, double lng, int zoom, System.Windows.Size size, String maker)
         {
             Latitude = lat;
             Longitude = lng;
