@@ -29,35 +29,30 @@ namespace WindowsPhoneApplication1
         private static string ClientTag { get; set; }
         private MainServiceClient ClientService;
 
-        
-       
-        
-        
- 
- 
        
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
             // Create proxy object.
             ClientService = new MainServiceClient();
-            ClientService.GetMapGoogleCompleted+=new EventHandler<GetMapGoogleCompletedEventArgs>(ClientService_GetMapGoogleCompleted);
-
+  
             // Gets client tag from app.config configuration file
             ClientTag = "ClientTag";
             // Retrieve AccessToken as first step
             var request = PrepareRequest(new MapImageRequest());
             request.mapImageDTO = new MapImageDTO();
-            System.Windows.Size size = new System.Windows.Size();
+            //System.Windows.Size size = new System.Windows.Size();
        
-            size.Height = 557;
-            size.Width = 421.0;
+            //size.Height = 557;
+            //size.Width = 421.0;
 
             request.mapImageDTO.Latitude=40.714728;
             request.mapImageDTO.Longitude=-73.998672;
-            request.mapImageDTO.Size=size;
-            request.mapImageDTO.Zoom=0;
+            request.mapImageDTO.Width = 130;
+            request.mapImageDTO.Height = 279;
+            request.mapImageDTO.Zoom=12;
             request.mapImageDTO.GetMaker="markers=color:red|label:0|10.771550,106.698330";
-        
+
+            ClientService.GetMapGoogleCompleted += new EventHandler<GetMapGoogleCompletedEventArgs>(ClientService_GetMapGoogleCompleted);
 
             ClientService.GetMapGoogleAsync(request);
             
@@ -74,15 +69,24 @@ namespace WindowsPhoneApplication1
             {
                 return;
             }
+
+
             MapImageResponse response = e.Result;
+            MemoryStream memoryStream;
+       
+            memoryStream = new MemoryStream((byte[])response.mapImageDTO.BitmapMapsStream);
+            memoryStream.Seek(0, SeekOrigin.Begin);
+
+
             System.Windows.Media.Imaging.BitmapImage bImg = new System.Windows.Media.Imaging.BitmapImage();
+
 
             //bImg.BeginInit();
 
             //bImg.StreamSource = new MemoryStream(ms.ToArray());
 
             //bImg.EndInit();
-            bImg.SetSource(new MemoryStream(response.mapImageDTO.BitmapMapsStream.ToArray()));
+            bImg.SetSource(memoryStream);
             this.image1.Source = bImg;
         }
 

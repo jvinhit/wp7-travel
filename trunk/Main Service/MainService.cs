@@ -129,7 +129,8 @@ namespace Main_Service
             response.mapImageDTO = Mapper.ToObjectDTOTranfer((MapImage)_mapImage.GetMapImages(request.mapImageDTO.Latitude,
                                                                           request.mapImageDTO.Longitude,
                                                                           request.mapImageDTO.Zoom,
-                                                                          request.mapImageDTO.Size,
+                                                                          request.mapImageDTO.Width,
+                                                                          request.mapImageDTO.Height,
                                                                           request.mapImageDTO.GetMaker));
             return response;
 

@@ -9,8 +9,8 @@ namespace Data_Objects
 {
     public interface IMapImage
     {
-        MapImage GetMapImages(double lat, double lng, int zoom,System.Windows.Size size);
+        MapImage GetMapImages(double lat, double lng, int zoom,int width, int height);
 
-        MapImage GetMapImages(double lat, double lng, int zoom,System.Windows.Size size, String maker);
+        MapImage GetMapImages(double lat, double lng, int zoom, int width, int height, String maker);
     }
 }
