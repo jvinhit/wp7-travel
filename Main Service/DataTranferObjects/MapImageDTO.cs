@@ -12,19 +12,21 @@ namespace Main_Service.DataTranferObjects
     public class MapImageDTO
     {
         [DataMember]
-        public MemoryStream BitmapMapsStream;
+        public byte[] BitmapMapsStream;
 
         [DataMember]
         public string GetMaker;
 
-        [DataMember]
-        public System.Windows.Size Size;
         [DataMember]
         public double Longitude;
         [DataMember]
         public double Latitude;
         [DataMember]
         public int Zoom;
+        [DataMember]
+        public int Width;
+        [DataMember]
+        public int Height;
 
     }
 }

@@ -228,10 +228,13 @@ namespace WindowsFormsApplication1.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Drawing.Bitmap BitmapMapsField;
+        private byte[] BitmapMapsStreamField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GetMakerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double LatitudeField;
@@ -240,7 +243,7 @@ namespace WindowsFormsApplication1.ServiceReference1 {
         private double LongitudeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Drawing.Size SizeField;
+        private int WidthField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ZoomField;
@@ -256,14 +259,14 @@ namespace WindowsFormsApplication1.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Drawing.Bitmap BitmapMaps {
+        public byte[] BitmapMapsStream {
             get {
-                return this.BitmapMapsField;
+                return this.BitmapMapsStreamField;
             }
             set {
-                if ((object.ReferenceEquals(this.BitmapMapsField, value) != true)) {
-                    this.BitmapMapsField = value;
-                    this.RaisePropertyChanged("BitmapMaps");
+                if ((object.ReferenceEquals(this.BitmapMapsStreamField, value) != true)) {
+                    this.BitmapMapsStreamField = value;
+                    this.RaisePropertyChanged("BitmapMapsStream");
                 }
             }
         }
@@ -277,6 +280,19 @@ namespace WindowsFormsApplication1.ServiceReference1 {
                 if ((object.ReferenceEquals(this.GetMakerField, value) != true)) {
                     this.GetMakerField = value;
                     this.RaisePropertyChanged("GetMaker");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Height {
+            get {
+                return this.HeightField;
+            }
+            set {
+                if ((this.HeightField.Equals(value) != true)) {
+                    this.HeightField = value;
+                    this.RaisePropertyChanged("Height");
                 }
             }
         }
@@ -308,14 +324,14 @@ namespace WindowsFormsApplication1.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Drawing.Size Size {
+        public int Width {
             get {
-                return this.SizeField;
+                return this.WidthField;
             }
             set {
-                if ((this.SizeField.Equals(value) != true)) {
-                    this.SizeField = value;
-                    this.RaisePropertyChanged("Size");
+                if ((this.WidthField.Equals(value) != true)) {
+                    this.WidthField = value;
+                    this.RaisePropertyChanged("Width");
                 }
             }
         }
@@ -608,7 +624,7 @@ namespace WindowsFormsApplication1.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IMainService", SessionMode=System.ServiceModel.SessionMode.Required)]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IMainService")]
     public interface IMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainService/GetToken", ReplyAction="http://tempuri.org/IMainService/GetTokenResponse")]
