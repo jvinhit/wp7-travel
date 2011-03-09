@@ -47,8 +47,8 @@ namespace WindowsPhoneApplication1
 
             request.mapImageDTO.Latitude=40.714728;
             request.mapImageDTO.Longitude=-73.998672;
-            request.mapImageDTO.Width = 130;
-            request.mapImageDTO.Height = 279;
+            request.mapImageDTO.Width = 1300;
+            request.mapImageDTO.Height = 2790;
             request.mapImageDTO.Zoom=12;
             request.mapImageDTO.GetMaker="markers=color:red|label:0|10.771550,106.698330";
 
