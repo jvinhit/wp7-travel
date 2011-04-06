@@ -14,7 +14,14 @@ namespace WindowsPhonePanoramaApplication1
 {
     public class WeatherViewMode : INotifyPropertyChanged
     {
-        public static string _locationWOEID;
+        private WeatherViewMode()
+        {
+            this.NameCity = "Ho Chi Minh";
+            this.LocationWOEID = "1252431";
+        }
+        public static WeatherViewMode weatherInstance = new WeatherViewMode();
+
+        private string _locationWOEID;
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
@@ -35,7 +42,7 @@ namespace WindowsPhonePanoramaApplication1
             }
         }
 
-        public static string _nameCity;
+        private string _nameCity;
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>

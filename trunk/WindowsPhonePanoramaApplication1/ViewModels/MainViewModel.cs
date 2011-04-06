@@ -23,7 +23,7 @@ namespace WindowsPhonePanoramaApplication1
         {
             this.Items1 = new ObservableCollection<ItemViewModel1>();
             this.Items2 = new ObservableCollection<ItemViewModel2>();
-            this.ItemsWeather = new ObservableCollection<WeatherViewMode>();
+            //this.ItemsWeather = new ObservableCollection<WeatherViewMode>();
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace WindowsPhonePanoramaApplication1
         public ObservableCollection<ItemViewModel2> Items2 { get; private set; }
 
         // weather funtion
-        public ObservableCollection<WeatherViewMode> ItemsWeather { get; private set; }
+        //public ObservableCollection<WeatherViewMode> ItemsWeather { get; private set; }
 
 
 
@@ -89,12 +89,13 @@ namespace WindowsPhonePanoramaApplication1
             this.Items1.Add(new ItemViewModel1() { LineOne = "runtime fifteen", LineTwo = "Habitant inceptos interdum lobortis", LineThree = "Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat" });
             this.Items1.Add(new ItemViewModel1() { LineOne = "runtime sixteen", LineTwo = "Nascetur pharetra placerat pulvinar", LineThree = "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum" });
             // function app
-            this.Items2.Add(new ItemViewModel2() { LineOne = "Maps", LineTwo = "Xác định vị trí, thông tin địa điểm....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/GoogleIcon.jpg",IdFuntion=EnumsFunction.GoogleMapFunc.ToString() });
-            this.Items2.Add(new ItemViewModel2() { LineOne = "Weather", LineTwo = "Dự báo thời tiết....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/WeatherIcon.jpg", IdFuntion = EnumsFunction.WeatherFunc.ToString() });
+            this.Items2.Add(new ItemViewModel2() { LineOne = "Maps", LineTwo = "Xác định vị trí, thông tin địa điểm....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/GoogleIcon.jpg", IdFuntion = EnumsFunction.GoogleMapFunc.ToString(), TagLink = "/Views/GoogleMaps/GoogleMaps.xaml" });
+            this.Items2.Add(new ItemViewModel2() { LineOne = "Weather", LineTwo = "Dự báo thời tiết....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/WeatherIcon.jpg", IdFuntion = EnumsFunction.WeatherFunc.ToString(), TagLink = "/Views/WeatherViews/WeatherView.xaml" });
+            this.Items2.Add(new ItemViewModel2() { LineOne = "Currency Convert", LineTwo = "Đổi tiền tệ ....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/CurrencyFunction.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/Views/Currency/Currency.xaml" });
 
 
             //weather funtion
-            this.ItemsWeather.Add(new WeatherViewMode(){LocationWOEID="1252431", NameCity="HCMCiTy"});
+            //this.ItemsWeather.Add(new WeatherViewMode(){LocationWOEID="1252431", NameCity="HCMCiTy"});
 
 
 

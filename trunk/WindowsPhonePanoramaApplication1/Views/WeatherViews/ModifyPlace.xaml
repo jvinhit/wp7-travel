@@ -1,0 +1,72 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WindowsPhonePanoramaApplication1.Views.WeatherViews.ModifyPlace"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Weather forecast" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Change Place" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel Height="610" HorizontalAlignment="Left" Name="stackPanel1" VerticalAlignment="Top" Width="456">
+                <Grid Height="612" Name="grid1" Width="454" >
+                    <controls:PanoramaItem >
+                        <!--Double line list with text wrapping-->
+                        <ListBox ItemsSource="{Binding Items1}" SelectionChanged="ListBox_SelectionChanged" Height="487" Margin="0,100,4,0" Width="432">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                                        <!--Replace rectangle with image-->
+                                        <!--<Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>-->
+                                        <Image Tag="{Binding InforCollection}" Name="{Binding IdFuntion}" Height="100" Width="100"  Margin="12,0,9,0" Source="/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/result.jpg" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
+                                        <StackPanel Width="311">
+                                            <TextBlock Text="{Binding City}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                            <TextBlock Text="{Binding Country}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </controls:PanoramaItem>
+                    <Button Content="Search" Height="71" Name="button1" Width="160" Click="button1_Click" Margin="264,55,30,486" />
+                    <TextBox Height="71" Name="textBox1" Text="Name City" Width="384" MouseLeftButtonDown="textBox1_MouseLeftButtonDown" Margin="40,0,30,541" />
+                  
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

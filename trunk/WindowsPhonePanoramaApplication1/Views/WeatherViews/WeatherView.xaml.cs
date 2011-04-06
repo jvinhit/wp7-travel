@@ -20,9 +20,9 @@ namespace WindowsPhonePanoramaApplication1.Views
         public WeatherView()
         {
             InitializeComponent();
-            DataContext = App.ViewModel;
-           
+            //DataContext = App.ViewModel;
 
+            this.textBlockListTitle.DataContext = WeatherViewMode.weatherInstance;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
         // Load data for the ViewModel Items
@@ -32,10 +32,16 @@ namespace WindowsPhonePanoramaApplication1.Views
             {
                 App.ViewModel.LoadData();
             }
-            this.textBlockListTitle.Text = WeatherViewMode._nameCity.ToString();
+            UpdateWeather();
+           
+           
+        }
+        public void UpdateWeather()
+        {
             WebClient wc1 = new WebClient();
             wc1.DownloadStringCompleted += new DownloadStringCompletedEventHandler(wc1_DownloadStringCompleted);
-            wc1.DownloadStringAsync(new Uri("http://xml.weather.yahoo.com/forecastrss?p=NOXX0035&u=c"));
+            Uri stringTemp = new Uri(string.Format("http://xml.weather.yahoo.com/forecastrss?w={0}&u=c", WeatherViewMode.weatherInstance.LocationWOEID));
+            wc1.DownloadStringAsync(stringTemp);
         }
 
         private void wc1_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
@@ -83,7 +89,7 @@ namespace WindowsPhonePanoramaApplication1.Views
                         int weatherCode = Convert.ToInt16(code);
                         string imageName = weatherImage(weatherCode);
 
-                        Uri uri = new Uri("Images/" + imageName + ".png", UriKind.Relative);
+                        Uri uri = new Uri("/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/" + imageName + ".png", UriKind.Relative);
                         ImageSource img = new BitmapImage(uri);
                         imgWeather1.Source = img;
 
@@ -100,7 +106,7 @@ namespace WindowsPhonePanoramaApplication1.Views
                         int weatherCode = Convert.ToInt16(code);
                         string imageName = weatherImage(weatherCode);
 
-                        Uri uri = new Uri("/WindowsPhonePanoramaApplication1;component/Images/" + imageName + ".png", UriKind.Relative);
+                        Uri uri = new Uri("/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/" + imageName + ".png", UriKind.Relative);
                         ImageSource img = new BitmapImage(uri);
 
                         if (forecastTomorrow)
@@ -168,7 +174,7 @@ namespace WindowsPhonePanoramaApplication1.Views
                     result = "31" + dayOrNight;
                 else if (weatherCode == 33 || weatherCode == 34)
                     result = "31" + dayOrNight;
-                else if (weatherCode == 37 || weatherCode == 47)
+                else if (weatherCode == 37 || weatherCode==38 || weatherCode == 47)
                     result = "37" + dayOrNight;
                 else if (weatherCode == 39 || weatherCode == 37 || weatherCode == 45)
                     result = "39" + dayOrNight;
@@ -183,6 +189,12 @@ namespace WindowsPhonePanoramaApplication1.Views
             }
 
             return result;
+        }
+
+        private void btnDelete_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //"/Views/WeatherViews/WeatherView.xaml"
+            this.NavigationService.Navigate(new Uri(((Image)sender).Tag.ToString(), UriKind.Relative));
         }
 
 

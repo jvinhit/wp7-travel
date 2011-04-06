@@ -14,6 +14,7 @@ namespace WindowsPhonePanoramaApplication1
     public enum EnumsFunction
     {
         GoogleMapFunc=1,
-        WeatherFunc
+        WeatherFunc,
+        CurrencyConvert
     }
 }

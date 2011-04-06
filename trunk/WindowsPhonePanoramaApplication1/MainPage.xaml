@@ -49,7 +49,7 @@
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
                                 <!--Replace rectangle with image-->
                                 <!--<Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>-->
-                                <Image Name="{Binding IdFuntion}" Height="100" Width="100"  Margin="12,0,9,0" Source="{Binding PathIcon}" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
+                                <Image Tag="{Binding TagLink}" Name="{Binding IdFuntion}" Height="100" Width="100"  Margin="12,0,9,0" Source="{Binding PathIcon}" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
                                 <StackPanel Width="311">                                    
                                     <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
                                     <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>

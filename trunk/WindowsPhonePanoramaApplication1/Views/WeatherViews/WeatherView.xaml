@@ -25,11 +25,11 @@
         <Grid x:Name="TitleGrid" Grid.Row="0" >
             <TextBlock Text="Weather forecast" x:Name="textBlockPageTitle" FontSize="40" />
 
-            <TextBlock x:Name="textBlockListTitle" Height="89" Margin="0,86,0,0" FontSize="40" />
+            <TextBlock Text="{Binding NameCity}"  x:Name="textBlockListTitle" Height="89" Margin="0,86,0,0" FontSize="40" />
          
             
             <Image x:Name="btnAdd" Margin="10,10" Source="/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/add.png" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-            <Image x:Name="btnDelete" Margin="10,65" Source="/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/write.png" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <Image x:Name="btnModify" Margin="10,65" Source="/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/write.png" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="btnDelete_MouseLeftButtonDown" Tag="/Views/WeatherViews/ModifyPlace.xaml" />
         </Grid>
 
         <!--ContentGrid is empty. Place new content here-->

@@ -15,6 +15,20 @@ namespace WindowsPhonePanoramaApplication1
     public class ItemViewModel2 : INotifyPropertyChanged
     {
         private string _lineOne;
+        private string _tagLink;
+
+        public string TagLink
+        {
+            get { return _tagLink; }
+            set
+            {
+                if (value != _tagLink)
+                {
+                    _tagLink = value;
+                    NotifyPropertyChanged("TagLink");
+                }
+            }
+        }
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
