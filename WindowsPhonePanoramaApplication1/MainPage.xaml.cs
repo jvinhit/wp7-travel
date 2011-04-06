@@ -36,16 +36,16 @@ namespace WindowsPhonePanoramaApplication1
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(((Image)sender).Name.ToString());
-           
-            EnumsFunction Text = EnumsFunction.WeatherFunc   ;
-            switch (Text)
-            {
-                case EnumsFunction.WeatherFunc:
-                    this.NavigationService.Navigate(new Uri(@"/Views/WeatherView.xaml", UriKind.Relative)); 
-                    break;
+           // MessageBox.Show(((Image)sender).Name.ToString());
+            this.NavigationService.Navigate(new Uri(((Image)sender).Tag.ToString(), UriKind.Relative));
+            //EnumsFunction Text = EnumsFunction.WeatherFunc   ;
+            //switch (Text)
+            //{
+            //    case EnumsFunction.WeatherFunc:
+                     
+            //        break;
 
-            }
+            //}
         }
     }
 }

@@ -50,6 +50,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -71,7 +72,26 @@
     <Compile Include="ViewModels\ItemViewModel1.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\WeatherViewMode.cs" />
-    <Compile Include="Views\WeatherView.xaml.cs">
+    <Compile Include="Views\Currency\Currency.xaml.cs">
+      <DependentUpon>Currency.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Currency\CurrencyModify.xaml.cs">
+      <DependentUpon>CurrencyModify.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Currency\ViewMode\CurrencyConvertViewModel.cs" />
+    <Compile Include="Views\Currency\ViewMode\ListCurrency.cs" />
+    <Compile Include="Views\GoogleMaps\GoogleMaps.xaml.cs">
+      <DependentUpon>GoogleMaps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoogleMaps\ViewMode\GoogleTile.cs" />
+    <Compile Include="Views\WeatherViews\ModifyPlace.xaml.cs">
+      <DependentUpon>ModifyPlace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeatherViews\PivotPage1.xaml.cs">
+      <DependentUpon>PivotPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeatherViews\ViewMode\PlaceMode.cs" />
+    <Compile Include="Views\WeatherViews\WeatherView.xaml.cs">
       <DependentUpon>WeatherView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -88,7 +108,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
-    <Page Include="Views\WeatherView.xaml">
+    <Page Include="Views\Currency\Currency.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Currency\CurrencyModify.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoogleMaps\GoogleMaps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WeatherViews\ModifyPlace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WeatherViews\PivotPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WeatherViews\WeatherView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,6 +239,16 @@
     <Resource Include="Images\WeatherImages\write.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\WeatherImages\result.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="IconFunctions\CurrencyFunction.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\GoogleMaps\ZoomIn_Black.png" />
+    <Resource Include="Images\GoogleMaps\ZoomIn_White.png" />
+    <Resource Include="Images\GoogleMaps\ZoomOut_Black.png" />
+    <Resource Include="Images\GoogleMaps\ZoomOut_White.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup />
