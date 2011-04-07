@@ -159,11 +159,11 @@
             <!--Pivot item one-->
             <controls:PivotItem Header="Maps">
                 <Grid>
-                    <Microsoft_Phone_Controls_Maps:Map Name="googlemap" Margin="0,13,0,0" CopyrightVisibility="Collapsed" LogoVisibility="Collapsed" ScaleVisibility="Visible" CredentialsProvider="ApBXPZf5IR94SLXE8nh5FYsb5WHKrH1XPY7428-EqQudseivcWhCROIJvGmtnkAV" Height="594">
+                    <Microsoft_Phone_Controls_Maps:Map Name="googlemap" Margin="0,0,0,0" CopyrightVisibility="Collapsed" LogoVisibility="Collapsed" ScaleVisibility="Visible" CredentialsProvider="ApBXPZf5IR94SLXE8nh5FYsb5WHKrH1XPY7428-EqQudseivcWhCROIJvGmtnkAV" Height="594" Visibility="Visible">
                         <Microsoft_Phone_Controls_Maps:Map.Mode>
                             <MSPCMCore:MercatorMode/>
                         </Microsoft_Phone_Controls_Maps:Map.Mode>
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer Name="street" Margin="0,0,0,32">
+                        <Microsoft_Phone_Controls_Maps:MapTileLayer Name="street" Margin="0,0,0,32" Visibility="Collapsed">
                             <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                                 <GoogleTileSource:GoogleTile TileTypes="Street"/>
                             </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
@@ -173,12 +173,12 @@
                                 <GoogleTileSource:GoogleTile TileTypes="WaterOverlay"/>
                             </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                         </Microsoft_Phone_Controls_Maps:MapTileLayer>
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer Visibility="Collapsed" Name="hybrid" Margin="0,0,0,32">
+                        <Microsoft_Phone_Controls_Maps:MapTileLayer Visibility="Visible" Name="hybrid" Margin="0,0,0,32">
                             <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                                 <GoogleTileSource:GoogleTile TileTypes="Hybrid"/>
                             </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                         </Microsoft_Phone_Controls_Maps:MapTileLayer>
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer Visibility="Collapsed" Name="satellite" Margin="0,0,0,32">
+                        <Microsoft_Phone_Controls_Maps:MapTileLayer Visibility="Visible" Name="satellite" Margin="0,0,0,32">
                             <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                                 <GoogleTileSource:GoogleTile TileTypes="Satellite"/>
                             </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>

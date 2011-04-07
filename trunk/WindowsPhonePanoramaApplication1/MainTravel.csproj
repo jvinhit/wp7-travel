@@ -84,6 +84,7 @@
       <DependentUpon>GoogleMaps.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GoogleMaps\ViewMode\GoogleTile.cs" />
+    <Compile Include="Views\GoogleMaps\ViewMode\TileSystem.cs" />
     <Compile Include="Views\WeatherViews\ModifyPlace.xaml.cs">
       <DependentUpon>ModifyPlace.xaml</DependentUpon>
     </Compile>
