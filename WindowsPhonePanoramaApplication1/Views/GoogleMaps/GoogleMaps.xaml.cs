@@ -26,6 +26,14 @@ namespace WindowsPhonePanoramaApplication1.Views.GoogleMaps
             street.Visibility = Visibility.Visible;
             physical.Visibility = Visibility.Collapsed;
             wateroverlay.Visibility = Visibility.Collapsed;
+
+
+          
+
+
+
+           
+         
         }
 
         private void ButtonZoomIn_Click(object sender, RoutedEventArgs e)
