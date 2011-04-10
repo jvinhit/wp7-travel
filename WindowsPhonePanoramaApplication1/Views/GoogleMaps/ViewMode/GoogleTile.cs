@@ -51,7 +51,7 @@ namespace WindowsPhonePanoramaApplication1
         public GoogleTile()
         {
             //UriFormat = @"http://mt{0}.google.com/vt/lyrs={1}&z={2}&x={3}&y={4}";
-            UriFormat = "http://maps.google.com/maps/api/staticmap?center={0},{1}&zoom={2}&size=256x256&maptype=roadmap&sensor=true";
+            UriFormat = "http://maps.google.com/maps/api/staticmap?center={0},{1}&zoom={2}&size=256x256&markers=color:blue|label:|{3},{4}&maptype=roadmap&sensor=true";
             Server = 0;
         }
 
@@ -71,7 +71,7 @@ namespace WindowsPhonePanoramaApplication1
                 yPix += 256 / 2;
 
                 TileSystem.PixelXYToLatLong(xPix, yPix, zoomLevel, out lat, out lon);
-                var Url = string.Format(UriFormat, lat, lon, zoomLevel);
+                var Url = string.Format(UriFormat, lat, lon, zoomLevel,MarkOnMap.Current.Latitude,MarkOnMap.Current.Longitude);
                 return new Uri(Url);
             }
             return null;

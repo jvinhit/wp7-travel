@@ -52,6 +52,7 @@
     <Reference Include="Microsoft.Phone.Controls" />
     <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
@@ -84,7 +85,11 @@
       <DependentUpon>GoogleMaps.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GoogleMaps\ViewMode\GoogleTile.cs" />
+    <Compile Include="Views\GoogleMaps\ViewMode\MarkOnMap.cs" />
     <Compile Include="Views\GoogleMaps\ViewMode\TileSystem.cs" />
+    <Compile Include="Views\News\News.xaml.cs">
+      <DependentUpon>News.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WeatherViews\ModifyPlace.xaml.cs">
       <DependentUpon>ModifyPlace.xaml</DependentUpon>
     </Compile>
@@ -118,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\GoogleMaps\GoogleMaps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\News\News.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,9 +259,14 @@
     <Resource Include="Images\GoogleMaps\ZoomIn_White.png" />
     <Resource Include="Images\GoogleMaps\ZoomOut_Black.png" />
     <Resource Include="Images\GoogleMaps\ZoomOut_White.png" />
+    <Resource Include="IconFunctions\News.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\News\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
