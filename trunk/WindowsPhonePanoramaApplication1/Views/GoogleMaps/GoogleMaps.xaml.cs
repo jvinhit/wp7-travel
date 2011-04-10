@@ -15,6 +15,7 @@ namespace WindowsPhonePanoramaApplication1.Views.GoogleMaps
 {
     public partial class GoogleMaps : PhoneApplicationPage
     {
+        private static bool bufferClick = false;
         public GoogleMaps()
         {
             InitializeComponent();
@@ -28,17 +29,16 @@ namespace WindowsPhonePanoramaApplication1.Views.GoogleMaps
             wateroverlay.Visibility = Visibility.Collapsed;
 
 
-          
+            googlemap.SetView(MarkOnMap.Current, MarkOnMap.ZoomLevelCurrent);
 
-
-
-           
-         
         }
 
         private void ButtonZoomIn_Click(object sender, RoutedEventArgs e)
         {
+
             googlemap.ZoomLevel++;
+
+
         }
 
         private void ButtonZoomOut_Click(object sender, RoutedEventArgs e)

@@ -15,6 +15,7 @@ namespace WindowsPhonePanoramaApplication1
     {
         GoogleMapFunc=1,
         WeatherFunc,
-        CurrencyConvert
+        CurrencyConvert,
+        News
     }
 }
