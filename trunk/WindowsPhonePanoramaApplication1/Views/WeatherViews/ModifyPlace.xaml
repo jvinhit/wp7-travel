@@ -50,7 +50,7 @@
                         </ListBox>
                     </controls:PanoramaItem>
                     <Button Content="Search" Height="71" Name="button1" Width="160" Click="button1_Click" Margin="264,55,30,486" />
-                    <TextBox Height="71" Name="textBox1" Text="Name City" Width="384" MouseLeftButtonDown="textBox1_MouseLeftButtonDown" Margin="40,0,30,541" />
+                    <TextBox Height="71" Name="textBox1" Text="Name City" Width="384" MouseLeftButtonDown="textBox1_MouseLeftButtonDown" Margin="40,0,30,541" GotFocus="textBox1_GotFocus" />
                   
                 </Grid>
             </StackPanel>
