@@ -72,21 +72,21 @@
     <Compile Include="ViewModels\ItemViewModel2.cs" />
     <Compile Include="ViewModels\ItemViewModel1.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\WeatherViewMode.cs" />
+    <Compile Include="ViewModels\WeatherView\WeatherViewMode.cs" />
     <Compile Include="Views\Currency\Currency.xaml.cs">
       <DependentUpon>Currency.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Currency\CurrencyModify.xaml.cs">
       <DependentUpon>CurrencyModify.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Currency\ViewMode\CurrencyConvertViewModel.cs" />
-    <Compile Include="Views\Currency\ViewMode\ListCurrency.cs" />
+    <Compile Include="ViewModels\CurrencyView\CurrencyConvertViewModel.cs" />
+    <Compile Include="ViewModels\CurrencyView\ListCurrency.cs" />
     <Compile Include="Views\GoogleMaps\GoogleMaps.xaml.cs">
       <DependentUpon>GoogleMaps.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GoogleMaps\ViewMode\GoogleTile.cs" />
-    <Compile Include="Views\GoogleMaps\ViewMode\MarkOnMap.cs" />
-    <Compile Include="Views\GoogleMaps\ViewMode\TileSystem.cs" />
+    <Compile Include="ViewModels\GoogleView\GoogleTile.cs" />
+    <Compile Include="ViewModels\GoogleView\MarkOnMap.cs" />
+    <Compile Include="ViewModels\GoogleView\TileSystem.cs" />
     <Compile Include="Views\News\News.xaml.cs">
       <DependentUpon>News.xaml</DependentUpon>
     </Compile>
@@ -96,7 +96,7 @@
     <Compile Include="Views\WeatherViews\PivotPage1.xaml.cs">
       <DependentUpon>PivotPage1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WeatherViews\ViewMode\PlaceMode.cs" />
+    <Compile Include="ViewModels\WeatherView\PlaceMode.cs" />
     <Compile Include="Views\WeatherViews\WeatherView.xaml.cs">
       <DependentUpon>WeatherView.xaml</DependentUpon>
     </Compile>
@@ -266,6 +266,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News\" />
+    <Folder Include="Presenter\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
