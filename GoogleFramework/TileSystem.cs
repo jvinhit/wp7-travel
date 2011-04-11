@@ -10,9 +10,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Text;
 
-namespace WindowsPhonePanoramaApplication1
+namespace GoogleFramework
 {
-    static class TileSystem
+    public static class TileSystem
     {
         private const double EarthRadius = 6378137;
         private const double MinLatitude = -85.05112878;

@@ -33,32 +33,32 @@
         </Grid>
 
         <!--ContentGrid is empty. Place new content here-->
-        <Grid x:Name="ContentGrid" Grid.Row="1" Margin="0,40" Visibility="Collapsed">
+        <Grid x:Name="ContentGrid" Visibility="{Binding IsContentGridVisibility}"  Grid.Row="1" Margin="0,40" >
 
             <StackPanel Orientation="Vertical">
 
                 <StackPanel Orientation="Horizontal" Height="200">
                     <StackPanel Orientation="Vertical" Width="250">
-                        <TextBlock x:Name="lblCurrent" Text="Current" FontSize="32" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
-                        <TextBlock x:Name="lblCurrent_conditions" Text="Mostly Cloudy, 6°C" Foreground="DarkGray" FontSize="21" Margin="20,-8" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="lblCurrent" Text="{Binding LblCurrent_Text}" FontSize="32" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="lblCurrent_conditions" Text="{Binding LblCurrent_conditions_Text}" Foreground="DarkGray" FontSize="21" Margin="20,-8" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
                     </StackPanel>
-                    <Image x:Name="imgWeather1" Source="/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/11n.png" Width="300" Height="200" Margin="0,0,-60,-20" />
+                    <Image x:Name="imgWeather1" Source="{Binding ImgWeather1_Source}" Width="300" Height="200" Margin="0,0,-60,-20" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Height="200">
                     <StackPanel Orientation="Vertical" Width="250">
-                        <TextBlock x:Name="lblForecast1" Text="Forecast: Mon" FontSize="32" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
-                        <TextBlock x:Name="lblForecast1_conditions" Text="Light Rain, 3-6°C" Foreground="DarkGray" FontSize="21" Margin="20,-8" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="lblForecast1" Text="{Binding LblForecast1_Text}" FontSize="32" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="lblForecast1_conditions" Text="{Binding LblForecast1_conditions_Text}" Foreground="DarkGray" FontSize="21" Margin="20,-8" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
                     </StackPanel>
-                    <Image x:Name="imgWeather2" Source="/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/11n.png" Width="300" Height="200" Margin="0,0,-60,-20" />
+                    <Image x:Name="imgWeather2" Source="{Binding ImgWeather2_Source}" Width="300" Height="200" Margin="0,0,-60,-20" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Height="200">
                     <StackPanel Orientation="Vertical" Width="250">
-                        <TextBlock x:Name="lblForecast2" Text="Forecast: Tue" FontSize="32" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
-                        <TextBlock x:Name="lblForecast2_conditions" Text="Showers, 2-6°C" Foreground="DarkGray" FontSize="21" Margin="20,-8" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="lblForecast2" Text="{Binding LblForecast2_Text}" FontSize="32" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="lblForecast2_conditions" Text="{Binding LblForecast2_conditions_Text }" Foreground="DarkGray" FontSize="21" Margin="20,-8" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
                     </StackPanel>
-                    <Image x:Name="imgWeather3" Source="/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/11n.png" Width="300" Height="200" Margin="0,0,-60,-20" />
+                    <Image x:Name="imgWeather3" Source="{Binding ImgWeather3_Source}" Width="300" Height="200" Margin="0,0,-60,-20" />
                 </StackPanel>
 
             </StackPanel>
