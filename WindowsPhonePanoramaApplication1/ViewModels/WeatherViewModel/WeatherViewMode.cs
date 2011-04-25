@@ -17,6 +17,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Microsoft.Phone.Controls;
+using WindowsPhonePanoramaApplication1.MyDatabase;
+using WindowsPhonePanoramaApplication1.MyDatabase.Weather;
 
 
 namespace WindowsPhonePanoramaApplication1
@@ -24,10 +26,69 @@ namespace WindowsPhonePanoramaApplication1
     public class WeatherViewMode : ViewModelBase
     {
         public ObservableCollection<WeatherView> ListWeatherInstance { get; private set; }
+        void LoadFromDatabase()
+        {
+            var query = from c in MainDatabase.mainDB.Table<WeatherData>() select c;
+            WeatherData tempInput = (WeatherData)query.ToList<WeatherData>()[0];
+            //ListWeatherInstance.Add(new WeatherView() { NameCity = "Ho Chi Minh", LocationWOEID = "1252431", LblCurrent_Text = "Today" });
+            WeatherView temp = new WeatherView();
+            temp.DateCreate = tempInput.DateCreate;
+            temp.IsContentGridVisibility = tempInput.IsContentGridVisibility;
+            temp.LblCurrent_conditions_Text = tempInput.LblCurrent_conditions_Text;
+            temp.LblCurrent_Text = tempInput.LblCurrent_Text;
+            temp.LblForecast1_conditions_Text = tempInput.LblForecast1_conditions_Text;
+            temp.LblForecast1_Text = tempInput.LblForecast1_Text;
+            temp.LblForecast2_conditions_Text = tempInput.LblForecast2_conditions_Text;
+            temp.LblForecast2_Text = tempInput.LblForecast2_Text;
+            temp.LocationWOEID = tempInput.LocationWOEID;
+            temp.NameCity = tempInput.NameCity;
+
+            Uri uri = new Uri(tempInput.ImgWeather1_Source, UriKind.Relative);
+            ImageSource img = new BitmapImage(uri);
+            temp.ImgWeather1_Source = img;
+
+            uri = new Uri(tempInput.ImgWeather2_Source, UriKind.Relative);
+            img = new BitmapImage(uri);
+            temp.ImgWeather2_Source = img;
+
+            uri = new Uri(tempInput.ImgWeather3_Source, UriKind.Relative);
+            img = new BitmapImage(uri);
+            temp.ImgWeather3_Source = img;
+
+
+
+            ListWeatherInstance.Add(temp);
+
+        }
+        public void SaveIntoDatabase()
+        {
+            MainDatabase.mainDB.Table<WeatherData>().Clear();
+            WeatherData tempInput = new WeatherData();
+            WeatherView temp = (WeatherView)ListWeatherInstance[0];
+
+            tempInput.DateCreate = temp.DateCreate;
+            tempInput.IsContentGridVisibility = temp.IsContentGridVisibility;
+            tempInput.LblCurrent_conditions_Text = temp.LblCurrent_conditions_Text;
+            tempInput.LblCurrent_Text = temp.LblCurrent_Text;
+            tempInput.LblForecast1_conditions_Text = temp.LblForecast1_conditions_Text;
+            tempInput.LblForecast1_Text = temp.LblForecast1_Text;
+            tempInput.LblForecast2_conditions_Text = temp.LblForecast2_conditions_Text;
+            tempInput.LblForecast2_Text = temp.LblForecast2_Text;
+            tempInput.LocationWOEID = temp.LocationWOEID;
+            tempInput.NameCity = temp.NameCity;
+            tempInput.ImgWeather1_Source = temp.Uri1;
+            tempInput.ImgWeather2_Source = temp.Uri2;
+            tempInput.ImgWeather3_Source = temp.Uri3;
+            
+            MainDatabase.mainDB.Table<WeatherData>().Add(tempInput);
+            MainDatabase.mainDB.Save();
+
+        }
+
         private WeatherViewMode()
         {
             ListWeatherInstance = new ObservableCollection<WeatherView>();
-            ListWeatherInstance.Add(new WeatherView() { NameCity = "Ho Chi Minh", LocationWOEID = "1252431",LblCurrent_Text="Today" });
+            LoadFromDatabase();
             
         }
         public static WeatherViewMode weatherInstance = new WeatherViewMode();
@@ -89,9 +150,11 @@ namespace WindowsPhonePanoramaApplication1
                         int weatherCode = Convert.ToInt16(code);
                         string imageName = weatherImage(weatherCode);
 
+
                         Uri uri = new Uri("/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/" + imageName + ".png", UriKind.Relative);
                         ImageSource img = new BitmapImage(uri);
                         //imgWeather1.Source = img;
+                        weatherInstance.ListWeatherInstance[0].Uri1 = String.Format("/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/{0}.png", imageName);
                         weatherInstance.ListWeatherInstance[0].ImgWeather1_Source = img;
 
                         weatherInstance.ListWeatherInstance[0].LblCurrent_conditions_Text = conditions + ", " + temp + "°C";
@@ -120,6 +183,7 @@ namespace WindowsPhonePanoramaApplication1
 
                             //imgWeather2.Source = img;
                             weatherInstance.ListWeatherInstance[0].ImgWeather2_Source = img;
+                            weatherInstance.ListWeatherInstance[0].Uri2 = String.Format("/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/{0}.png", imageName);
                             forecastTomorrow = false;
                         }
                         else
@@ -130,10 +194,18 @@ namespace WindowsPhonePanoramaApplication1
                             weatherInstance.ListWeatherInstance[0].LblForecast2_Text = "Forecast: " + day; ;
                             weatherInstance.ListWeatherInstance[0].LblForecast2_conditions_Text = String.Format("{0}, {1}-{2}°C", conditions, tempLow, tempHigh);
                             weatherInstance.ListWeatherInstance[0].ImgWeather3_Source = img;
+                            weatherInstance.ListWeatherInstance[0].Uri3 = String.Format("/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/{0}.png", imageName);
 
                         }
                     }
                 }
+
+                //// save into database
+                //SaveIntoDatabase();
+
+                
+
+
             }
             catch (Exception ex)
             {

@@ -12,7 +12,7 @@ using System.ComponentModel;
 
 namespace WindowsPhonePanoramaApplication1
 {
-    public class ListCurrency : INotifyPropertyChanged
+    public class ListCurrencyView : INotifyPropertyChanged
     {
         private string symbol;
 

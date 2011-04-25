@@ -28,7 +28,7 @@ namespace WindowsPhonePanoramaApplication1
             }
         
         }
-        private static int _zoomLevelCurrent = 15;
+        private static int _zoomLevelCurrent = 14;
 
         public static int ZoomLevelCurrent
         {

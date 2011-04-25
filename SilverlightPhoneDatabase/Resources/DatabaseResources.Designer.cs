@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsPhonePanoramaApplication1 {
+namespace SilverlightPhoneDatabase.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace WindowsPhonePanoramaApplication1 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResourceMain {
+    internal class DatabaseResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResourceMain() {
+        internal DatabaseResources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace WindowsPhonePanoramaApplication1 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WindowsPhonePanoramaApplication1.ResourceMain", typeof(ResourceMain).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SilverlightPhoneDatabase.Resources.DatabaseResources", typeof(DatabaseResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,60 @@ namespace WindowsPhonePanoramaApplication1 {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Database {0} does not exists.
+        /// </summary>
+        internal static string DatabaseDoesNotExistsExceptionText {
+            get {
+                return ResourceManager.GetString("DatabaseDoesNotExistsExceptionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Database {0} already exists.
+        /// </summary>
+        internal static string DatabaseExistsExceptionText {
+            get {
+                return ResourceManager.GetString("DatabaseExistsExceptionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot open database. See InnerException for details.
+        /// </summary>
+        internal static string OpenError {
+            get {
+                return ResourceManager.GetString("OpenError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot save data. See InnerException for details.
+        /// </summary>
+        internal static string SaveError {
+            get {
+                return ResourceManager.GetString("SaveError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Table {0} already exists.
+        /// </summary>
+        internal static string TableExistsExceptionText {
+            get {
+                return ResourceManager.GetString("TableExistsExceptionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Table without database cannot be saved.
+        /// </summary>
+        internal static string TableWithoutDatabaseCannotBeSaved {
+            get {
+                return ResourceManager.GetString("TableWithoutDatabaseCannotBeSaved", resourceCulture);
             }
         }
     }

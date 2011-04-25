@@ -12,8 +12,50 @@ using System.ComponentModel;
 
 namespace WindowsPhonePanoramaApplication1
 {
+
     public class WeatherView : INotifyPropertyChanged
     {
+        private string uri1;
+        public string Uri1
+        {
+            get
+            {
+                return uri1;
+            }
+            set
+            {
+                
+                uri1 = value;
+            }
+        }
+        private string uri2;
+        public string Uri2
+        {
+            get
+            {
+                return uri2;
+            }
+            set
+            {
+
+                uri2 = value;
+            }
+        }
+        private string uri3;
+        public string Uri3
+        {
+            get
+            {
+                return uri3;
+            }
+            set
+            {
+
+                uri3 = value;
+            }
+        }
+
+        public DateTime? DateCreate { get; set; }
         private string _locationWOEID;
         /// <summary>
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.

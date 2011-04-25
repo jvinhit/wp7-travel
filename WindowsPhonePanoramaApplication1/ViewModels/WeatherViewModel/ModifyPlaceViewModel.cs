@@ -53,7 +53,7 @@ namespace WindowsPhonePanoramaApplication1
                 //XElement ele = new XElement(doc.Elements());
                 XElement ele = XElement.Parse(e.Result);
 
-                XElement[] datasource = null;
+                //XElement[] datasource = null;
                 var numResult = (IEnumerable<XElement>)null;
 
                 numResult = from item in ele.Descendants("Found")
