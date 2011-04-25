@@ -1,0 +1,71 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WindowsPhonePanoramaApplication1.ViewPages.WeatherView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitleGrid is the name of the application and page title-->
+        <Grid x:Name="TitleGrid" Grid.Row="0" >
+            <TextBlock Text="Weather forecast" x:Name="textBlockPageTitle" FontSize="40" />
+
+            <TextBlock Text="{Binding NameCity}"  x:Name="textBlockListTitle" Height="89" Margin="0,86,0,0" FontSize="40" />
+         
+            
+            <Image x:Name="btnAdd" Margin="10,10" Source="/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/add.png" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="btnAdd_MouseLeftButtonDown" />
+            <Image x:Name="btnModify" Margin="10,65" Source="/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/write.png" Width="45" Height="45" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonDown="btnDelete_MouseLeftButtonDown" Tag="/ViewPages/WeatherViews/ModifyPlace.xaml" />
+        </Grid>
+
+        <!--ContentGrid is empty. Place new content here-->
+        <Grid x:Name="ContentGrid" Visibility="{Binding IsContentGridVisibility}"  Grid.Row="1" Margin="0,40" >
+
+            <StackPanel Orientation="Vertical">
+
+                <StackPanel Orientation="Horizontal" Height="200">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBlock x:Name="lblCurrent" Text="{Binding LblCurrent_Text}" FontSize="32" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="lblCurrent_conditions" Text="{Binding LblCurrent_conditions_Text}" Foreground="DarkGray" FontSize="21" Margin="20,-8" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <Image x:Name="imgWeather1" Source="{Binding ImgWeather1_Source}" Width="300" Height="200" Margin="0,0,-60,-20" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Height="200">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBlock x:Name="lblForecast1" Text="{Binding LblForecast1_Text}" FontSize="32" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="lblForecast1_conditions" Text="{Binding LblForecast1_conditions_Text}" Foreground="DarkGray" FontSize="21" Margin="20,-8" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <Image x:Name="imgWeather2" Source="{Binding ImgWeather2_Source}" Width="300" Height="200" Margin="0,0,-60,-20" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Height="200">
+                    <StackPanel Orientation="Vertical" Width="250">
+                        <TextBlock x:Name="lblForecast2" Text="{Binding LblForecast2_Text}" FontSize="32" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                        <TextBlock x:Name="lblForecast2_conditions" Text="{Binding LblForecast2_conditions_Text }" Foreground="DarkGray" FontSize="21" Margin="20,-8" Style="{StaticResource PhoneTextPageTitle2Style}" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <Image x:Name="imgWeather3" Source="{Binding ImgWeather3_Source}" Width="300" Height="200" Margin="0,0,-60,-20" />
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>

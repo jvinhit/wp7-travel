@@ -18,6 +18,7 @@ namespace WindowsPhonePanoramaApplication1
     public partial class App : Application
     {
         private static MainViewModel viewModel = null;
+        internal const string BingId = "AnjrJlYx7pu0K0jnByP6i66MWs7an4yVDH5CCt3mAJQmoB_oxbG-cbVlKg20zLt0";
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.

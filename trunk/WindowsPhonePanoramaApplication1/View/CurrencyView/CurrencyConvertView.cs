@@ -12,17 +12,9 @@ using System.ComponentModel;
 
 namespace WindowsPhonePanoramaApplication1
 {
-    public class CurrencyConvertViewModel : INotifyPropertyChanged
+    public class CurrencyConvertView : INotifyPropertyChanged
     {
-        private CurrencyConvertViewModel()
-        {
-            this.currencyFrom = "USD-U.S. Dollar";
-            this.currencyTo = "VND-Vietnam Dong";
-
-        }
-        public static CurrencyConvertViewModel currentInstance = new CurrencyConvertViewModel();
-
-        //private static bool isFromCurrency = true;
+      
         private string currencyFrom;
 
         public string CurrencyFrom
@@ -49,6 +41,21 @@ namespace WindowsPhonePanoramaApplication1
                 {
                     currencyTo = value;
                     NotifyPropertyChanged("CurrencyTo");
+                }
+            }
+        }
+
+        private string resultValue;
+
+        public string ResultValue
+        {
+            get { return resultValue; }
+            set
+            {
+                if (value != resultValue)
+                {
+                    resultValue = value;
+                    NotifyPropertyChanged("ResultValue");
                 }
             }
         }

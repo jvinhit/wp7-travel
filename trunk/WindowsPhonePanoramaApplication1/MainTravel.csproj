@@ -51,56 +51,88 @@
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls" />
     <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Microsoft.Xna.Framework.Game" />
+    <Reference Include="Microsoft.Xna.Framework.GamerServices" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics" />
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch" />
+    <Reference Include="SilverlightPhoneDatabase">
+      <HintPath>Library Reference\SilverlightPhoneDatabase.dll</HintPath>
+    </Reference>
     <Reference Include="System.Device" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyDatabase\MainDatabase.cs" />
     <Compile Include="Enums\EnumsFunction.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyDatabase\Weather\WeatherData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResourceMain.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceMain.resx</DependentUpon>
-    </Compile>
+    <Page Include="SampleData\ImageSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="ViewModels\CaptureViewModel\CapturedPictureViewModel.cs" />
+    <Compile Include="ViewModels\CaptureViewModel\NotifyingObject.cs" />
+    <Compile Include="ViewModels\CaptureViewModel\PictureRepository.cs" />
+    <Compile Include="ViewModels\CaptureViewModel\PictureViewModel.cs" />
+    <Compile Include="ViewModels\CaptureViewModel\Picture.cs" />
+    <Compile Include="ViewModels\CaptureViewModel\PositionTypeConverter.cs" />
+    <Compile Include="ViewModels\CaptureViewModel\ResourcePicture.cs" />
+    <Compile Include="ViewModels\CurrencyViewModel\CurrencyViewModel.cs" />
+    <Compile Include="ViewModels\CurrencyViewModel\ListCurrencyViewModel.cs" />
+    <Compile Include="ViewModels\GoogleViewModel\GoogleViewModel.cs" />
     <Compile Include="ViewModels\WeatherViewModel\ModifyPlaceViewModel.cs" />
+    <Compile Include="ViewPages\Capture\CapturePicturePage.xaml.cs">
+      <DependentUpon>CapturePicturePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPages\Capture\PictureList.xaml.cs">
+      <DependentUpon>PictureList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPages\Capture\Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GoogleView\GoogleMapView.cs" />
     <Compile Include="View\ItemViewModel2.cs" />
     <Compile Include="View\ItemViewModel1.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\WeatherViewModel\WeatherViewMode.cs" />
-    <Compile Include="Views\Currency\Currency.xaml.cs">
+    <Compile Include="ViewPages\Currency\Currency.xaml.cs">
       <DependentUpon>Currency.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Currency\CurrencyModify.xaml.cs">
+    <Compile Include="ViewPages\Currency\CurrencyModify.xaml.cs">
       <DependentUpon>CurrencyModify.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CurrencyView\CurrencyConvertViewModel.cs" />
-    <Compile Include="View\CurrencyView\ListCurrency.cs" />
-    <Compile Include="Views\GoogleMaps\GoogleMaps.xaml.cs">
+    <Compile Include="View\CurrencyView\CurrencyConvertView.cs" />
+    <Compile Include="View\CurrencyView\ListCurrencyView.cs" />
+    <Compile Include="ViewPages\GoogleMaps\GoogleMaps.xaml.cs">
       <DependentUpon>GoogleMaps.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GoogleView\GoogleTile.cs" />
     <Compile Include="View\GoogleView\MarkOnMap.cs" />
-    <Compile Include="Views\News\News.xaml.cs">
+    <Compile Include="ViewPages\News\News.xaml.cs">
       <DependentUpon>News.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WeatherViews\ModifyPlace.xaml.cs">
+    <Compile Include="ViewPages\WeatherViews\ModifyPlace.xaml.cs">
       <DependentUpon>ModifyPlace.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WeatherView\PlaceMode.cs" />
-    <Compile Include="Views\WeatherViews\WeatherView.xaml.cs">
+    <Compile Include="ViewPages\WeatherViews\WeatherView.xaml.cs">
       <DependentUpon>WeatherView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WeatherView\WeatherView.cs" />
@@ -118,27 +150,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
-    <Page Include="Views\Currency\Currency.xaml">
+    <Page Include="ViewPages\Capture\CapturePicturePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Currency\CurrencyModify.xaml">
+    <Page Include="ViewPages\Capture\PictureList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GoogleMaps\GoogleMaps.xaml">
+    <Page Include="ViewPages\Capture\Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\News\News.xaml">
+    <Page Include="ViewPages\Currency\Currency.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WeatherViews\ModifyPlace.xaml">
+    <Page Include="ViewPages\Currency\CurrencyModify.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WeatherViews\WeatherView.xaml">
+    <Page Include="ViewPages\GoogleMaps\GoogleMaps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPages\News\News.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPages\WeatherViews\ModifyPlace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPages\WeatherViews\WeatherView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,22 +306,88 @@
     <Resource Include="IconFunctions\News.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="IconFunctions\cameraFunction.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\SampleImages\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\SampleImages\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\SampleImages\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\SampleImages\4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\SampleImages\5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Library Reference\SilverlightPhoneDatabase.dll" />
+    <Content Include="Library Reference\SilverlightPhoneDatabase.xml" />
+    <Resource Include="Resources\AppBar\App_ListMode.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AppBar\App_MapMode.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AppBar\App_MyLocation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AppBar\App_NewPicture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AppBar\App_PlayFast.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AppBar\App_PlaySlow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AppBar\App_Save.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AppBar\App_SlideShow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AppBar\App_TrackMyLocation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AppBar\App_ViewOnMap.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\ZoomIn_Black.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\ZoomIn_White.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\ZoomOut_Black.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\ZoomOut_White.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News\" />
+    <Folder Include="View\CaptureView\" />
+    <Folder Include="View\News\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccessingWP7Devices.Assets\MicrosoftFramework.csproj">
+      <Project>{801F6D26-EE49-4DF6-9DFF-F7CCC393DFF5}</Project>
+      <Name>MicrosoftFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GoogleFramework\GoogleFramework.csproj">
       <Project>{DA6211F9-F696-4E3C-8AA4-4907567EFD48}</Project>
       <Name>GoogleFramework</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ResourceMain.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceMain.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\WP7Sqlite\WP7Shared.csproj">
+      <Project>{1E4E4924-4F8A-4100-8321-8D33792C1973}</Project>
+      <Name>WP7Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

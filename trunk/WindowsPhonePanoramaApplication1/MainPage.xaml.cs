@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using WindowsPhonePanoramaApplication1.MyDatabase;
 
 namespace WindowsPhonePanoramaApplication1
 {
@@ -32,6 +33,13 @@ namespace WindowsPhonePanoramaApplication1
             {
                 App.ViewModel.LoadData();
             }
+            // create database **Very Importance**
+            MainDatabase.CreateDataBase();
+
+
+
+
+
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
