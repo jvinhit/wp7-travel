@@ -60,6 +60,8 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
         /// </summary>
         private void LoadAllPicturesFromIsolatedStorage()
         {
+
+
             var isoFile = IsolatedStorageFile.GetUserStoreForApplication();
             isoFile.EnsureDirectory(IsolatedStoragePath);
 
@@ -124,6 +126,7 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
 
         private PictureRepository()
         {
+            
             LoadSampleImages();
             LoadAllPicturesFromIsolatedStorage();
         }

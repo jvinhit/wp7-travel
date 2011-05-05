@@ -9,15 +9,12 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace WindowsPhonePanoramaApplication1
+namespace TravelObject
 {
-    public class GoogleMapView
+    public interface IPlaceObject
     {
-        public Microsoft.Phone.Controls.Maps.Map googlemap { get; set; }
 
-        public DateTime? DateCreate { get; set; }
-
-     
+       
 
     }
 }
