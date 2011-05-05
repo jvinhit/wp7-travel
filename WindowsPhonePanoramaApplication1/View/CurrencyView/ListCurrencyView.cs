@@ -19,8 +19,6 @@ namespace WindowsPhonePanoramaApplication1
         public string Symbol
         {
             get { return symbol; }
-
-
             set
             {
                 if (value != symbol)

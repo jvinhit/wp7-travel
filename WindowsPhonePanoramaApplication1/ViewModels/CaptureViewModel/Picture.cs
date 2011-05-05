@@ -87,5 +87,7 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
             Note = reader.ReadString();
             DateTaken = reader.ReadString();
         }
+
+ 
     }
 }

@@ -9,7 +9,7 @@
     xmlns:GoogleTileSource="clr-namespace:WindowsPhonePanoramaApplication1;assembly=WindowsPhonePanoramaApplication1"
     xmlns:Microsoft_Phone_Controls_Maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -155,8 +155,8 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
   
-                <Grid>
-                    <Microsoft_Phone_Controls_Maps:Map Name="googlemap" Margin="0,0,0,0" CopyrightVisibility="Collapsed" LogoVisibility="Collapsed" ScaleVisibility="Visible" CredentialsProvider="ApBXPZf5IR94SLXE8nh5FYsb5WHKrH1XPY7428-EqQudseivcWhCROIJvGmtnkAV" Height="594" Visibility="Visible">
+                <Grid Margin="0,0,0,-73">
+                    <Microsoft_Phone_Controls_Maps:Map Name="googlemap" Margin="4,2,-4,6" CopyrightVisibility="Collapsed" LogoVisibility="Collapsed" ScaleVisibility="Visible" CredentialsProvider="ApBXPZf5IR94SLXE8nh5FYsb5WHKrH1XPY7428-EqQudseivcWhCROIJvGmtnkAV" Visibility="Visible" MouseLeftButtonDown="googlemap_MouseLeftButtonDown">
                         <Microsoft_Phone_Controls_Maps:Map.Mode>
                             <MSPCMCore:MercatorMode/>
                         </Microsoft_Phone_Controls_Maps:Map.Mode>
@@ -175,35 +175,36 @@
                                 <GoogleTileSource:GoogleTile TileTypes="Hybrid"/>
                             </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                         </Microsoft_Phone_Controls_Maps:MapTileLayer>
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer Visibility="Visible" Name="satellite" Margin="0,0,0,32">
+                        <Microsoft_Phone_Controls_Maps:MapTileLayer Visibility="Visible" Name="satellite" Margin="0" Height="684">
                             <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                                 <GoogleTileSource:GoogleTile TileTypes="Satellite"/>
                             </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                         </Microsoft_Phone_Controls_Maps:MapTileLayer>
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer Visibility="Collapsed" Name="physical" Margin="0,0,0,32" Height="564" Width="477">
+                        <Microsoft_Phone_Controls_Maps:MapTileLayer Visibility="Collapsed" Name="physical" Margin="0" Height="719" Width="477">
                             <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                                 <GoogleTileSource:GoogleTile TileTypes="Physical"/>
                             </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
                         </Microsoft_Phone_Controls_Maps:MapTileLayer>
                     </Microsoft_Phone_Controls_Maps:Map>
-            <StackPanel HorizontalAlignment="Left" Margin="355,0,0,687" Orientation="Horizontal" Width="125" VerticalAlignment="Bottom">
+            <StackPanel HorizontalAlignment="Left" Margin="6,566,0,0" Orientation="Vertical" Width="68" VerticalAlignment="Top">
                 <Button x:Name="ButtonZoomIn" Style="{StaticResource ButtonZoomInStyle}" RenderTransformOrigin="0.429,-0.679" Click="ButtonZoomIn_Click" Height="53" Width="60" />
                 <Button x:Name="ButtonZoomOut" Style="{StaticResource ButtonZoomOutStyle}" VerticalAlignment="Top" Height="56" Click="ButtonZoomOut_Click" Width="61" />
             </StackPanel>
-            <TextBlock Height="75" HorizontalAlignment="Left" Margin="6,6,0,0" Name="textBlock1" Text="Google Map" VerticalAlignment="Top" Width="312" FontSize="50" />
+            <TextBlock HorizontalAlignment="Left" Margin="6,6,0,0" Name="textBlock1" Text="Google Map" Width="312" FontSize="50" Height="75" VerticalAlignment="Top" />
         </Grid>
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
+    <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Resources/AppBar/SearchIcon.png" Text="Search" Click="appbar_button1_Click" />
             <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
+            
+            <!--<shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
                 <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>-->
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
+    </phone:PhoneApplicationPage.ApplicationBar>
     
 </phone:PhoneApplicationPage>

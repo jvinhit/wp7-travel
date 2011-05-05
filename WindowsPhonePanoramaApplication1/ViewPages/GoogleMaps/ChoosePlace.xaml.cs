@@ -10,14 +10,17 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using WindowsPhonePanoramaApplication1.ViewModels.GoogleViewModel;
 
-namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
+namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
 {
-    public partial class Test : PhoneApplicationPage
+    public partial class ChoosePlace : PhoneApplicationPage
     {
-        public Test()
+        
+        public ChoosePlace()
         {
             InitializeComponent();
+            this.DataContext = GoogleViewModel.placeKind;
         }
     }
 }

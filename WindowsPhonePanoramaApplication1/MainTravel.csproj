@@ -25,6 +25,8 @@
     <SilverlightAppEntry>WindowsPhonePanoramaApplication1.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20901.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -96,6 +98,7 @@
     <Compile Include="ViewModels\CurrencyViewModel\CurrencyViewModel.cs" />
     <Compile Include="ViewModels\CurrencyViewModel\ListCurrencyViewModel.cs" />
     <Compile Include="ViewModels\GoogleViewModel\GoogleViewModel.cs" />
+    <Compile Include="ViewModels\GoogleViewModel\PlaceKindViewModel.cs" />
     <Compile Include="ViewModels\WeatherViewModel\ModifyPlaceViewModel.cs" />
     <Compile Include="ViewPages\Capture\CapturePicturePage.xaml.cs">
       <DependentUpon>CapturePicturePage.xaml</DependentUpon>
@@ -103,10 +106,14 @@
     <Compile Include="ViewPages\Capture\PictureList.xaml.cs">
       <DependentUpon>PictureList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\Capture\Test.xaml.cs">
-      <DependentUpon>Test.xaml</DependentUpon>
+    <Compile Include="ViewPages\Capture\PictureView.xaml.cs">
+      <DependentUpon>PictureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPages\GoogleMaps\ChoosePlace.xaml.cs">
+      <DependentUpon>ChoosePlace.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GoogleView\GoogleMapView.cs" />
+    <Compile Include="View\GoogleView\PlaceKindView.cs" />
     <Compile Include="View\ItemViewModel2.cs" />
     <Compile Include="View\ItemViewModel1.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -158,7 +165,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\Capture\Test.xaml">
+    <Page Include="ViewPages\Capture\PictureView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewPages\Currency\CurrencyModify.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPages\GoogleMaps\ChoosePlace.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -324,38 +335,40 @@
     <Resource Include="Images\SampleImages\5.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\SampleImages\coffee.png" />
+    <Resource Include="Images\SampleImages\hotel5stars.png" />
     <Content Include="Library Reference\SilverlightPhoneDatabase.dll" />
     <Content Include="Library Reference\SilverlightPhoneDatabase.xml" />
-    <Resource Include="Resources\AppBar\App_ListMode.png">
+    <Content Include="Resources\AppBar\App_ListMode.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\AppBar\App_MapMode.png">
+    </Content>
+    <Content Include="Resources\AppBar\App_MapMode.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\AppBar\App_MyLocation.png">
+    </Content>
+    <Content Include="Resources\AppBar\App_MyLocation.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\AppBar\App_NewPicture.png">
+    </Content>
+    <Content Include="Resources\AppBar\App_NewPicture.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\AppBar\App_PlayFast.png">
+    </Content>
+    <Content Include="Resources\AppBar\App_PlayFast.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\AppBar\App_PlaySlow.png">
+    </Content>
+    <Content Include="Resources\AppBar\App_PlaySlow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\AppBar\App_Save.png">
+    </Content>
+    <Content Include="Resources\AppBar\App_Save.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\AppBar\App_SlideShow.png">
+    </Content>
+    <Content Include="Resources\AppBar\App_SlideShow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\AppBar\App_TrackMyLocation.png">
+    </Content>
+    <Content Include="Resources\AppBar\App_TrackMyLocation.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\AppBar\App_ViewOnMap.png">
+    </Content>
+    <Content Include="Resources\AppBar\App_ViewOnMap.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Resource Include="Resources\Icons\ZoomIn_Black.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -368,10 +381,14 @@
     <Resource Include="Resources\Icons\ZoomOut_White.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Resources\AppBar\SearchIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News\" />
+    <Folder Include="MyUserControl\" />
     <Folder Include="View\CaptureView\" />
     <Folder Include="View\News\" />
   </ItemGroup>
@@ -383,6 +400,10 @@
     <ProjectReference Include="..\GoogleFramework\GoogleFramework.csproj">
       <Project>{DA6211F9-F696-4E3C-8AA4-4907567EFD48}</Project>
       <Name>GoogleFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TravelObject\TravelObject.csproj">
+      <Project>{5B97E6B1-FD67-4A03-9F25-1AB32631C53C}</Project>
+      <Name>TravelObject</Name>
     </ProjectReference>
     <ProjectReference Include="..\WP7Sqlite\WP7Shared.csproj">
       <Project>{1E4E4924-4F8A-4100-8321-8D33792C1973}</Project>

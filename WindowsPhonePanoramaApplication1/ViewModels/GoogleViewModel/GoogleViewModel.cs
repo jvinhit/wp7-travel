@@ -18,6 +18,7 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.GoogleViewModel
     public class GoogleViewModel
     {
         static string fileName = "Google.map";
+        public static PlaceKindViewModel placeKind=PlaceKindViewModel.intanceCurrent;
         public static void LoadFromdDatabase(ref Microsoft.Phone.Controls.Maps.Map googlemap)
         {
             using (IsolatedStorageFile isf = IsolatedStorageFile.GetUserStoreForApplication())

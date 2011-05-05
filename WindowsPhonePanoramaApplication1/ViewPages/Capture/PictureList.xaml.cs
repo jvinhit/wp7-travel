@@ -65,5 +65,10 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
         {
             _cameraTask.Show();
         }
+
+        private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/ViewPages/Capture/PictureView.xaml", UriKind.Relative));
+        }
     }
 }
