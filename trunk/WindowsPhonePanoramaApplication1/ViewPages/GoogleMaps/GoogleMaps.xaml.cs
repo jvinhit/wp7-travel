@@ -17,35 +17,40 @@ using System.Xml.Serialization;
 using GoogleFramework;
 using Microsoft.Phone.Controls.Maps;
 using System.Device.Location;
+using System.Collections.ObjectModel;
+using TravelObject;
+using System.ComponentModel;
 
 
 namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
 {
     public partial class GoogleMaps : PhoneApplicationPage
     {
-        
-      
+
         public GoogleMaps()
         {
             InitializeComponent();
-            street.Visibility = Visibility.Visible;
+            //street.Visibility = Visibility.Visible;
             //st.IsChecked = true;
 
-            hybrid.Visibility = Visibility.Collapsed;
-            satellite.Visibility = Visibility.Collapsed;
-            street.Visibility = Visibility.Visible;
-            physical.Visibility = Visibility.Collapsed;
-            wateroverlay.Visibility = Visibility.Collapsed;
+            //hybrid.Visibility = Visibility.Collapsed;
+            //satellite.Visibility = Visibility.Collapsed;
+            //street.Visibility = Visibility.Visible;
+            //physical.Visibility = Visibility.Collapsed;
+            //wateroverlay.Visibility = Visibility.Collapsed;
 
             //GoogleViewModel.LoadFromdDatabase(ref googlemap);
-            googlemap.SetView(MarkOnMap.Current, MarkOnMap.ZoomLevelCurrent);
+            //googlemap.SetView(MarkOnMap.Current, MarkOnMap.ZoomLevelCurrent);
             ApplicationBar.Opacity = 0.5;
 
 
 
             //googlemap.reso
 
-            
+            //this.googlemap.DataContext = GoogleViewModel.listPlacePushpin;
+            DataContext = GoogleViewModel.InstanceCurrent;
+            //street.Opacity = 1;
+            GoogleViewModel.InstanceCurrent.GotoCenterMap();
 
         }
         ~GoogleMaps()
@@ -55,6 +60,22 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
 
 
         }
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            ////base.OnNavigatedTo(e);
+            //GoogleViewModel.UpdatePushPin(ref googlemap);
+
+            ////create a new pushpin---
+            //Pushpin pin = new Pushpin();
+
+            ////set the location for the pushpin---
+            //pin.Location = new GeoCoordinate(10.324, 106.654);
+
+            ////add the pushpin to the map---
+            //googlemap.Children.Add(pin);
+
+        }
+       
 
         private void ButtonZoomIn_Click(object sender, RoutedEventArgs e)
         {
@@ -68,7 +89,7 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
 
         private void googlemap_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
+
             //Point p = e.GetPosition(this.googlemap);
             //GeoCoordinate geo = new GeoCoordinate();
             //geo = googlemap.ViewportPointToLocation(p);
@@ -83,11 +104,44 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
             ////add the pushpin to the map---
             //googlemap.Children.Add(pin);
 
+
+            ////create a new pushpin---
+            //Pushpin pin = new Pushpin();
+
+            ////set the location for the pushpin---
+            //pin.Location = new GeoCoordinate(10.324, 106.654);
+
+            ////add the pushpin to the map---
+            //googlemap.Children.Add(pin);
+
+
         }
 
         private void appbar_button1_Click(object sender, EventArgs e)
         {
             this.NavigationService.Navigate(new Uri("/ViewPages/GoogleMaps/ChoosePlace.xaml", UriKind.Relative));
         }
+
+        private void Pushpin_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            //MessageBox.Show("asfdA");
+            ShowInformation.Visibility = Visibility.Visible;
+            
+            
+
+        }
+
+        private void appbar_button2_Click(object sender, EventArgs e)
+        {
+            ShowInformation.Visibility = Visibility.Collapsed;
+            GoogleViewModel.InstanceCurrent.GotoCenterMap();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ShowInformation.Visibility = Visibility.Collapsed;
+        }
+
+
     }
 }
