@@ -43,6 +43,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            <Button Content="OK" Margin="152,0,144,18" Name="button1" Height="72" VerticalAlignment="Bottom" Click="button1_Click" />
         </Grid>
     </Grid>
  

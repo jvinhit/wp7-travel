@@ -8,19 +8,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Device.Location;
 
 namespace TravelObject
 {
-    public class PlaceObject
+    public abstract class PlaceObject
     {
-        public string Name;
-        public string Article;
-        public string IdObject;
-        public string IdKindPlace;
-        public double Latitude;
-        public double Longitude;
-        public double ZoomLevel;
-        public byte[] IconImage;
-
+        public string Name { get; set; }
+        public string Article{ get; set; }
+        public string IdObject { get; set; }
+        public string IdKindPlace { get; set; }
+        public GeoCoordinate geoCoor { get; set; }
+        public double ZoomLevel { get; set; }
+        public Uri Icon { get; set; }
+        public string background { get; set; }
     }
 }

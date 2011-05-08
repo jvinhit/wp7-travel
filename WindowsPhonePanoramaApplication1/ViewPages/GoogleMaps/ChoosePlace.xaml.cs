@@ -20,7 +20,12 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
         public ChoosePlace()
         {
             InitializeComponent();
-            this.DataContext = GoogleViewModel.placeKind;
+            this.DataContext = GoogleViewModel.InstanceCurrent.placeKind;
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

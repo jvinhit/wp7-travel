@@ -57,6 +57,8 @@ namespace WindowsPhonePanoramaApplication1.View.GoogleView
             }
         }
 
+        public string IDPlaceKind;
+
 
 
 

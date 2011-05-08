@@ -21,9 +21,10 @@ namespace WindowsPhonePanoramaApplication1
         {
             get 
             {
-                //&markers=color:blue|label:|10.75,106.663
-                MarkOnMap._current.Latitude = 10.75;
-                MarkOnMap._current.Longitude = 106.663;
+                //&markers=color:blue|label:|10.75,106.663  10.7593, 106.6901
+
+                MarkOnMap._current.Latitude = 10.7593;
+                MarkOnMap._current.Longitude = 106.6901;
                 return MarkOnMap._current;
             }
         

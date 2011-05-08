@@ -88,6 +88,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Styles\DefaultStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Resources\Converters\ItineraryTextConverter.cs" />
+    <Compile Include="Resources\Converters\LocationGeoCoordinateConverter.cs" />
+    <Compile Include="Resources\Converters\PushpinTypeBrushConverter.cs" />
     <Compile Include="ViewModels\CaptureViewModel\CapturedPictureViewModel.cs" />
     <Compile Include="ViewModels\CaptureViewModel\NotifyingObject.cs" />
     <Compile Include="ViewModels\CaptureViewModel\PictureRepository.cs" />
@@ -335,10 +342,13 @@
     <Resource Include="Images\SampleImages\5.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\SampleImages\coffee.png" />
+    <Content Include="Images\SampleImages\coffee.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Images\SampleImages\hotel5stars.png" />
     <Content Include="Library Reference\SilverlightPhoneDatabase.dll" />
     <Content Include="Library Reference\SilverlightPhoneDatabase.xml" />
+    <Content Include="Resources\AppBar\App_Home.png" />
     <Content Include="Resources\AppBar\App_ListMode.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
