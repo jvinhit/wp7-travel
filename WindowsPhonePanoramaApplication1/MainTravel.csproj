@@ -321,9 +321,6 @@
     <Resource Include="Images\GoogleMaps\ZoomIn_White.png" />
     <Resource Include="Images\GoogleMaps\ZoomOut_Black.png" />
     <Resource Include="Images\GoogleMaps\ZoomOut_White.png" />
-    <Resource Include="IconFunctions\News.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="IconFunctions\cameraFunction.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -342,6 +339,7 @@
     <Resource Include="Images\SampleImages\5.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="IconFunctions\icon_news.png" />
     <Content Include="Images\SampleImages\coffee.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
