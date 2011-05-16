@@ -142,6 +142,11 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
             ShowInformation.Visibility = Visibility.Collapsed;
         }
 
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+        }
+
 
     }
 }

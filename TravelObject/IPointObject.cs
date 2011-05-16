@@ -8,15 +8,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Device.Location;
 
 namespace TravelObject
 {
-    public class CafePlace:PlaceObject,IPointObject
+    public interface IPointObject
     {
+        GeoCoordinate getGeoCoor();
+        string GetNameImage();
+       
 
-        public System.Device.Location.GeoCoordinate getGeoCoor()
-        {
-            return geoCoor;
-        }
     }
 }

@@ -42,16 +42,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Device" />
+    <Reference Include="System.Observable" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CafePlace.cs" />
+    <Compile Include="IInformationObject.cs" />
     <Compile Include="NewsObject.cs" />
-    <Compile Include="IPlaceObject.cs" />
+    <Compile Include="IPointObject.cs" />
     <Compile Include="PlaceObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

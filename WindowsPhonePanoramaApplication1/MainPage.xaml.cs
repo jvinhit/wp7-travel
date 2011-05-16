@@ -11,11 +11,15 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using WindowsPhonePanoramaApplication1.MyDatabase;
+using System.ComponentModel;
+using System.Threading;
 
 namespace WindowsPhonePanoramaApplication1
 {
     public partial class MainPage : PhoneApplicationPage
     {
+
+        
         // Constructor
         public MainPage()
         {
@@ -35,9 +39,12 @@ namespace WindowsPhonePanoramaApplication1
             }
             // create database **Very Importance**
             MainDatabase.CreateDataBase();
-
-
-
+            
+            //for ads
+            //myAds.Visibility = Visibility.Visible;
+            //Thread t = new Thread(new ThreadStart(this.ShowAds));
+            
+            //t.Start();
 
 
         }
@@ -55,5 +62,14 @@ namespace WindowsPhonePanoramaApplication1
 
             //}
         }
+        //private void ShowAds()
+        //{
+            
+        //    myAds.Visibility = Visibility.Collapsed;
+
+        //}
+
+     
+
     }
 }

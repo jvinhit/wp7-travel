@@ -52,7 +52,7 @@ namespace WindowsPhonePanoramaApplication1.MyDatabase
             temp.DateCreate = DateTime.Today;
             //Uri uri = new Uri("/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/" + "result" + ".jpg", UriKind.Relative);
 
-            string tempUri = "/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/" + "result" + ".jpg";
+            string tempUri = "/WindowsPhonePanoramaApplication1;component/Images/WeatherImages/" + "result" + ".png";
             temp.ImgWeather1_Source = tempUri;
             temp.ImgWeather2_Source = tempUri;
             temp.ImgWeather3_Source = tempUri;

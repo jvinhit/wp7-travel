@@ -5,8 +5,5 @@
 
     <models:ResourcePicture x:Key="1" ResourceUri="/WindowsPhonePanoramaApplication1;component/Images/SampleImages/1.jpg" Note="sample1" DateTaken="Monday, October 25, 2010" Position="47.639739, -122.127275" />
     <models:ResourcePicture x:Key="2" ResourceUri="/WindowsPhonePanoramaApplication1;component/Images/SampleImages/2.jpg" Note="sample2" DateTaken="Monday, October 25, 2010" Position="47.639987, -122.127501" />
-    <models:ResourcePicture x:Key="3" ResourceUri="/WindowsPhonePanoramaApplication1;component/Images/SampleImages/3.jpg" Note="sample3" DateTaken="Monday, October 25, 2010" Position="47.639481, -122.127075" />
-    <models:ResourcePicture x:Key="4" ResourceUri="/WindowsPhonePanoramaApplication1;component/Images/SampleImages/4.jpg" Note="sample4" DateTaken="Monday, October 25, 2010" Position="47.639139, -122.127275" />
-    <models:ResourcePicture x:Key="5" ResourceUri="/WindowsPhonePanoramaApplication1;component/Images/SampleImages/5.jpg" Note="sample5" DateTaken="Monday, October 25, 2010" Position="47.639987, -122.127201" />
 
 </ResourceDictionary>

@@ -70,5 +70,10 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Currency
                     this.NavigationService.GoBack();
             
         }
+
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+        }
     }
 }

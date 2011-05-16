@@ -29,10 +29,10 @@ namespace WindowsPhonePanoramaApplication1.ViewPages
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!App.ViewModel.IsDataLoaded)
-            {
-                App.ViewModel.LoadData();
-            }
+            //if (!App.ViewModel.IsDataLoaded)
+            //{
+            //    App.ViewModel.LoadData();
+            //}
         }
         ~WeatherView()
         {
@@ -51,9 +51,22 @@ namespace WindowsPhonePanoramaApplication1.ViewPages
             //UpdateWeather();
             //if (WP7Shared.Network.InternetIsAvailable())
                 WeatherViewMode.weatherInstance.UpdateWeather();
-                
-          
 
+        }
+
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            WeatherViewMode.weatherInstance.UpdateWeather();
+        }
+
+        private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/ViewPages/WeatherViews/ModifyPlace.xaml", UriKind.Relative));
+        }
+
+        private void ApplicationBarIconButton_Click_2(object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 
 

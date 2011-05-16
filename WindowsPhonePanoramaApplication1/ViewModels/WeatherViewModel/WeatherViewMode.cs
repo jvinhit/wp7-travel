@@ -55,8 +55,6 @@ namespace WindowsPhonePanoramaApplication1
             img = new BitmapImage(uri);
             temp.ImgWeather3_Source = img;
 
-
-
             ListWeatherInstance.Add(temp);
 
         }
