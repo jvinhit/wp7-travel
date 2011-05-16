@@ -337,6 +337,7 @@
     <Resource Include="IconFunctions\GoogleIcon.png" />
     <Resource Include="IconFunctions\WeatherIcon.png" />
     <Resource Include="Images\AdsImages\ford_ads.jpg" />
+    <Resource Include="Images\ImageForPoint\Coffee.png" />
     <Content Include="Images\SampleImages\coffee.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -403,7 +404,6 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\ImageForPoint\" />
     <Folder Include="Images\News\" />
     <Folder Include="View\CaptureView\" />
     <Folder Include="View\News\" />
