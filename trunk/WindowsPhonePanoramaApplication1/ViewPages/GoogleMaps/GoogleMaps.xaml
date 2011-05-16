@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage x:Class="WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps.GoogleMaps" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:GoogleTileSource="clr-namespace:WindowsPhonePanoramaApplication1;assembly=WindowsPhonePanoramaApplication1" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Microsoft_Phone_Controls_Maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps" xmlns:MSPCMCore="clr-namespace:Microsoft.Phone.Controls.Maps.Core;assembly=Microsoft.Phone.Controls.Maps" xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" FontFamily="{StaticResource PhoneFontFamilyNormal}" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource PhoneForegroundBrush}" Opacity="1" Orientation="Portrait" SupportedOrientations="Portrait" mc:Ignorable="d" shell:SystemTray.IsVisible="True" d:DesignHeight="696" d:DesignWidth="480">
+﻿<phone:PhoneApplicationPage xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:GoogleTileSource="clr-namespace:WindowsPhonePanoramaApplication1;assembly=WindowsPhonePanoramaApplication1" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Microsoft_Phone_Controls_Maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps" xmlns:MSPCMCore="clr-namespace:Microsoft.Phone.Controls.Maps.Core;assembly=Microsoft.Phone.Controls.Maps" xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" xmlns:WindowsPhonePanoramaApplication1_MyUserControl="clr-namespace:WindowsPhonePanoramaApplication1.MyUserControl" x:Class="WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps.GoogleMaps" Opacity="1" Orientation="Portrait" SupportedOrientations="Portrait" mc:Ignorable="d" shell:SystemTray.IsVisible="True" d:DesignHeight="696" d:DesignWidth="480">
 
     <phone:PhoneApplicationPage.Resources>
 
@@ -135,6 +135,30 @@
 
     </phone:PhoneApplicationPage.Resources>
 
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="True" IsVisible="True">
+            <shell:ApplicationBarIconButton IconUri="/Resources/AppBar/App_HomeMain.png" Text="Main Home" Click="ApplicationBarIconButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" Click="appbar_button1_Click" IconUri="/Resources/AppBar/SearchIcon.png" Text="Choose Place" />
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Resources/AppBar/App_Home.png" Text="Home" Click="appbar_button2_Click" />
+
+            <!--<shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>-->
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Canvas Margin="0,0,0,-73" d:IsHidden="True">
@@ -152,51 +176,48 @@
                             </DataTemplate>
                         </Microsoft_Phone_Controls_Maps:MapItemsControl.ItemTemplate>
                     </Microsoft_Phone_Controls_Maps:MapItemsControl>-->
-
-                <Microsoft_Phone_Controls_Maps:Map.Children>
                     
 
 
-                    <Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="street" Margin="0,0,0,32" Visibility="Visible" Opacity="1">
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                            <GoogleTileSource:GoogleTile TileTypes="Street" />
-                        </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                    </Microsoft_Phone_Controls_Maps:MapTileLayer>
-                    <Microsoft_Phone_Controls_Maps:MapItemsControl Name="MapItems" ItemsSource="{Binding Pushpins}">
-                        <Microsoft_Phone_Controls_Maps:MapItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Microsoft_Phone_Controls_Maps:Pushpin Style="{StaticResource PushpinStyle}"
-                                        MouseLeftButtonUp="Pushpin_MouseLeftButtonUp"
-                                        Location="{Binding geoCoor}"
-                                        Background="{Binding background, Converter={StaticResource PushpinTypeBrushConverter}}">
-                                    <Image Source="{Binding Icon}" />
-                                </Microsoft_Phone_Controls_Maps:Pushpin>
-                            </DataTemplate>
-                        </Microsoft_Phone_Controls_Maps:MapItemsControl.ItemTemplate>
-                    </Microsoft_Phone_Controls_Maps:MapItemsControl>
+            	<Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="street" Margin="0,0,0,32" Visibility="Visible" Opacity="1">
+            		<Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            			<GoogleTileSource:GoogleTile TileTypes="Street" />
+            		</Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            	</Microsoft_Phone_Controls_Maps:MapTileLayer>
+            	<Microsoft_Phone_Controls_Maps:MapItemsControl x:Name="MapItems" ItemsSource="{Binding Pushpins}">
+            		<Microsoft_Phone_Controls_Maps:MapItemsControl.ItemTemplate>
+            			<DataTemplate>
+            				<Microsoft_Phone_Controls_Maps:Pushpin Style="{StaticResource PushpinStyle}"
+            					MouseLeftButtonUp="Pushpin_MouseLeftButtonUp"
+            					Location="{Binding geoCoor}"
+            					Background="{Binding background, Converter={StaticResource PushpinTypeBrushConverter}}">
+            					<Image Source="{Binding Icon}" />
+            				</Microsoft_Phone_Controls_Maps:Pushpin>
+            			</DataTemplate>
+            		</Microsoft_Phone_Controls_Maps:MapItemsControl.ItemTemplate>
+            	</Microsoft_Phone_Controls_Maps:MapItemsControl>
 
 
-                    <Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="wateroverlay" Margin="0,0,0,32" Visibility="Collapsed">
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                            <GoogleTileSource:GoogleTile TileTypes="WaterOverlay" />
-                        </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                    </Microsoft_Phone_Controls_Maps:MapTileLayer>
-                    <Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="hybrid" Margin="0,0,0,32" Visibility="Collapsed">
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                            <GoogleTileSource:GoogleTile TileTypes="Hybrid" />
-                        </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                    </Microsoft_Phone_Controls_Maps:MapTileLayer>
-                    <Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="satellite" Height="684" Margin="0" Visibility="Collapsed">
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                            <GoogleTileSource:GoogleTile TileTypes="Satellite" />
-                        </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                    </Microsoft_Phone_Controls_Maps:MapTileLayer>
-                    <Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="physical" Height="719" Margin="0" Width="477" Visibility="Collapsed">
-                        <Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                            <GoogleTileSource:GoogleTile TileTypes="Physical" />
-                        </Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
-                    </Microsoft_Phone_Controls_Maps:MapTileLayer>
-                </Microsoft_Phone_Controls_Maps:Map.Children>
+            	<Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="wateroverlay" Margin="0,0,0,32" Visibility="Collapsed">
+            		<Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            			<GoogleTileSource:GoogleTile TileTypes="WaterOverlay" />
+            		</Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            	</Microsoft_Phone_Controls_Maps:MapTileLayer>
+            	<Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="hybrid" Margin="0,0,0,32" Visibility="Collapsed">
+            		<Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            			<GoogleTileSource:GoogleTile TileTypes="Hybrid" />
+            		</Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            	</Microsoft_Phone_Controls_Maps:MapTileLayer>
+            	<Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="satellite" Height="684" Margin="0" Visibility="Collapsed">
+            		<Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            			<GoogleTileSource:GoogleTile TileTypes="Satellite" />
+            		</Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            	</Microsoft_Phone_Controls_Maps:MapTileLayer>
+            	<Microsoft_Phone_Controls_Maps:MapTileLayer x:Name="physical" Height="719" Margin="0" Width="477" Visibility="Collapsed">
+            		<Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            			<GoogleTileSource:GoogleTile TileTypes="Physical" />
+            		</Microsoft_Phone_Controls_Maps:MapTileLayer.TileSources>
+            	</Microsoft_Phone_Controls_Maps:MapTileLayer>
 
             </Microsoft_Phone_Controls_Maps:Map>
 
@@ -206,7 +227,7 @@
             </StackPanel>
             <TextBlock x:Name="textBlock1" Canvas.Left="6" Canvas.Top="6" Height="75" Width="312" FontSize="50" HorizontalAlignment="Left" Text="Google Map" />
         </Canvas>
-        <Grid x:Name="ShowInformation" Margin="29,39,22,25" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid x:Name="ShowInformation" Margin="29,39,22,25" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
         	<Border BorderThickness="2" CornerRadius="15" Background="#E6000000" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="630" VerticalAlignment="Top" Margin="0">
         		<Border.BorderBrush>
         			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -241,19 +262,7 @@
         		</Grid>
         	</Border>
         </Grid>
+    	<WindowsPhonePanoramaApplication1_MyUserControl:ControlAds x:Name="myAds" HorizontalAlignment="Left" Width="Auto" Height="105" VerticalAlignment="Bottom" Visibility="Visible" Margin="5,0,0,0"/>
     </Grid>
-
-    <!--Sample code showing usage of ApplicationBar-->
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsMenuEnabled="True" IsVisible="True">
-            <shell:ApplicationBarIconButton x:Name="appbar_button1" Click="appbar_button1_Click" IconUri="/Resources/AppBar/SearchIcon.png" Text="Choose Place" />
-            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Resources/AppBar/App_Home.png" Text="Home" Click="appbar_button2_Click" />
-
-            <!--<shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>-->
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

@@ -67,6 +67,11 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.WeatherViews
             textBox1.SelectAll();
         }
 
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+        }
+
        
     }
 }

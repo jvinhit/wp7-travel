@@ -29,6 +29,12 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Image Height="auto" HorizontalAlignment="Left" Name="imageContent" Stretch="Fill" VerticalAlignment="Top" Width="auto" />
+            <Button Content="Button" HorizontalAlignment="Left" Margin="31,121,0,141" Style="{StaticResource ButtonZoomInStyle}" Width="74">
+            	<Button.Background>
+            		<ImageBrush Stretch="Fill"/>
+            	</Button.Background>
+            </Button>
+            <Button Content="Button" Margin="331,121,298,141" Style="{StaticResource ButtonZoomInStyle}"/>
         </Grid>
     </Grid>
  

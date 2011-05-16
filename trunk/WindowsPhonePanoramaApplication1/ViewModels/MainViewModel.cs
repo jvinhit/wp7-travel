@@ -60,6 +60,8 @@ namespace WindowsPhonePanoramaApplication1
             }
         }
 
+
+
         public bool IsDataLoaded
         {
             get;
@@ -90,8 +92,8 @@ namespace WindowsPhonePanoramaApplication1
             this.Items1.Add(new ItemViewModel1() { LineOne = "runtime sixteen", LineTwo = "Nascetur pharetra placerat pulvinar", LineThree = "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum" });
             // function app
             this.Items2.Add(new ItemViewModel2() { LineOne = "News", LineTwo = "Thông tin mới nhất....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/icon_news.png", IdFuntion = EnumsFunction.News.ToString(), TagLink = "/ViewPages/News/News.xaml" });
-            this.Items2.Add(new ItemViewModel2() { LineOne = "Maps", LineTwo = "Xác định vị trí, thông tin địa điểm....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/GoogleIcon.jpg", IdFuntion = EnumsFunction.GoogleMapFunc.ToString(), TagLink = "/ViewPages/GoogleMaps/GoogleMaps.xaml" });
-            this.Items2.Add(new ItemViewModel2() { LineOne = "Weather", LineTwo = "Dự báo thời tiết....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/WeatherIcon.jpg", IdFuntion = EnumsFunction.WeatherFunc.ToString(), TagLink = "/ViewPages/WeatherViews/WeatherView.xaml" });
+            this.Items2.Add(new ItemViewModel2() { LineOne = "Maps", LineTwo = "Xác định vị trí, thông tin địa điểm....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/GoogleIcon.png", IdFuntion = EnumsFunction.GoogleMapFunc.ToString(), TagLink = "/ViewPages/GoogleMaps/GoogleMaps.xaml" });
+            this.Items2.Add(new ItemViewModel2() { LineOne = "Weather", LineTwo = "Dự báo thời tiết....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/WeatherIcon.png", IdFuntion = EnumsFunction.WeatherFunc.ToString(), TagLink = "/ViewPages/WeatherViews/WeatherView.xaml" });
             this.Items2.Add(new ItemViewModel2() { LineOne = "Currency Convert", LineTwo = "Đổi tiền tệ ....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/CurrencyFunction.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/ViewPages/Currency/Currency.xaml" });
             this.Items2.Add(new ItemViewModel2() { LineOne = "Pictures Captures", LineTwo = "Chụp lại khoảng khắc ....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/cameraFunction.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/ViewPages/Capture/PictureList.xaml" });
 

@@ -8,13 +8,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace TravelObject
 {
-    public interface IPlaceObject
+    public interface IInformationObject
     {
-
+        ObservableCollection<String> GetListComment();
+        void MakeComment();
+        
        
-
+       
     }
 }

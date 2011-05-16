@@ -19,5 +19,10 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.News
         {
             InitializeComponent();
         }
+
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+        }
     }
 }

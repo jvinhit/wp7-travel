@@ -50,6 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls" />
     <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
@@ -69,6 +70,7 @@
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml.Serialization" />
@@ -83,7 +85,14 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyDatabase\Weather\WeatherData.cs" />
+    <Compile Include="MyUserControl\ControlAds.xaml.cs">
+      <DependentUpon>ControlAds.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="MyUserControl\ControlAds.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SampleData\ImageSample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,11 +225,8 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="MyUserControl\ford_ads.jpg" />
     <Resource Include="PanoramaBackground.png" />
-    <Resource Include="IconFunctions\GoogleIcon.jpg" />
-    <Resource Include="IconFunctions\WeatherIcon.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\WeatherImages\11n.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -311,9 +317,6 @@
     <Resource Include="Images\WeatherImages\write.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\WeatherImages\result.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="IconFunctions\CurrencyFunction.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -330,23 +333,22 @@
     <Resource Include="Images\SampleImages\2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\SampleImages\3.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\SampleImages\4.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\SampleImages\5.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="IconFunctions\icon_news.png" />
+    <Resource Include="IconFunctions\GoogleIcon.png" />
+    <Resource Include="IconFunctions\WeatherIcon.png" />
+    <Resource Include="Images\AdsImages\ford_ads.jpg" />
     <Content Include="Images\SampleImages\coffee.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Images\SampleImages\hotel5stars.png" />
+    <Resource Include="Images\WeatherImages\result.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Library Reference\SilverlightPhoneDatabase.dll" />
     <Content Include="Library Reference\SilverlightPhoneDatabase.xml" />
     <Content Include="Resources\AppBar\App_Home.png" />
+    <Content Include="Resources\AppBar\App_HomeMain.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\AppBar\App_ListMode.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -377,6 +379,12 @@
     <Content Include="Resources\AppBar\App_ViewOnMap.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\AppBar\App_Change.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AppBar\App_Update.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Resources\Icons\ZoomIn_Black.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -395,8 +403,8 @@
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\ImageForPoint\" />
     <Folder Include="Images\News\" />
-    <Folder Include="MyUserControl\" />
     <Folder Include="View\CaptureView\" />
     <Folder Include="View\News\" />
   </ItemGroup>

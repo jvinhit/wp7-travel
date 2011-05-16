@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Device.Location;
+using System.Collections.ObjectModel;
 
 namespace TravelObject
 {
@@ -18,9 +19,11 @@ namespace TravelObject
         public string Article{ get; set; }
         public string IdObject { get; set; }
         public string IdKindPlace { get; set; }
-        public GeoCoordinate geoCoor { get; set; }
+        protected GeoCoordinate geoCoor { get; set; }
         public double ZoomLevel { get; set; }
         public Uri Icon { get; set; }
         public string background { get; set; }
+        private ObservableCollection<String> listComment;
+      
     }
 }
