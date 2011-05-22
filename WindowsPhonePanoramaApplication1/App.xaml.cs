@@ -18,7 +18,7 @@ namespace WindowsPhonePanoramaApplication1
     public partial class App : Application
     {
         // for show ads
-        public static bool IsShowAds = true;
+        public static bool IsShowAds = false;
 
         private static MainViewModel viewModel = null;
         internal const string BingId = "AnjrJlYx7pu0K0jnByP6i66MWs7an4yVDH5CCt3mAJQmoB_oxbG-cbVlKg20zLt0";

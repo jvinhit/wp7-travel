@@ -14,9 +14,8 @@ namespace TravelObject
     public class CafePlace:PlaceObject,IPointObject
     {
 
-        public System.Device.Location.GeoCoordinate getGeoCoor()
-        {
-            return geoCoor;
-        }
+ 
+
+ 
     }
 }
