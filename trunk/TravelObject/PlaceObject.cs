@@ -19,7 +19,7 @@ namespace TravelObject
         public string Article{ get; set; }
         public string IdObject { get; set; }
         public string IdKindPlace { get; set; }
-        protected GeoCoordinate geoCoor { get; set; }
+        public GeoCoordinate geoCoor { get; set; }
         public double ZoomLevel { get; set; }
         public Uri Icon { get; set; }
         public string background { get; set; }

@@ -108,6 +108,10 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.GoogleViewModel
             _pushpins.Add(new CafePlace() { Article = "Coffee", background = System.IO.Path.GetFileNameWithoutExtension(temp.ToString()), geoCoor = new GeoCoordinate(10.7669, 106.6918), Icon = temp });
             _pushpins.Add(new CafePlace() { Article = "Coffee", background = System.IO.Path.GetFileNameWithoutExtension(temp.ToString()), geoCoor = new GeoCoordinate(10.7627, 106.6893), Icon = temp });
             _pushpins.Add(new CafePlace() { Article = "Coffee", background = System.IO.Path.GetFileNameWithoutExtension(temp.ToString()), geoCoor = new GeoCoordinate(10.7669, 106.6876), Icon = temp });
+
+            
+
+
         }
 
         public void LoadFromdDatabase(ref Microsoft.Phone.Controls.Maps.Map googlemap)

@@ -8,14 +8,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using System.Device.Location;
 
 namespace TravelObject
 {
-    public interface IPointObject
+    public class HotelPlace:PlaceObject,IPointObject
     {
-
-       
 
     }
 }

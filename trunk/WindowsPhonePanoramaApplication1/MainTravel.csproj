@@ -337,10 +337,9 @@
     <Resource Include="IconFunctions\GoogleIcon.png" />
     <Resource Include="IconFunctions\WeatherIcon.png" />
     <Resource Include="Images\AdsImages\ford_ads.jpg" />
-    <Resource Include="Images\ImageForPoint\Coffee.png" />
-    <Content Include="Images\SampleImages\coffee.png">
+    <Resource Include="Images\ImageForPoint\Coffee.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Resource Include="Images\WeatherImages\result.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

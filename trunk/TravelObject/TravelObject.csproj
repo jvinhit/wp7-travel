@@ -53,13 +53,16 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CafePlace.cs" />
+    <Compile Include="InformationNews\FestivalInformation.cs" />
+    <Compile Include="PointObjectMap\CafePlace.cs" />
     <Compile Include="IInformationObject.cs" />
     <Compile Include="NewsObject.cs" />
     <Compile Include="IPointObject.cs" />
     <Compile Include="PlaceObject.cs" />
+    <Compile Include="PointObjectMap\HotelPlace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions />
