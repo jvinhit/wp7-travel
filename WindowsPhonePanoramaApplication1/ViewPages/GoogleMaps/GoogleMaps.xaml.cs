@@ -95,13 +95,13 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
             //geo = googlemap.ViewportPointToLocation(p);
             //googlemap.ZoomLevel = 17;
             //googlemap.Center = geo;
-            ////create a new pushpin---
+            //create a new pushpin---
             //Pushpin pin = new Pushpin();
 
-            ////set the location for the pushpin---
+            //set the location for the pushpin---
             //pin.Location = geo;
 
-            ////add the pushpin to the map---
+            //add the pushpin to the map---
             //googlemap.Children.Add(pin);
 
 
