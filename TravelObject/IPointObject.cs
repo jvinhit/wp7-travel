@@ -14,6 +14,7 @@ namespace TravelObject
 {
     public interface IPointObject
     {
+        void GetBookings();
 
        
 

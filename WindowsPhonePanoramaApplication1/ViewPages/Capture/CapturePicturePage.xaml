@@ -30,7 +30,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
                 <Image Grid.Column="1" Grid.Row="1" Stretch="Uniform"
-                   Source="{Binding Source}" HorizontalAlignment="Left" Width="178" Margin="16" />
+                   Source="{Binding Source}" HorizontalAlignment="Left" Width="424" Margin="16" Height="243" />
                 <TextBlock Text="{Binding Position}" Margin="19,5,19,5"  Opacity="0.5" />
                 <TextBlock Text="{Binding Address}" Margin="19,5,19,5"  Opacity="0.5"/>
                 <TextBlock Text="{Binding DateTaken}" Margin="19,5,19,5"  Opacity="0.5"/>
@@ -44,7 +44,8 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsMenuEnabled="False">
             <shell:ApplicationBarIconButton IconUri="/Resources/AppBar/App_ListMode.png" Text="pictures" Click="ApplicationBarPictureList_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Resources/AppBar/App_Save.png" Text="save" Click="ApplicationBarSavePicture_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Resources/AppBar/App_Save.png" Text="Save" Click="ApplicationBarSavePicture_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Resources/AppBar/App_ViewOnMap.png" Text="Share" Click="ApplicationBarIconButton_Click" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

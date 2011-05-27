@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Xna.Framework.Media;
 
 namespace WindowsPhonePanoramaApplication1
 {
@@ -48,6 +49,30 @@ namespace WindowsPhonePanoramaApplication1
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
+        /// 
+        /// <summary>
+        /// Represents the method that will handle the Slide events
+        /// </summary>
+        public delegate void SlideHandler(object sender, EventArgs e);
+
+        public static PictureCollection SelectedAlbum { get; set; }
+
+        /// <summary>
+        /// Occurs when the Slide Duration is completion
+        /// </summary>
+        public static SlideHandler SlideDurationCompleting;
+
+        /// <summary>
+        /// Random Number Generator to be used throughout the app
+        /// </summary>
+        public static Random RandomNumber = new Random();
+
+        /// <summary>
+        /// Provides easy access to the root frame of the Phone Application.
+        /// </summary>
+    
+
+
         public App()
         {
             // Global handler for uncaught exceptions. 

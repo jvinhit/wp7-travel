@@ -13,12 +13,13 @@ using Microsoft.Phone.Controls;
 using WindowsPhonePanoramaApplication1.MyDatabase;
 using System.ComponentModel;
 using System.Threading;
+using Microsoft.Phone.Tasks;
 
 namespace WindowsPhonePanoramaApplication1
 {
     public partial class MainPage : PhoneApplicationPage
     {
-
+   
         
         // Constructor
         public MainPage()
@@ -28,6 +29,12 @@ namespace WindowsPhonePanoramaApplication1
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
+
+        }
+
+        void photoChooserTask_Completed(object sender, PhotoResult e)
+        {
+            throw new NotImplementedException();
         }
 
         // Load data for the ViewModel Items
@@ -52,7 +59,10 @@ namespace WindowsPhonePanoramaApplication1
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
            // MessageBox.Show(((Image)sender).Name.ToString());
+
+     
             this.NavigationService.Navigate(new Uri(((Image)sender).Tag.ToString(), UriKind.Relative));
+            
             //EnumsFunction Text = EnumsFunction.WeatherFunc   ;
             //switch (Text)
             //{

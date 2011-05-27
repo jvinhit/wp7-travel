@@ -104,11 +104,34 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.GoogleViewModel
         #region Method
         private GoogleViewModel()
         {
-            Uri temp = new Uri("/Images/SampleImages/coffee.png",UriKind.Relative);
-            _pushpins.Add(new CafePlace() { Article = "Coffee", background = System.IO.Path.GetFileNameWithoutExtension(temp.ToString()), geoCoor = new GeoCoordinate(10.7669, 106.6918), Icon = temp });
-            _pushpins.Add(new CafePlace() { Article = "Coffee", background = System.IO.Path.GetFileNameWithoutExtension(temp.ToString()), geoCoor = new GeoCoordinate(10.7627, 106.6893), Icon = temp });
-            _pushpins.Add(new CafePlace() { Article = "Coffee", background = System.IO.Path.GetFileNameWithoutExtension(temp.ToString()), geoCoor = new GeoCoordinate(10.7669, 106.6876), Icon = temp });
+            // sample data
 
+            //get coffe 
+
+
+            ObservableCollection<PlaceObject> listCoffee = new ObservableCollection<PlaceObject>();
+            _pushpins.Clear();
+            listCoffee.Add(new CafePlace() { geoCoor = new GeoCoordinate(10.7669, 106.6918) });
+            listCoffee.Add(new CafePlace() { geoCoor = new GeoCoordinate(10.7627, 106.6893) });
+            listCoffee.Add(new CafePlace() { geoCoor = new GeoCoordinate(10.7669, 106.6876) });
+            foreach (var tempIndex in listCoffee.ToList<PlaceObject>())
+            {
+                _pushpins.Add(tempIndex);
+            }
+            
+           
+            //get hotel
+            
+
+            ObservableCollection<PlaceObject> listHotel = new ObservableCollection<PlaceObject>();
+            listHotel.Add(new HotelPlace() { geoCoor = new GeoCoordinate(10.7664, 106.6988) });
+            listHotel.Add(new HotelPlace() { geoCoor = new GeoCoordinate(10.7690, 106.6887) });
+            listHotel.Add(new HotelPlace() { geoCoor = new GeoCoordinate(10.7621, 106.6914) });
+            foreach (var tempIndex in listHotel.ToList<PlaceObject>())
+            {
+                _pushpins.Add(tempIndex);
+            }
+            
             
 
 

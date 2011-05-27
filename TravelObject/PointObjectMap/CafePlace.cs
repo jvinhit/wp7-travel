@@ -13,9 +13,20 @@ namespace TravelObject
 {
     public class CafePlace:PlaceObject,IPointObject
     {
+        public CafePlace()
+            : base()
+        {
+             this.Icon = new Uri("/Images/ImageForPoint/Coffee.png", UriKind.Relative);
+             this.Article = "Cafe";
+             background = System.IO.Path.GetFileNameWithoutExtension(this.Icon.ToString());
+        }
 
- 
 
- 
+
+
+        public void GetBookings()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
