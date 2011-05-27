@@ -13,6 +13,17 @@ namespace TravelObject
 {
     public class HotelPlace:PlaceObject,IPointObject
     {
+        public HotelPlace()
+            : base()
+        {
+            this.Icon = new Uri("/Images/ImageForPoint/hotel1star.png", UriKind.Relative);
+            this.Article = "Hotel";
+            background = System.IO.Path.GetFileNameWithoutExtension(this.Icon.ToString());
+        }
 
+        public void GetBookings()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

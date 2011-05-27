@@ -94,7 +94,7 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
         {
             get
             {
-                return new NotificationBoxCommand("local store", () =>
+                return new NotificationBoxCommand("Local Memory", () =>
                 {
                     // Cache image in repository.
                     PictureRepository.Instance.Pictures.Add(Model);
@@ -109,7 +109,7 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
         {
             get
             {
-                return new NotificationBoxCommand("website sharing", () =>
+                return new NotificationBoxCommand("Library Picture", () =>
                 {
                     PictureRepository.Instance.SaveToPicturesHub(Model);
 
@@ -117,5 +117,14 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
                 });
             }
         }
+
+
+ 
+
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

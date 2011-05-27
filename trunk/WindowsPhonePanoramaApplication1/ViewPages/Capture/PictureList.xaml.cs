@@ -14,6 +14,7 @@ using WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel;
 using Microsoft.Phone.Tasks;
 using AccessingWP7Devices.Assets.Controls;
 using WP7Shared;
+using System.Windows.Media.Imaging;
 
 
 namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
@@ -21,6 +22,7 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
     public partial class PictureList : PhoneApplicationPage
     {
         private readonly CameraCaptureTask _cameraTask;
+        private readonly PhotoChooserTask photoChooseTask;
         public PictureList()
         {
             InitializeComponent();
@@ -30,7 +32,23 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
             // Initialize camera task
             _cameraTask = new CameraCaptureTask();
             _cameraTask.Completed += cameraTask_Completed;
+
+
+            photoChooseTask = new PhotoChooserTask();
+            photoChooseTask.Completed += new EventHandler<PhotoResult>(photoChooseTask_Completed);
         }
+
+        void photoChooseTask_Completed(object sender, PhotoResult e)
+        {
+          
+
+            var capturedPicture = new CapturedPictureViewModel(e.OriginalFileName, e.ChosenPhoto);
+            //set mode for camera
+            TransientState.Set("CapturedPictureViewModel", capturedPicture);
+           
+        }
+
+
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             var capturedPicture = TransientState.Get<CapturedPictureViewModel>("CapturedPictureViewModel");
@@ -39,9 +57,6 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
                 TransientState.Set<CapturedPictureViewModel>(CapturePicturePage.ModelStateKey, capturedPicture);
                 //NavigationService.Navigate<CapturePicturePage>();
                 this.NavigationService.Navigate(new Uri("/ViewPages/Capture/CapturePicturePage.xaml", UriKind.Relative));
-
-
-
             }
 
             base.OnNavigatedTo(e);
@@ -66,8 +81,17 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
             _cameraTask.Show();
         }
 
-        private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
+
+
+        private void ApplicationBarIconButton_Click_2(object sender, EventArgs e)
         {
+            photoChooseTask.Show();
+        }
+
+
+        private void ApplicationBarIconButtonSlideShow_Click_1(object sender, EventArgs e)
+        {
+
             this.NavigationService.Navigate(new Uri("/ViewPages/Capture/PictureView.xaml", UriKind.Relative));
         }
     }

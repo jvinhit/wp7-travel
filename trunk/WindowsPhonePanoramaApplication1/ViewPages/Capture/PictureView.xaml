@@ -9,6 +9,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
+    ManipulationCompleted="Image_ManipulationCompleted"
     SupportedOrientations="Landscape" Orientation="Landscape"
     mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="728"
     shell:SystemTray.IsVisible="True">
@@ -20,21 +21,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="WP7 Travel" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="View Picture" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
-
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Image Height="auto" HorizontalAlignment="Left" Name="imageContent" Stretch="Fill" VerticalAlignment="Top" Width="auto" />
-            <Button Content="Button" HorizontalAlignment="Left" Margin="31,121,0,141" Style="{StaticResource ButtonZoomInStyle}" Width="74">
-            	<Button.Background>
-            		<ImageBrush Stretch="Fill"/>
-            	</Button.Background>
-            </Button>
-            <Button Content="Button" Margin="331,121,298,141" Style="{StaticResource ButtonZoomInStyle}"/>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" MouseMove="ContentPanel_MouseMove">
+            <Image Name="imageContent" Source="{Binding ImageSource}" Height="auto" HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top" Width="auto" />
         </Grid>
     </Grid>
  
