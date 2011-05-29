@@ -28,7 +28,6 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
             }
             else
                 instance.pictures.IndexImageCurrent++;
-
             UpdateImage();
 
         }

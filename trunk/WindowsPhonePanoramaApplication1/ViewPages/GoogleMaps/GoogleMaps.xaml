@@ -262,7 +262,7 @@
         		</Grid>
         	</Border>
         </Grid>
-    	<!--<WindowsPhonePanoramaApplication1_MyUserControl:ControlAds x:Name="myAds" HorizontalAlignment="Left" Width="Auto" Height="105" VerticalAlignment="Bottom" Visibility="Visible" Margin="5,0,0,0"/>-->
+    	<WindowsPhonePanoramaApplication1_MyUserControl:ControlAds x:Name="myAds" HorizontalAlignment="Left" Width="Auto" Height="105" VerticalAlignment="Bottom" Visibility="Visible" Margin="5,0,0,0"/>
     </Grid>
 
 </phone:PhoneApplicationPage>
