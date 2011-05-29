@@ -105,6 +105,18 @@
     <Compile Include="Resources\Converters\LocationGeoCoordinateConverter.cs" />
     <Compile Include="Resources\Converters\PushpinTypeBrushConverter.cs" />
     <Compile Include="ViewModels\CaptureViewModel\CapturedPictureViewModel.cs" />
+    <Compile Include="ViewModels\News\ArticalListViewModel.cs" />
+    <Compile Include="ViewModels\News\NewsDetailViewModel.cs" />
+    <Compile Include="ViewModels\News\NewsPageViewModel.cs" />
+    <Compile Include="ViewPages\News\ArticalPage.xaml.cs">
+      <DependentUpon>ArticalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPages\News\NewsDetail.xaml.cs">
+      <DependentUpon>NewsDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPages\News\NewsPage.xaml.cs">
+      <DependentUpon>NewsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CaptureView\NotifyingObject.cs" />
     <Compile Include="View\CaptureView\PictureRepository.cs" />
     <Compile Include="ViewModels\CaptureViewModel\PictureViewModel.cs" />
@@ -150,12 +162,12 @@
     </Compile>
     <Compile Include="View\GoogleView\GoogleTile.cs" />
     <Compile Include="View\GoogleView\MarkOnMap.cs" />
-    <Compile Include="ViewPages\News\News.xaml.cs">
-      <DependentUpon>News.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewPages\WeatherViews\ModifyPlace.xaml.cs">
       <DependentUpon>ModifyPlace.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\News\ArticalListView.cs" />
+    <Compile Include="View\News\SectionPageView.cs" />
+    <Compile Include="View\News\VideoPageView.cs" />
     <Compile Include="View\WeatherView\PlaceMode.cs" />
     <Compile Include="ViewPages\WeatherViews\WeatherView.xaml.cs">
       <DependentUpon>WeatherView.xaml</DependentUpon>
@@ -203,7 +215,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\News\News.xaml">
+    <Page Include="ViewPages\News\ArticalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPages\News\NewsDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPages\News\NewsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -227,6 +247,7 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\Background\newspage.jpg" />
     <Resource Include="MyUserControl\ford_ads.jpg" />
     <Resource Include="PanoramaBackground.png" />
     <Resource Include="Images\WeatherImages\11n.png">
@@ -349,6 +370,16 @@
     <Content Include="Images\ImageForPoint\hotel1star.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\News\Sections\motorcycleRent.jpeg" />
+    <Content Include="Images\News\Sections\Review.jpg" />
+    <Content Include="Images\News\Sections\ticketAirPlane.jpg" />
+    <Content Include="Images\News\Sections\Top Travel.jpg" />
+    <Content Include="Images\News\Sections\TopEvent.png" />
+    <Content Include="Images\News\Sections\tourism.jpg" />
+    <Content Include="Images\News\Sections\travel-tips.jpg" />
+    <Content Include="Images\News\Sections\cafe.jpg" />
+    <Content Include="Images\News\Sections\hotel.jpg" />
+    <Content Include="Images\News\Sections\Restaurant.jpg" />
     <Content Include="Library Reference\SilverlightPhoneDatabase.dll" />
     <Content Include="Library Reference\SilverlightPhoneDatabase.xml" />
     <Content Include="Resources\AppBar\App_Home.png" />
@@ -407,11 +438,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SplashScreenImage.jpg" />
+    <Resource Include="ViewPages\News\newspage.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\News\" />
-    <Folder Include="View\News\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AccessingWP7Devices.Assets\MicrosoftFramework.csproj">
       <Project>{801F6D26-EE49-4DF6-9DFF-F7CCC393DFF5}</Project>

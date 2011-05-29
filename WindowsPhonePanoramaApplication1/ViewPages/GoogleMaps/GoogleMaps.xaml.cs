@@ -125,6 +125,9 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
         private void Pushpin_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             //MessageBox.Show("asfdA");
+
+
+
             ShowInformation.Visibility = Visibility.Visible;
             
             

@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Microsoft.Phone.Tasks;
 
 namespace WindowsPhonePanoramaApplication1.MyUserControl
 {
@@ -27,6 +28,16 @@ namespace WindowsPhonePanoramaApplication1.MyUserControl
             
             
 
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var webBrowserTask = new WebBrowserTask
+            {
+                URL = "http://google.com"
+            };
+
+            webBrowserTask.Show();
         }
 
        

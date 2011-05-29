@@ -10,6 +10,7 @@
     xmlns:converters="clr-namespace:WindowsPhonePanoramaApplication1.Resources.Converters"
      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
+
     mc:Ignorable="d">
 
     <!--Application Resources-->
@@ -109,6 +110,8 @@
             <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeLarge}"/>
             <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
         </Style>
+
+        
 
         <Style x:Key="PhoneTextTitle3Style" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiLight}"/>

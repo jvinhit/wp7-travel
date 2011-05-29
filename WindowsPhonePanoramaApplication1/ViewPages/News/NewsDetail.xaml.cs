@@ -10,19 +10,16 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using WindowsPhonePanoramaApplication1.ViewModels.News;
 
 namespace WindowsPhonePanoramaApplication1.ViewPages.News
 {
-    public partial class News : PhoneApplicationPage
+    public partial class NewsDetail : PhoneApplicationPage
     {
-        public News()
+        public NewsDetail()
         {
             InitializeComponent();
-        }
-
-        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
-        {
-            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            this.DataContext = NewsDetailViewModel.instance;
         }
     }
 }
