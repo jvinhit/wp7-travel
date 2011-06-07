@@ -50,6 +50,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bewise.Phone">
+      <HintPath>Library Reference\Bewise.Phone.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls" />
@@ -88,6 +91,7 @@
     <Compile Include="MyUserControl\ControlAds.xaml.cs">
       <DependentUpon>ControlAds.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl\RelativeAnimatingContentControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Page Include="MyUserControl\ControlAds.xaml">
       <SubType>Designer</SubType>
@@ -108,11 +112,18 @@
     <Compile Include="ViewModels\News\ArticalListViewModel.cs" />
     <Compile Include="ViewModels\News\NewsDetailViewModel.cs" />
     <Compile Include="ViewModels\News\NewsPageViewModel.cs" />
-    <Compile Include="ViewPages\News\ArticalPage.xaml.cs">
-      <DependentUpon>ArticalPage.xaml</DependentUpon>
+    <Compile Include="ViewModels\News\PerformanceProgressBarVisibilityConverter.cs" />
+    <Compile Include="ViewPages\Currency\ModifyCurrency.xaml.cs">
+      <DependentUpon>ModifyCurrency.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\News\NewsDetail.xaml.cs">
-      <DependentUpon>NewsDetail.xaml</DependentUpon>
+    <Compile Include="ViewPages\News\DetailItem.xaml.cs">
+      <DependentUpon>DetailItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPages\News\ListArtical.xaml.cs">
+      <DependentUpon>ListArtical.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPages\News\ListComment.xaml.cs">
+      <DependentUpon>ListComment.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewPages\News\NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
@@ -152,20 +163,18 @@
     <Compile Include="ViewPages\Currency\Currency.xaml.cs">
       <DependentUpon>Currency.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\Currency\CurrencyModify.xaml.cs">
-      <DependentUpon>CurrencyModify.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\CurrencyView\CurrencyConvertView.cs" />
     <Compile Include="View\CurrencyView\ListCurrencyView.cs" />
     <Compile Include="ViewPages\GoogleMaps\GoogleMaps.xaml.cs">
       <DependentUpon>GoogleMaps.xaml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="View\GoogleView\GoogleTile.cs" />
     <Compile Include="View\GoogleView\MarkOnMap.cs" />
     <Compile Include="ViewPages\WeatherViews\ModifyPlace.xaml.cs">
       <DependentUpon>ModifyPlace.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\News\ArticalListView.cs" />
+    <Compile Include="View\News\ItemsView.cs" />
     <Compile Include="View\News\SectionPageView.cs" />
     <Compile Include="View\News\VideoPageView.cs" />
     <Compile Include="View\WeatherView\PlaceMode.cs" />
@@ -187,6 +196,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
+    <Page Include="Themes\ThemeDark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ThemeLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewPages\Capture\CapturePicturePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -203,7 +220,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\Currency\CurrencyModify.xaml">
+    <Page Include="ViewPages\Currency\ModifyCurrency.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -214,12 +231,17 @@
     <Page Include="ViewPages\GoogleMaps\GoogleMaps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Page>
-    <Page Include="ViewPages\News\ArticalPage.xaml">
+    <Page Include="ViewPages\News\DetailItem.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewPages\News\ListArtical.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\News\NewsDetail.xaml">
+    <Page Include="ViewPages\News\ListComment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -247,9 +269,7 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Images\Background\newspage.jpg" />
     <Resource Include="MyUserControl\ford_ads.jpg" />
-    <Resource Include="PanoramaBackground.png" />
     <Resource Include="Images\WeatherImages\11n.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -360,7 +380,15 @@
     <Resource Include="IconFunctions\GoogleIcon.png" />
     <Resource Include="IconFunctions\WeatherIcon.png" />
     <Resource Include="Images\AdsImages\ford_ads.jpg" />
-    <Resource Include="Images\Background\BackgroundPictuesPage.jpg" />
+    <Content Include="Images\Background\DarkTheme\contrast_flower-wallpaper-960x600.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Background\DarkTheme\dark-abstract-wide-wallpaper-1280x800-028.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Background\LightTheme\Ultimate Walls Nature %281505%29.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\ImageForPoint\Coffee.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -370,7 +398,14 @@
     <Content Include="Images\ImageForPoint\hotel1star.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\News\Sections\motorcycleRent.jpeg" />
+    <Content Include="Images\list.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\News\Sections\best-travel-camera-m.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\News\Sections\icon_folder.png" />
+    <Content Include="Images\News\Sections\motorcycleRent.jpg" />
     <Content Include="Images\News\Sections\Review.jpg" />
     <Content Include="Images\News\Sections\ticketAirPlane.jpg" />
     <Content Include="Images\News\Sections\Top Travel.jpg" />
@@ -380,8 +415,12 @@
     <Content Include="Images\News\Sections\cafe.jpg" />
     <Content Include="Images\News\Sections\hotel.jpg" />
     <Content Include="Images\News\Sections\Restaurant.jpg" />
-    <Content Include="Library Reference\SilverlightPhoneDatabase.dll" />
-    <Content Include="Library Reference\SilverlightPhoneDatabase.xml" />
+    <Content Include="Images\Background\LightTheme\light-abstract-wide-wallpaper-1280x800-009.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AppBar\App_Favourite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\AppBar\App_Home.png" />
     <Content Include="Resources\AppBar\App_HomeMain.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -398,10 +437,16 @@
     <Content Include="Resources\AppBar\App_NewPicture.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\AppBar\App_Next.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\AppBar\App_PlayFast.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\AppBar\App_PlaySlow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AppBar\App_Pre.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\AppBar\App_Save.png">
@@ -422,25 +467,35 @@
     <Content Include="Resources\AppBar\App_Update.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\Icons\ZoomIn_Black.png">
+    <Content Include="Resources\Icons\ZoomIn_Black.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Icons\ZoomIn_White.png">
+    </Content>
+    <Content Include="Resources\Icons\ZoomIn_White.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Icons\ZoomOut_Black.png">
+    </Content>
+    <Content Include="Resources\Icons\ZoomOut_Black.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\Icons\ZoomOut_White.png">
+    </Content>
+    <Content Include="Resources\Icons\ZoomOut_White.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="Resources\AppBar\SearchIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Icons\AddComment.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\appbar.back.rest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\comment_add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\icon_favourite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SplashScreenImage.jpg" />
-    <Resource Include="ViewPages\News\newspage.jpg" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AccessingWP7Devices.Assets\MicrosoftFramework.csproj">
       <Project>{801F6D26-EE49-4DF6-9DFF-F7CCC393DFF5}</Project>

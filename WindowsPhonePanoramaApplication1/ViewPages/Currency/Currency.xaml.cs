@@ -34,12 +34,12 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Currency
 
         private void textBox2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/ViewPages/Currency/CurrencyModify.xaml?isFromCurrency=1", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/ViewPages/Currency/ModifyCurrency.xaml?isFromCurrency=1", UriKind.Relative));
         }
 
         private void textBox3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/ViewPages/Currency/CurrencyModify.xaml?isFromCurrency=0", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/ViewPages/Currency/ModifyCurrency.xaml?isFromCurrency=0", UriKind.Relative));
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

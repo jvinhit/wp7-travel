@@ -14,6 +14,7 @@ namespace WindowsPhonePanoramaApplication1
 {
     public class ListCurrencyView : INotifyPropertyChanged
     {
+
         private string symbol;
 
         public string Symbol

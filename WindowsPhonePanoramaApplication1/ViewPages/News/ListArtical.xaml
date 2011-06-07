@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WindowsPhonePanoramaApplication1.ViewPages.News.ListArtical"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:Bewise="clr-namespace:Bewise.Phone;assembly=Bewise.Phone"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="728"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+	xmlns:Phone="clr-namespace:Bewise.Phone;assembly=Bewise.Phone"
+    shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:WindowsPhonePanoramaApplication1.MyUserControl">
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="DoubleLineLargeGridListTemplate">
+            <Grid Height="173" Margin="12,0,12,12">
+                <Image Width="173" HorizontalAlignment="Left" Source="{Binding ImageUrl}"/> 
+
+                <StackPanel Margin="187,-4,0,0" VerticalAlignment="Top" >
+                    <TextBlock Text="{Binding Title}" Padding="0,3,0,0" FontFamily="{StaticResource PhoneFontFamilyLight}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Foreground="{StaticResource PhoneTextContentMyStyle}" TextWrapping="Wrap" LineStackingStrategy="BlockLineHeight" LineHeight="43" Margin="0,0,0,5" />
+                    <Bewise:RatingControl Width="140" Score="{Binding RatingLevel, Mode=TwoWay}" Margin="-50,0,0,0" HorizontalAlignment="Center" />
+					<TextBlock Text="{Binding DatePost}" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="{StaticResource PhoneTextSubtleStyleMystype}" FontFamily="{StaticResource PhoneFontFamilyNormal}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+					<TextBlock Text="{Binding NameAuthor}" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="{StaticResource ThemeAuthor}" FontFamily="{StaticResource PhoneFontFamilyNormal}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBlock Text="{Binding ShorDescription}" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="{StaticResource PhoneTextSubtleStyleMystype}" FontFamily="{StaticResource PhoneFontFamilyNormal}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama Title="WP7 Travel" Foreground="{StaticResource HeaderTextPage}">
+        	<controls:Panorama.Background>
+        		<ImageBrush Stretch="Fill" ImageSource="{StaticResource ImageBackgroundMain}"/>
+        	</controls:Panorama.Background>
+
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="By Date">
+                <ListBox ItemTemplate="{StaticResource DoubleLineLargeGridListTemplate}" ItemsSource="{Binding listArtical}" SelectionChanged="ListBox_SelectionChanged">
+                </ListBox>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="By Title">
+                                <ListBox ItemTemplate="{StaticResource DoubleLineLargeGridListTemplate}" ItemsSource="{Binding listArtical}">
+                </ListBox>
+            </controls:PanoramaItem>
+            <controls:PanoramaItem Header="By Rating">
+                                <ListBox ItemTemplate="{StaticResource DoubleLineLargeGridListTemplate}" ItemsSource="{Binding listArtical}">
+                </ListBox>
+            </controls:PanoramaItem>
+            <controls:PanoramaItem Header="By Video">
+                <ListBox ItemTemplate="{StaticResource DoubleLineLargeGridListTemplate}" ItemsSource="{Binding listArtical}">
+                </ListBox>
+            </controls:PanoramaItem>
+        </controls:Panorama>
+        <my:ControlAds Height="40" HorizontalAlignment="Left" Margin="0,134,0,0" x:Name="controlAds1" VerticalAlignment="Top" Width="480" />
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="70">
+            <shell:ApplicationBarIconButton IconUri="/Resources/AppBar/App_HomeMain.png" Text="Main Home" Click="HomeReturn_Click" />
+            <!--<shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>-->
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

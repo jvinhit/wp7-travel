@@ -17,12 +17,13 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
     public class PictureViewViewModel : NotifyingObject
     {
         public PictureSlideView pictures = new PictureSlideView();
+        public ObservableCollection<BitmapSource> listImage=new ObservableCollection<BitmapSource>();
 
-        private int maxNumberImage = PictureRepository.Instance.Pictures.Count;
+       
         public void NextImage()
         {
 
-            if (instance.pictures.IndexImageCurrent == maxNumberImage - 1)
+            if (instance.pictures.IndexImageCurrent == listImage.Count - 1)
             {
                 instance.pictures.IndexImageCurrent = 0;
             }
@@ -36,20 +37,23 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
 
             if (instance.pictures.IndexImageCurrent == 0)
             {
-                instance.pictures.IndexImageCurrent = maxNumberImage - 1;
+                instance.pictures.IndexImageCurrent = listImage.Count - 1;
             }
             else
                 instance.pictures.IndexImageCurrent--;
 
             UpdateImage();
         }
-        void UpdateImage()
+        public void UpdateImage()
         {
-            pictures.ImageSource = PictureRepository.Instance.Pictures[pictures.IndexImageCurrent].Source;
+            pictures.ImageSource = listImage[pictures.IndexImageCurrent];
         }
         private PictureViewViewModel()
         {
-            UpdateImage();
+          
+           
+            //UpdateImage();
+
         }
         public static PictureViewViewModel instance = new PictureViewViewModel();
  

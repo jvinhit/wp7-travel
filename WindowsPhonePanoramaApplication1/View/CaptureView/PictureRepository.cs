@@ -21,7 +21,7 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
     {
         #region Constants
 
-        public const string IsolatedStoragePath = "Pictures";
+        public const string IsolatedStoragePath = App.DATABASE_PICTURE;
 
         #endregion
 
@@ -61,12 +61,13 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
         private void LoadAllPicturesFromIsolatedStorage()
         {
 
-
             var isoFile = IsolatedStorageFile.GetUserStoreForApplication();
             isoFile.EnsureDirectory(IsolatedStoragePath);
 
             // Get all picture files from the pictures directory and populate the Items collection.
             var pictureFiles = isoFile.GetFileNames(System.IO.Path.Combine(IsolatedStoragePath, "*.jpg"));
+            //_pictures.Clear();
+         
             foreach (var pictureFile in pictureFiles)
             {
                 var picture = LoadFromLocalStorage(pictureFile, IsolatedStoragePath);

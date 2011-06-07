@@ -24,7 +24,7 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
         {
             InitializeComponent();
             this.DataContext = PictureViewViewModel.instance.pictures;
-
+            PictureViewViewModel.instance.UpdateImage();
             TouchPanel.EnabledGestures = GestureType.Flick;
             
    
