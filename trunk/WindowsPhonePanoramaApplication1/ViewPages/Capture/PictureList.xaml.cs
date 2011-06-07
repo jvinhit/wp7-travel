@@ -85,13 +85,19 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.Capture
 
         private void ApplicationBarIconButton_Click_2(object sender, EventArgs e)
         {
+
             photoChooseTask.Show();
         }
 
 
         private void ApplicationBarIconButtonSlideShow_Click_1(object sender, EventArgs e)
         {
-
+            foreach (Picture tempIndex in PictureRepository.Instance.Pictures)
+            {
+                PictureViewViewModel.instance.listImage.Add(tempIndex.Source);
+            }
+            
+            //PictureViewViewModel.instance.listImage = PictureRepository.Instance.Pictures;
             this.NavigationService.Navigate(new Uri("/ViewPages/Capture/PictureView.xaml", UriKind.Relative));
         }
     }

@@ -20,15 +20,15 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
         <!--Panorama control-->
-        <controls:Panorama Title="Travel WP7">
+        <controls:Panorama Title="Travel WP7" FontFamily="Trebuchet MS" Foreground="{StaticResource HeaderTextPage}">
             <controls:Panorama.Background>
-                <ImageBrush ImageSource="PanoramaBackground.png"/>
+            	<ImageBrush ImageSource="{StaticResource ImageBackgroundMain}"/>
             </controls:Panorama.Background>
  
             <!--Panorama item one-->
-            <controls:PanoramaItem Header="Tin tức">
+            <controls:PanoramaItem Header="News" FontFamily="Trebuchet MS" Foreground="{StaticResource HeaderTextPage}">
                 <!--Double line list with text wrapping-->
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items1}">
+                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items1}" Background="Transparent" BorderThickness="1">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17" Width="432">
@@ -42,7 +42,7 @@
  
             <!--Panorama item two-->
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-            <controls:PanoramaItem Header="Chức năng">
+            <controls:PanoramaItem Header="Functions">
                 <!--Double line list with image placeholder and text wrapping-->
                 <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items2}">
                     <ListBox.ItemTemplate>
@@ -61,7 +61,7 @@
                 </ListBox>
             </controls:PanoramaItem>
         </controls:Panorama>
-    	<WindowsPhonePanoramaApplication1_MyUserControl:ControlAds x:Name="myAds" HorizontalAlignment="Left" Width="Auto" Height="105" VerticalAlignment="Bottom"/>
+        <WindowsPhonePanoramaApplication1_MyUserControl:ControlAds Height="40" HorizontalAlignment="Left" Margin="0,147,0,0" x:Name="controlAds1" VerticalAlignment="Top" Width="480" />
     </Grid>
  
     <!--Panorama-based applications should not show an ApplicationBar-->

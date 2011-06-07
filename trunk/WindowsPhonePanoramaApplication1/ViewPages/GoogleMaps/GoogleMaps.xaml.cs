@@ -20,39 +20,32 @@ using System.Device.Location;
 using System.Collections.ObjectModel;
 using TravelObject;
 using System.ComponentModel;
+using WindowsPhonePanoramaApplication1.ViewModels.News;
 
 
 namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
 {
+  
     public partial class GoogleMaps : PhoneApplicationPage
     {
-
+      
+        PlaceObject placeObject;
         public GoogleMaps()
         {
             InitializeComponent();
-            //street.Visibility = Visibility.Visible;
-            //st.IsChecked = true;
 
-            //hybrid.Visibility = Visibility.Collapsed;
-            //satellite.Visibility = Visibility.Collapsed;
-            //street.Visibility = Visibility.Visible;
-            //physical.Visibility = Visibility.Collapsed;
-            //wateroverlay.Visibility = Visibility.Collapsed;
-
-            //GoogleViewModel.LoadFromdDatabase(ref googlemap);
-            //googlemap.SetView(MarkOnMap.Current, MarkOnMap.ZoomLevelCurrent);
             ApplicationBar.Opacity = 0.5;
-
-
-
-            //googlemap.reso
-
-            //this.googlemap.DataContext = GoogleViewModel.listPlacePushpin;
             DataContext = GoogleViewModel.InstanceCurrent;
             //street.Opacity = 1;
             GoogleViewModel.InstanceCurrent.GotoCenterMap();
+            //this.DataContext= placeObject;
+
+
+      
+
 
         }
+
         ~GoogleMaps()
         {
             //GoogleViewModel.SaveIntoDatabase(googlemap);
@@ -75,7 +68,7 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
             //googlemap.Children.Add(pin);
 
         }
-       
+
 
         private void ButtonZoomIn_Click(object sender, RoutedEventArgs e)
         {
@@ -90,30 +83,6 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
         private void googlemap_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
-            //Point p = e.GetPosition(this.googlemap);
-            //GeoCoordinate geo = new GeoCoordinate();
-            //geo = googlemap.ViewportPointToLocation(p);
-            //googlemap.ZoomLevel = 17;
-            //googlemap.Center = geo;
-            //create a new pushpin---
-            //Pushpin pin = new Pushpin();
-
-            //set the location for the pushpin---
-            //pin.Location = geo;
-
-            //add the pushpin to the map---
-            //googlemap.Children.Add(pin);
-
-
-            ////create a new pushpin---
-            //Pushpin pin = new Pushpin();
-
-            ////set the location for the pushpin---
-            //pin.Location = new GeoCoordinate(10.324, 106.654);
-
-            ////add the pushpin to the map---
-            //googlemap.Children.Add(pin);
-
 
         }
 
@@ -124,13 +93,29 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
 
         private void Pushpin_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            //MessageBox.Show("asfdA");
 
+            Pushpin t = sender as Pushpin;
+
+            foreach (PlaceObject temp in GoogleViewModel.InstanceCurrent._pushpins)
+            {
+
+                if (temp.geoCoor == t.Location)
+                {
+                    //placeObject = temp;
+                    //NamePlace.Text = temp.Title;
+                    //AdressPlace.Text = temp.Address;
+                    //Description.Text = temp.ShorDescription;
+
+                    ContentInfomation.DataContext = temp;
+
+                    placeObject = new CafePlace();
+                    placeObject = temp;
+                    break;
+                }
+            }
 
 
             ShowInformation.Visibility = Visibility.Visible;
-            
-            
 
         }
 
@@ -148,6 +133,20 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.GoogleMaps
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
             this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+        }
+
+        private void DetailButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (NewsDetailViewModel.instance == null)
+            {
+                NewsDetailViewModel.instance = new CafePlace();
+                NewsDetailViewModel.instance = placeObject;
+                this.NavigationService.Navigate(new Uri("/ViewPages/News/DetailItem.xaml", UriKind.Relative));
+            }
+            else
+                this.NavigationService.GoBack();
+
+
         }
 
 

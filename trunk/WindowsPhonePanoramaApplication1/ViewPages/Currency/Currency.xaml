@@ -14,7 +14,10 @@
     </phone:PhoneApplicationPage.ApplicationBar>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="{StaticResource ImageBackgroundMain}"/>
+    	</Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -22,8 +25,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" x:Name="ApplicationTitle" Text="Travel WP7" />
-            <TextBlock Style="{StaticResource PhoneTextTitle1Style}" x:Name="PageTitle" Margin="9,-7,0,0" Text="Currency" />
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" x:Name="ApplicationTitle" Text="Travel WP7" Foreground="{StaticResource HeaderTextPage}" />
+            <TextBlock Style="{StaticResource PhoneTextTitle1Style}" x:Name="PageTitle" Margin="9,-7,0,0" Text="Currency" Foreground="{StaticResource HeaderTextPage}" />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -35,21 +38,20 @@
                     </InputScope>
                 </TextBox.InputScope>
             </TextBox>
-            <TextBlock Height="30" Margin="22,80,0,0" HorizontalAlignment="Left" x:Name="textBlock1" Text="Amount:" VerticalAlignment="Top" Style="{StaticResource PhoneTextAccentStyle}" />
-            <TextBlock Height="30" Margin="22,162,0,0" HorizontalAlignment="Left" x:Name="textBlock2" Text="From:" VerticalAlignment="Top" Style="{StaticResource PhoneTextAccentStyle}" />
-            <TextBlock Height="30" Margin="22,255,0,0" HorizontalAlignment="Left" x:Name="textBlock3" Text="To:" VerticalAlignment="Top" Style="{StaticResource PhoneTextAccentStyle}" />
+            <TextBlock Height="30" Margin="22,80,0,0" HorizontalAlignment="Left" x:Name="textBlock1" Text="Amount:" VerticalAlignment="Top" Style="{StaticResource PhoneTextAccentStyle}" Foreground="{StaticResource PhoneTextContentMyStyle}" />
+            <TextBlock Height="30" Margin="22,162,0,0" HorizontalAlignment="Left" x:Name="textBlock2" Text="From:" VerticalAlignment="Top" Style="{StaticResource PhoneTextAccentStyle}" Foreground="{StaticResource PhoneTextContentMyStyle}" />
+            <TextBlock Height="30" Margin="22,255,0,0" HorizontalAlignment="Left" x:Name="textBlock3" Text="To:" VerticalAlignment="Top" Style="{StaticResource PhoneTextAccentStyle}" Foreground="{StaticResource PhoneTextContentMyStyle}" />
             <Border Height="75" Margin="100,136,0,0" Width="338" BorderBrush="Silver" BorderThickness="3" HorizontalAlignment="Left" x:Name="border1" VerticalAlignment="Top">
                 <TextBox Height="72" Width="334" BorderThickness="1" IsReadOnly="True" MouseLeftButtonDown="textBox2_MouseLeftButtonDown" x:Name="textBox2" Tag="/ViewPages/Currency/CurrencyModify.xaml?isFromCurrency=1" Text="{Binding CurrencyFrom}" />
             </Border>
             <Border Height="75" Margin="100,229,0,0" Width="338" BorderBrush="Silver" BorderThickness="3" HorizontalAlignment="Left" x:Name="border2" VerticalAlignment="Top">
                 <TextBox Height="72" Width="334" BorderThickness="1" IsReadOnly="True" MouseLeftButtonDown="textBox3_MouseLeftButtonDown" x:Name="textBox3" Text="{Binding CurrencyTo}" />
             </Border>
-            <Button Height="72" Margin="151,326,0,0" Width="160" Content="Convert" HorizontalAlignment="Left" x:Name="button1" VerticalAlignment="Top" Click="button1_Click" />
+            <Button Height="72" Margin="151,326,0,0" Width="160" Content="Convert" HorizontalAlignment="Left" x:Name="button1" VerticalAlignment="Top" Click="button1_Click" Foreground="{StaticResource PhoneTextSubtleStyleMystype}" BorderBrush="{StaticResource PhoneTextSubtleStyleMystype}" />
             <Border Height="188" Margin="35,404,0,0" Width="402" BorderBrush="Silver" BorderThickness="3" HorizontalAlignment="Left" x:Name="border3" VerticalAlignment="Top">
-                <TextBlock Height="149" x:Name="textBlock4" Text="{Binding ResultValue}" Width="367" FontSize="32" TextWrapping="Wrap" />
+                <TextBlock Height="149" x:Name="textBlock4" Text="{Binding ResultValue}" Width="367" FontSize="32" TextWrapping="Wrap" Foreground="{StaticResource PhoneTextContentMyStyle}" />
             </Border>
         </Grid>
-    	<WindowsPhonePanoramaApplication1_MyUserControl:ControlAds x:Name="myAds" HorizontalAlignment="Left" Width="Auto" Height="105" VerticalAlignment="Bottom" Visibility="Visible" Grid.Row="1"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

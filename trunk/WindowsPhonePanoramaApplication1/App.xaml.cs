@@ -21,6 +21,16 @@ namespace WindowsPhonePanoramaApplication1
         // for show ads
         public static bool IsShowAds = true;
 
+
+        public  const string DATABASE_PICTURE = "Pictures_Database";
+        public  const string DATABASE_ITEMS_CAFE = "News_Cafe";
+        public const string DATABASE_ITEMS_HOTEL = "News_Hot";
+        public const string DATABASE_ITEMS_RESTAURANT = "News_Restaurant";
+        public const string DATABASE_ITEMS_FLIGHTS = "News_Flights";
+        public const string DATABASE_ITEMS_CAR = "News_Car";
+        public const string DATABASE_ITEMS_TOUR = "News_Tour";
+
+
         private static MainViewModel viewModel = null;
         internal const string BingId = "AnjrJlYx7pu0K0jnByP6i66MWs7an4yVDH5CCt3mAJQmoB_oxbG-cbVlKg20zLt0";
 

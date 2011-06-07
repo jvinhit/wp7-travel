@@ -16,6 +16,7 @@ namespace WindowsPhonePanoramaApplication1.View.News
     {
         public Uri ImageUri { get; set; }
         public string DisplayName { get; set; }
+        public int RatingLevel { get; set; }
 
 
 

@@ -9,11 +9,12 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using WindowsPhonePanoramaApplication1.View.News;
+using TravelObject;
 
 namespace WindowsPhonePanoramaApplication1.ViewModels.News
 {
     public class NewsDetailViewModel : ViewModelBase
     {
-        public static ArticalListView instance=new ArticalListView();
+        public static PlaceObject instance;
     }
 }

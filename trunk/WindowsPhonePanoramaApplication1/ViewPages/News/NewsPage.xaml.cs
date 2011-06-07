@@ -24,7 +24,13 @@ namespace WindowsPhonePanoramaApplication1.ViewPages.News
 
         private void ListBoxSections_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("/ViewPages/News/ArticalPage.xaml", UriKind.Relative));
+
+            this.NavigationService.Navigate(new Uri("/ViewPages/News/ListArtical.xaml", UriKind.Relative));
+        }
+
+        private void HomeReturn_Click(object sender, EventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
 
     }
