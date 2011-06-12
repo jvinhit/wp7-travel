@@ -97,6 +97,9 @@ namespace WindowsPhonePanoramaApplication1
             this.Items2.Add(new ItemViewModel2() { LineOne = "Currency Convert", LineTwo = "Đổi tiền tệ ....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/CurrencyFunction.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/ViewPages/Currency/Currency.xaml" });
             this.Items2.Add(new ItemViewModel2() { LineOne = "Pictures Captures", LineTwo = "Chụp lại khoảng khắc ....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/cameraFunction.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/ViewPages/Capture/PictureList.xaml" });
 
+            this.Items2.Add(new ItemViewModel2() { LineOne = "Setting", LineTwo = "Chỉnh lại hệ thống ....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/settings.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/ViewPages/Setting/SettingPage.xaml" });
+
+
 
             //weather funtion
             //this.ItemsWeather.Add(new WeatherViewMode(){LocationWOEID="1252431", NameCity="HCMCiTy"});

@@ -108,11 +108,13 @@
     <Compile Include="Resources\Converters\ItineraryTextConverter.cs" />
     <Compile Include="Resources\Converters\LocationGeoCoordinateConverter.cs" />
     <Compile Include="Resources\Converters\PushpinTypeBrushConverter.cs" />
+    <Compile Include="StaticResourceDictionary.cs" />
     <Compile Include="ViewModels\CaptureViewModel\CapturedPictureViewModel.cs" />
     <Compile Include="ViewModels\News\ArticalListViewModel.cs" />
     <Compile Include="ViewModels\News\NewsDetailViewModel.cs" />
     <Compile Include="ViewModels\News\NewsPageViewModel.cs" />
     <Compile Include="ViewModels\News\PerformanceProgressBarVisibilityConverter.cs" />
+    <Compile Include="ViewModels\Setting\SettingViewModel.cs" />
     <Compile Include="ViewPages\Currency\ModifyCurrency.xaml.cs">
       <DependentUpon>ModifyCurrency.xaml</DependentUpon>
     </Compile>
@@ -127,6 +129,9 @@
     </Compile>
     <Compile Include="ViewPages\News\NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPages\Setting\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CaptureView\NotifyingObject.cs" />
     <Compile Include="View\CaptureView\PictureRepository.cs" />
@@ -177,6 +182,7 @@
     <Compile Include="View\News\ItemsView.cs" />
     <Compile Include="View\News\SectionPageView.cs" />
     <Compile Include="View\News\VideoPageView.cs" />
+    <Compile Include="View\Setting\SettingView.cs" />
     <Compile Include="View\WeatherView\PlaceMode.cs" />
     <Compile Include="ViewPages\WeatherViews\WeatherView.xaml.cs">
       <DependentUpon>WeatherView.xaml</DependentUpon>
@@ -196,11 +202,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
-    <Page Include="Themes\ThemeDark.xaml">
+    <Page Include="Themes\DarkBlue\System.Windows.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\ThemeLight.xaml">
+    <Page Include="Themes\DarkBlue\ThemeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DarkBrown\System.Windows.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DarkBrown\ThemeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Resources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -249,6 +267,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewPages\Setting\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewPages\WeatherViews\ModifyPlace.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -266,9 +288,9 @@
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Background.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="MyUserControl\ford_ads.jpg" />
     <Resource Include="Images\WeatherImages\11n.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -380,9 +402,12 @@
     <Resource Include="IconFunctions\GoogleIcon.png" />
     <Resource Include="IconFunctions\WeatherIcon.png" />
     <Resource Include="Images\AdsImages\ford_ads.jpg" />
-    <Content Include="Images\Background\DarkTheme\contrast_flower-wallpaper-960x600.jpg">
+    <Resource Include="Images\Background\DarkTheme\Background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
+    <Resource Include="IconFunctions\settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Images\Background\DarkTheme\dark-abstract-wide-wallpaper-1280x800-028.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -415,9 +440,9 @@
     <Content Include="Images\News\Sections\cafe.jpg" />
     <Content Include="Images\News\Sections\hotel.jpg" />
     <Content Include="Images\News\Sections\Restaurant.jpg" />
-    <Content Include="Images\Background\LightTheme\light-abstract-wide-wallpaper-1280x800-009.jpg">
+    <Resource Include="Images\Background\LightTheme\Background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
     <Content Include="Resources\AppBar\App_Favourite.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -514,6 +539,7 @@
       <Name>WP7Shared</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

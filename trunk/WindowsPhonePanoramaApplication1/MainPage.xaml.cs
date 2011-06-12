@@ -14,6 +14,7 @@ using WindowsPhonePanoramaApplication1.MyDatabase;
 using System.ComponentModel;
 using System.Threading;
 using Microsoft.Phone.Tasks;
+using System.IO.IsolatedStorage;
 
 namespace WindowsPhonePanoramaApplication1
 {
@@ -29,6 +30,21 @@ namespace WindowsPhonePanoramaApplication1
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
+
+            //theme
+
+            string theme;
+            IsolatedStorageSettings.ApplicationSettings["Theme"] = "DarkBlue";
+
+            //if (IsolatedStorageSettings.ApplicationSettings.TryGetValue<string>("Theme", out theme))
+            //{
+            //    //LightTheme.IsChecked = theme == "Light";
+            //    IsolatedStorageSettings.ApplicationSettings["Theme"] = "DarkBrown";
+            //}
+            //else
+            //{
+            //    IsolatedStorageSettings.ApplicationSettings["Theme"] = "DarkBrown";
+            //}
 
         }
 

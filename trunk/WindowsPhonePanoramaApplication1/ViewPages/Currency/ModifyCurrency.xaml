@@ -14,7 +14,7 @@
     xmlns:Bewise="clr-namespace:Bewise.Phone;assembly=Bewise.Phone" 
     shell:SystemTray.IsVisible="True">
 
-    <Grid x:Name="LayoutRoot" Background="Transparent" Loaded="LayoutRoot_Loaded">
+    <Grid Background="{StaticResource PhoneBackgroundBrush}"  x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
 
         <Bewise:JumpList Name="lstUsers" Grid.Row="1" Margin="20" PicturePath="Image" IsPumped="True" SelectedItemChanged="lstUsers_SelectedItemChanged">
             <Bewise:JumpList.ItemTemplate>
