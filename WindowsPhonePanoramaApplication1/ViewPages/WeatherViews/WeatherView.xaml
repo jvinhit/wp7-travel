@@ -74,11 +74,11 @@
 
         <!--ContentGrid is empty. Place new content here-->
         <Grid x:Name="ContentGrid" Visibility="{Binding IsContentGridVisibility}"  Grid.Row="1" Margin="0" >
-            <controls:Pivot Title="WP7 Travel">
+            <controls:Pivot Title="WP7 Travel" Foreground="White">
                 <!--Pivot item one-->
                 <controls:PivotItem Header="Today">
-                    <Grid>
-                    	<Grid Margin="0">
+                    <Grid Height="570" Width="470">
+                    	<Grid Margin="-11,0,1,0" Background="Black" Width="466">
                             <TextBlock x:Name="lblCurrent" FontSize="48" Style="{StaticResource PhoneTextAccentStyle}" VerticalAlignment="Top" Text="{Binding NameCity}" Margin="20,31,20,0" HorizontalAlignment="Center" />
                     		<Border Height="131" Margin="20,0,20,171" VerticalAlignment="Bottom" CornerRadius="15" >
                     			<Border.Background>
@@ -110,7 +110,7 @@
 
                 <controls:PivotItem Header="{Binding LblForecast1_Text}">
                     <Grid HorizontalAlignment="Left" d:LayoutOverrides="Height" Width="448">
-                        <TextBlock x:Name="lblForecast1" Text="{Binding NameCity}" FontSize="48" Style="{StaticResource PhoneTextAccentStyle}" VerticalAlignment="Top" Margin="79,35,79,0" HorizontalAlignment="Center" />
+                        <TextBlock x:Name="lblForecast1" Text="{Binding NameCity}" FontSize="48" Style="{StaticResource PhoneTextAccentStyle}" VerticalAlignment="Top" Margin="0,50,0,0" HorizontalAlignment="Center" />
                 		<TextBlock x:Name="lblForecast1_conditions" Text="{Binding LblForecast1_conditions_Text}" Foreground="DarkGray" FontSize="21" Margin="16,0,16,30" Style="{StaticResource PhoneTextGroupHeaderStyle}" VerticalAlignment="Bottom" Height="105" />
                 		<Image x:Name="imgWeather2" Source="{Binding ImgWeather2_Source}" Width="290" Margin="79,125,79,321" Stretch="None" >
                 			<Custom:Interaction.Triggers>
@@ -131,7 +131,7 @@
                 	</Grid>
                 </controls:PivotItem>
                 <controls:PivotItem Header="{Binding LblForecast2_Text}">
-                    <Grid>
+                    <Grid Background="#9B000000">
                 		<Image x:Name="imgWeather3" Source="{Binding ImgWeather3_Source}" Width="300" Margin="80,152,76,296" Stretch="None" >
                 			<Custom:Interaction.Triggers>
                 				<Custom:EventTrigger EventName="MouseLeftButtonDown">
@@ -139,7 +139,7 @@
                 				</Custom:EventTrigger>
                 			</Custom:Interaction.Triggers>
                 		</Image>
-                        <TextBlock x:Name="lblForecast2" Text="{Binding NameCity}" FontSize="48" Style="{StaticResource PhoneTextAccentStyle}" VerticalAlignment="Top" Margin="80,55,76,0" Height="70" HorizontalAlignment="Center" />
+                        <TextBlock x:Name="lblForecast2" Text="{Binding NameCity}" FontSize="48" Style="{StaticResource PhoneTextAccentStyle}" VerticalAlignment="Top" Margin="0,50,0,0" Height="70" HorizontalAlignment="Center" />
                 		<TextBlock x:Name="lblForecast2_conditions" Text="{Binding LblForecast2_conditions_Text}" Foreground="DarkGray" FontSize="21" Margin="24,0,16,32" Style="{StaticResource PhoneTextGroupHeaderStyle}" VerticalAlignment="Bottom" Height="103" TextWrapping="Wrap" />
                 		<Border Height="131" Margin="24,0,16,161" VerticalAlignment="Bottom" CornerRadius="15" >
                 			<Border.Background>
@@ -155,7 +155,7 @@
             </controls:Pivot>
 
         </Grid>
-    	<WindowsPhonePanoramaApplication1_MyUserControl:ControlAds x:Name="myAds" HorizontalAlignment="Left" Width="Auto" Height="105" VerticalAlignment="Bottom" Visibility="Visible" Margin="2,0,0,0" Grid.Row="1"/>
+    	<WindowsPhonePanoramaApplication1_MyUserControl:ControlAds x:Name="myAds" HorizontalAlignment="Left" Width="Auto" Visibility="Visible" Margin="2,0,0,0" Grid.Row="1" Height="Auto" VerticalAlignment="Bottom" />
     </Grid>
 	
 

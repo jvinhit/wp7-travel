@@ -21,6 +21,9 @@ namespace WindowsPhonePanoramaApplication1
         // for show ads
         public static bool IsShowAds = true;
 
+        //background
+       
+
 
         public  const string DATABASE_PICTURE = "Pictures_Database";
         public  const string DATABASE_ITEMS_CAFE = "News_Cafe";

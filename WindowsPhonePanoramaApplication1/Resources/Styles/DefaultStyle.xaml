@@ -6,6 +6,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:converters="clr-namespace:WindowsPhonePanoramaApplication1.Resources.Converters"
     mc:Ignorable="d">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/WindowsPhonePanoramaApplication1;component/Themes/DarkBlue/System.Windows.xaml"/>
+		<ResourceDictionary Source="/WindowsPhonePanoramaApplication1;component/Themes/DarkBlue/ThemeResources.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
 
     <!-- #Converters -->
     <converters:ItineraryTextConverter x:Key="ItineraryTextConverter" />

@@ -17,16 +17,14 @@
     shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" >
  
         <!--Panorama control-->
-        <controls:Panorama Title="Travel WP7" FontFamily="Trebuchet MS" Foreground="{StaticResource HeaderTextPage}">
-            <controls:Panorama.Background>
-            	<ImageBrush ImageSource="{StaticResource ImageBackgroundMain}"/>
-            </controls:Panorama.Background>
+        <controls:Panorama Background="{StaticResource PhoneBackgroundBrush}"  Title="Travel WP7" FontFamily="Trebuchet MS" Foreground="{StaticResource PhoneAccentBrush}" >
+
  
             <!--Panorama item one-->
-            <controls:PanoramaItem Header="News" FontFamily="Trebuchet MS" Foreground="{StaticResource HeaderTextPage}">
+            <controls:PanoramaItem Header="News" FontFamily="Trebuchet MS">
                 <!--Double line list with text wrapping-->
                 <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items1}" Background="Transparent" BorderThickness="1">
                     <ListBox.ItemTemplate>

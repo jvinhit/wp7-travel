@@ -2,10 +2,8 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <!--LayoutRoot contains the root grid where all other page content is placed-->
-    <Grid x:Name="LayoutRoot">
-        <Grid.Background>
-            <ImageBrush ImageSource="{StaticResource ImageBackgroundMain}" Stretch="Fill" />
-        </Grid.Background>
+    <Grid Background="{StaticResource PhoneBackgroundBrush}" x:Name="LayoutRoot">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -22,15 +20,15 @@
                 <StackPanel x:Name="DataTemplateStackPanel" Grid.Row="0" Margin="5,5,5,5" Orientation="Horizontal">
                     <Image x:Name="ItemImage" Height="150" Margin="5,0,10,0" Width="144" OpacityMask="#FF8589C0" Source="{Binding ImageUrl}" VerticalAlignment="Top" />
                     <StackPanel Margin="0,-4,0,0" Width="310" d:LayoutOverrides="Height">
-                        <TextBlock Margin="0,0,0,5" Padding="0,3,0,0" FontFamily="{StaticResource PhoneFontFamilyLight}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Foreground="{StaticResource PhoneTextContentMyStyle}" LineHeight="43" LineStackingStrategy="BlockLineHeight" Text="{Binding Title}" TextWrapping="Wrap" />
+                        <TextBlock Margin="0,0,0,5" Padding="0,3,0,0" FontFamily="{StaticResource PhoneFontFamilyLight}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" LineHeight="43" LineStackingStrategy="BlockLineHeight" Text="{Binding Title}" TextWrapping="Wrap" />
                         <Bewise:RatingControl Margin="-168,0,0,0" Width="140" HorizontalAlignment="Center" Score="{Binding RatingLevel, Mode=TwoWay}" />
-                        <TextBlock FontFamily="{StaticResource PhoneFontFamilyNormal}" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="{StaticResource PhoneTextSubtleStyleMystype}" HorizontalAlignment="Left" Text="{Binding DatePost}" VerticalAlignment="Top" />
-                        <TextBlock FontFamily="{StaticResource PhoneFontFamilyNormal}" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="{StaticResource ThemeAuthor}" HorizontalAlignment="Left" Text="{Binding NameAuthor}" VerticalAlignment="Top" />
+                        <TextBlock FontFamily="{StaticResource PhoneFontFamilyNormal}" FontSize="{StaticResource PhoneFontSizeSmall}"  HorizontalAlignment="Left" Text="{Binding DatePost}" VerticalAlignment="Top" />
+                        <TextBlock FontFamily="{StaticResource PhoneFontFamilyNormal}" FontSize="{StaticResource PhoneFontSizeSmall}" HorizontalAlignment="Left" Text="{Binding NameAuthor}" VerticalAlignment="Top" />
                     </StackPanel>
                 </StackPanel>
-                <ListBox Grid.Row="1" Background="#00211D50" BorderBrush="#00894F4F" BorderThickness="5" Foreground="{StaticResource PhoneTextSubtleStyleMystype}">
-                    <Border Margin="10,15,5,10" Padding="2" Background="#FFC8D8F7" BorderBrush="#FFCAB5B5" BorderThickness="1" MaxWidth="465" Opacity="0.745">
-                        <TextBlock Foreground="{StaticResource PhoneTextSubtleStyleMystype}" Text="{Binding Content}" TextWrapping="Wrap" />
+                <ListBox Grid.Row="1" Background="#00211D50" BorderBrush="#00894F4F" BorderThickness="5" >
+                    <Border Margin="10,15,5,10" Padding="10" BorderBrush="#FF1047FF" BorderThickness="1" MaxWidth="465" Opacity="0.745" CornerRadius="5">
+                        <TextBlock  Text="{Binding Content}" TextWrapping="Wrap" />
                     </Border>
                 </ListBox>
             </Grid>
