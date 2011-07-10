@@ -9,6 +9,7 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:converters="clr-namespace:WindowsPhonePanoramaApplication1.Resources.Converters"
      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local ="clr-namespace:WindowsPhonePanoramaApplication1.Themes"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
                  xmlns:unsupported="clr-namespace:Microsoft.Phone.Controls.Unsupported"
 
@@ -20,9 +21,17 @@
     		<ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/DarkBlue/System.Windows.xaml"/>
                 <ResourceDictionary Source="Themes/Resources.xaml"/>
-                               
-    		</ResourceDictionary.MergedDictionaries>
-           
+                <ResourceDictionary Source="Languages/StringResources.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+
+
+          
+
+
+
+
+
 
 
             <!--***** LISTBOX/LISTBOXITEM TEMPLATES *****-->
@@ -834,6 +843,7 @@
             </Style>
 
         </ResourceDictionary>
+
 
     </Application.Resources>
 

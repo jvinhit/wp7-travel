@@ -69,6 +69,8 @@
     </Reference>
     <Reference Include="System.Device" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Servicemodel" />
+    <Reference Include="System.Servicemodel.Web" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
@@ -87,15 +89,37 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyDatabase\Weather\WeatherData.cs" />
+    <Compile Include="MyDatabase\Mapping\PlaceObjectMapping.cs" />
+    <Compile Include="MyDatabase\ViewData\PlaceObjectViewData.cs" />
+    <Compile Include="MyDatabase\ViewData\WeatherViewData.cs" />
     <Compile Include="MyUserControl\ControlAds.xaml.cs">
       <DependentUpon>ControlAds.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyUserControl\RelativeAnimatingContentControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Page Include="MyUserControl\ControlAds.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Languages\VietnamPac.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Languages\EnglishPac.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Languages\StringResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="MyUserControl\ControlAds.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
     <Page Include="SampleData\ImageSample.xaml">
       <SubType>Designer</SubType>
@@ -108,86 +132,88 @@
     <Compile Include="Resources\Converters\ItineraryTextConverter.cs" />
     <Compile Include="Resources\Converters\LocationGeoCoordinateConverter.cs" />
     <Compile Include="Resources\Converters\PushpinTypeBrushConverter.cs" />
+    <Compile Include="Service1.cs" />
     <Compile Include="StaticResourceDictionary.cs" />
-    <Compile Include="ViewModels\CaptureViewModel\CapturedPictureViewModel.cs" />
-    <Compile Include="ViewModels\News\ArticalListViewModel.cs" />
-    <Compile Include="ViewModels\News\NewsDetailViewModel.cs" />
-    <Compile Include="ViewModels\News\NewsPageViewModel.cs" />
-    <Compile Include="ViewModels\News\PerformanceProgressBarVisibilityConverter.cs" />
-    <Compile Include="ViewModels\Setting\SettingViewModel.cs" />
-    <Compile Include="ViewPages\Currency\ModifyCurrency.xaml.cs">
+    <Compile Include="Models\CaptureViewModel\CapturedPictureViewModel.cs" />
+    <Compile Include="Models\News\ArticalListViewModel.cs" />
+    <Compile Include="Models\News\NewsDetailViewModel.cs" />
+    <Compile Include="Models\News\NewsPageViewModel.cs" />
+    <Compile Include="Models\News\PerformanceProgressBarVisibilityConverter.cs" />
+    <Compile Include="Models\Setting\SettingViewModel.cs" />
+    <Compile Include="Themes\LocalizedStrings.cs" />
+    <Compile Include="Views\Currency\ModifyCurrency.xaml.cs">
       <DependentUpon>ModifyCurrency.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\News\DetailItem.xaml.cs">
+    <Compile Include="Views\News\DetailItem.xaml.cs">
       <DependentUpon>DetailItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\News\ListArtical.xaml.cs">
+    <Compile Include="Views\News\ListArtical.xaml.cs">
       <DependentUpon>ListArtical.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\News\ListComment.xaml.cs">
+    <Compile Include="Views\News\ListComment.xaml.cs">
       <DependentUpon>ListComment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\News\NewsPage.xaml.cs">
+    <Compile Include="Views\News\NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\Setting\SettingPage.xaml.cs">
+    <Compile Include="Views\Setting\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CaptureView\NotifyingObject.cs" />
-    <Compile Include="View\CaptureView\PictureRepository.cs" />
-    <Compile Include="ViewModels\CaptureViewModel\PictureViewModel.cs" />
-    <Compile Include="View\CaptureView\Picture.cs" />
-    <Compile Include="ViewModels\CaptureViewModel\PictureViewViewModel.cs" />
-    <Compile Include="View\CaptureView\PositionTypeConverter.cs" />
-    <Compile Include="View\CaptureView\ResourcePicture.cs" />
-    <Compile Include="ViewModels\CurrencyViewModel\CurrencyViewModel.cs" />
-    <Compile Include="ViewModels\CurrencyViewModel\ListCurrencyViewModel.cs" />
-    <Compile Include="ViewModels\GoogleViewModel\GoogleViewModel.cs" />
-    <Compile Include="ViewModels\GoogleViewModel\PlaceKindViewModel.cs" />
-    <Compile Include="ViewModels\WeatherViewModel\ModifyPlaceViewModel.cs" />
-    <Compile Include="ViewPages\Capture\CapturePicturePage.xaml.cs">
+    <Compile Include="ViewModels\CaptureView\NotifyingObject.cs" />
+    <Compile Include="ViewModels\CaptureView\PictureRepository.cs" />
+    <Compile Include="Models\CaptureViewModel\PictureViewModel.cs" />
+    <Compile Include="ViewModels\CaptureView\Picture.cs" />
+    <Compile Include="Models\CaptureViewModel\PictureViewViewModel.cs" />
+    <Compile Include="ViewModels\CaptureView\PositionTypeConverter.cs" />
+    <Compile Include="ViewModels\CaptureView\ResourcePicture.cs" />
+    <Compile Include="Models\CurrencyViewModel\CurrencyViewModel.cs" />
+    <Compile Include="Models\CurrencyViewModel\ListCurrencyViewModel.cs" />
+    <Compile Include="Models\GoogleViewModel\GoogleViewModel.cs" />
+    <Compile Include="Models\GoogleViewModel\PlaceKindViewModel.cs" />
+    <Compile Include="Models\WeatherViewModel\ModifyPlaceViewModel.cs" />
+    <Compile Include="Views\Capture\CapturePicturePage.xaml.cs">
       <DependentUpon>CapturePicturePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\Capture\PictureList.xaml.cs">
+    <Compile Include="Views\Capture\PictureList.xaml.cs">
       <DependentUpon>PictureList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\Capture\PictureView.xaml.cs">
+    <Compile Include="Views\Capture\PictureView.xaml.cs">
       <DependentUpon>PictureView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPages\GoogleMaps\ChoosePlace.xaml.cs">
+    <Compile Include="Views\GoogleMaps\ChoosePlace.xaml.cs">
       <DependentUpon>ChoosePlace.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CaptureView\PictureSlideView.cs" />
-    <Compile Include="View\GoogleView\GoogleMapView.cs" />
-    <Compile Include="View\GoogleView\PlaceKindView.cs" />
-    <Compile Include="View\ItemViewModel2.cs" />
-    <Compile Include="View\ItemViewModel1.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="ViewModels\WeatherViewModel\WeatherViewMode.cs" />
-    <Compile Include="ViewPages\Currency\Currency.xaml.cs">
+    <Compile Include="ViewModels\CaptureView\PictureSlideView.cs" />
+    <Compile Include="ViewModels\GoogleView\GoogleMapView.cs" />
+    <Compile Include="ViewModels\GoogleView\PlaceKindView.cs" />
+    <Compile Include="ViewModels\ItemViewModel2.cs" />
+    <Compile Include="ViewModels\ItemViewModel1.cs" />
+    <Compile Include="Models\MainViewModel.cs" />
+    <Compile Include="Models\ViewModelBase.cs" />
+    <Compile Include="Models\WeatherViewModel\WeatherViewMode.cs" />
+    <Compile Include="Views\Currency\Currency.xaml.cs">
       <DependentUpon>Currency.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CurrencyView\CurrencyConvertView.cs" />
-    <Compile Include="View\CurrencyView\ListCurrencyView.cs" />
-    <Compile Include="ViewPages\GoogleMaps\GoogleMaps.xaml.cs">
+    <Compile Include="ViewModels\CurrencyView\CurrencyConvertView.cs" />
+    <Compile Include="ViewModels\CurrencyView\ListCurrencyView.cs" />
+    <Compile Include="Views\GoogleMaps\GoogleMaps.xaml.cs">
       <DependentUpon>GoogleMaps.xaml</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="View\GoogleView\GoogleTile.cs" />
-    <Compile Include="View\GoogleView\MarkOnMap.cs" />
-    <Compile Include="ViewPages\WeatherViews\ModifyPlace.xaml.cs">
+    <Compile Include="ViewModels\GoogleView\GoogleTile.cs" />
+    <Compile Include="ViewModels\GoogleView\MarkOnMap.cs" />
+    <Compile Include="Views\WeatherViews\ModifyPlace.xaml.cs">
       <DependentUpon>ModifyPlace.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\News\ItemsView.cs" />
-    <Compile Include="View\News\SectionPageView.cs" />
-    <Compile Include="View\News\VideoPageView.cs" />
-    <Compile Include="View\Setting\SettingView.cs" />
-    <Compile Include="View\WeatherView\PlaceMode.cs" />
-    <Compile Include="ViewPages\WeatherViews\WeatherView.xaml.cs">
+    <Compile Include="ViewModels\News\ItemsView.cs" />
+    <Compile Include="ViewModels\News\SectionPageView.cs" />
+    <Compile Include="ViewModels\News\VideoPageView.cs" />
+    <Compile Include="ViewModels\Setting\SettingView.cs" />
+    <Compile Include="ViewModels\WeatherView\PlaceMode.cs" />
+    <Compile Include="Views\WeatherViews\WeatherView.xaml.cs">
       <DependentUpon>WeatherView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WeatherView\WeatherView.cs" />
+    <Compile Include="ViewModels\WeatherView\WeatherView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -222,67 +248,73 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewPages\Capture\CapturePicturePage.xaml">
+    <Page Include="Views\Capture\CapturePicturePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\Capture\PictureList.xaml">
+    <Page Include="Views\Capture\PictureList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\Capture\PictureView.xaml">
+    <Page Include="Views\Capture\PictureView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\Currency\Currency.xaml">
+    <Page Include="Views\Currency\Currency.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\Currency\ModifyCurrency.xaml">
+    <Page Include="Views\Currency\ModifyCurrency.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\GoogleMaps\ChoosePlace.xaml">
+    <Page Include="Views\GoogleMaps\ChoosePlace.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\GoogleMaps\GoogleMaps.xaml">
+    <Page Include="Views\GoogleMaps\GoogleMaps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Page>
-    <Page Include="ViewPages\News\DetailItem.xaml">
+    <Page Include="Views\News\DetailItem.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewPages\News\ListArtical.xaml">
+    <Page Include="Views\News\ListArtical.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\News\ListComment.xaml">
+    <Page Include="Views\News\ListComment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\News\NewsPage.xaml">
+    <Page Include="Views\News\NewsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\Setting\SettingPage.xaml">
+    <Page Include="Views\Setting\SettingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\WeatherViews\ModifyPlace.xaml">
+    <Page Include="Views\WeatherViews\ModifyPlace.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPages\WeatherViews\WeatherView.xaml">
+    <Page Include="Views\WeatherViews\WeatherView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
+    <Content Include="Library Reference\Bewise.Phone.dll" />
+    <Content Include="Library Reference\SilverlightPhoneDatabase.dll" />
+    <Content Include="Library Reference\SilverlightPhoneDatabase.xml" />
+    <Resource Include="MyUserControl\ford_ads.jpg" />
+    <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.png">
@@ -291,7 +323,6 @@
     <Resource Include="Background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="MyUserControl\ford_ads.jpg" />
     <Resource Include="Images\WeatherImages\11n.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -382,30 +413,15 @@
     <Resource Include="Images\WeatherImages\write.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="IconFunctions\CurrencyFunction.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\GoogleMaps\ZoomIn_Black.png" />
     <Resource Include="Images\GoogleMaps\ZoomIn_White.png" />
     <Resource Include="Images\GoogleMaps\ZoomOut_Black.png" />
     <Resource Include="Images\GoogleMaps\ZoomOut_White.png" />
-    <Resource Include="IconFunctions\cameraFunction.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\SampleImages\1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\SampleImages\2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="IconFunctions\icon_news.png" />
-    <Resource Include="IconFunctions\GoogleIcon.png" />
-    <Resource Include="IconFunctions\WeatherIcon.png" />
     <Resource Include="Images\AdsImages\ford_ads.jpg" />
     <Resource Include="Images\Background\DarkTheme\Background.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="IconFunctions\settings.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Content Include="Images\Background\DarkTheme\dark-abstract-wide-wallpaper-1280x800-028.jpg">
@@ -414,6 +430,24 @@
     <Content Include="Images\Background\LightTheme\Ultimate Walls Nature %281505%29.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\IconFunctions\cameraFunction.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\IconFunctions\CurrencyFunction.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\IconFunctions\GoogleIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\IconFunctions\icon_news.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\IconFunctions\settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\IconFunctions\WeatherIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Images\ImageForPoint\Coffee.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -539,7 +573,6 @@
       <Name>WP7Shared</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

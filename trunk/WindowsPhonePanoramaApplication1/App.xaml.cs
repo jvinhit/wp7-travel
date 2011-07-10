@@ -13,29 +13,40 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Xna.Framework.Media;
+using WindowsPhonePanoramaApplication1.MyDatabase;
 
 namespace WindowsPhonePanoramaApplication1
 {
     public partial class App : Application
     {
+        //languages
+   
+        
+
+
+
+
+
         // for show ads
         public static bool IsShowAds = true;
 
         //background
-       
 
-
-        public  const string DATABASE_PICTURE = "Pictures_Database";
-        public  const string DATABASE_ITEMS_CAFE = "News_Cafe";
+        public const string DATABASE_NAME = "WP7Travel";
+        public const string DATABASE_PICTURE = "Pictures_Database";
+        public const string DATABASE_ITEMS_CAFE = "News_Cafe";
         public const string DATABASE_ITEMS_HOTEL = "News_Hot";
         public const string DATABASE_ITEMS_RESTAURANT = "News_Restaurant";
         public const string DATABASE_ITEMS_FLIGHTS = "News_Flights";
         public const string DATABASE_ITEMS_CAR = "News_Car";
         public const string DATABASE_ITEMS_TOUR = "News_Tour";
 
-
         private static MainViewModel viewModel = null;
         internal const string BingId = "AnjrJlYx7pu0K0jnByP6i66MWs7an4yVDH5CCt3mAJQmoB_oxbG-cbVlKg20zLt0";
+        // list file
+        public List<string> listFileImage = new List<string>();
+
+
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
@@ -83,7 +94,7 @@ namespace WindowsPhonePanoramaApplication1
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
-    
+
 
 
         public App()
@@ -110,12 +121,17 @@ namespace WindowsPhonePanoramaApplication1
 
             // Phone-specific initialization
             InitializePhoneApplication();
+            // create database **Very Importance**
+
+            MainDatabase.CreateDataBase();
+
         }
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            
         }
 
         // Code to execute when the application is activated (brought to foreground)

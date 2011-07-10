@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ITravelService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:54251/TravelService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITravelService"
+                contract="ITravelService" name="BasicHttpBinding_ITravelService" />
+        </client>
+    </system.serviceModel>
+</configuration>
