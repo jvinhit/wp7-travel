@@ -16,15 +16,28 @@
     SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="FunctionColumn">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                <!--Replace rectangle with image-->
+                <!--<Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>-->
+                <Image Tag="{Binding TagLink}" x:Name="{Binding IdFuntion}" Height="100" Width="100"  Margin="12,0,9,0" Source="{Binding PathIcon}"/>
+                <StackPanel Width="311">
+                    <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                    <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" >
- 
-        <!--Panorama control-->
-        <controls:Panorama Background="{StaticResource PhoneBackgroundBrush}"  Title="Travel WP7" FontFamily="Trebuchet MS" Foreground="{StaticResource PhoneAccentBrush}" >
 
- 
+        <!--Panorama control-->
+        <controls:Panorama Background="{StaticResource PhoneBackgroundBrush}"  Title="{StaticResource AppName}" FontFamily="Trebuchet MS" Foreground="{StaticResource PhoneAccentBrush}" >
             <!--Panorama item one-->
-            <controls:PanoramaItem Header="News" FontFamily="Trebuchet MS">
+            <controls:PanoramaItem Header="{StaticResource MainPages_1}" FontFamily="Trebuchet MS">
                 <!--Double line list with text wrapping-->
                 <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items1}" Background="Transparent" BorderThickness="1">
                     <ListBox.ItemTemplate>
@@ -37,31 +50,17 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PanoramaItem>
- 
+
             <!--Panorama item two-->
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-            <controls:PanoramaItem Header="Functions">
+            <controls:PanoramaItem Header="{StaticResource MainPages_2}">
                 <!--Double line list with image placeholder and text wrapping-->
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items2}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                                <!--Replace rectangle with image-->
-                                <!--<Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>-->
-                                <Image Tag="{Binding TagLink}" x:Name="{Binding IdFuntion}" Height="100" Width="100"  Margin="12,0,9,0" Source="{Binding PathIcon}" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
-                                <StackPanel Width="311">                                    
-                                    <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                <ListBox ItemTemplate="{StaticResource FunctionColumn }" Margin="0,0,-12,0" ItemsSource="{Binding Items2}" SelectionChanged="ListBox_SelectionChanged"/>
             </controls:PanoramaItem>
         </controls:Panorama>
         <WindowsPhonePanoramaApplication1_MyUserControl:ControlAds Height="40" HorizontalAlignment="Left" Margin="0,147,0,0" x:Name="controlAds1" VerticalAlignment="Top" Width="480" />
     </Grid>
- 
+
     <!--Panorama-based applications should not show an ApplicationBar-->
 
 </phone:PhoneApplicationPage>

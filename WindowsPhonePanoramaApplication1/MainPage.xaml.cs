@@ -20,8 +20,7 @@ namespace WindowsPhonePanoramaApplication1
 {
     public partial class MainPage : PhoneApplicationPage
     {
-   
-        
+
         // Constructor
         public MainPage()
         {
@@ -33,19 +32,9 @@ namespace WindowsPhonePanoramaApplication1
 
             //theme
 
-            string theme;
-            IsolatedStorageSettings.ApplicationSettings["Theme"] = "DarkBlue";
-
-            //if (IsolatedStorageSettings.ApplicationSettings.TryGetValue<string>("Theme", out theme))
-            //{
-            //    //LightTheme.IsChecked = theme == "Light";
-            //    IsolatedStorageSettings.ApplicationSettings["Theme"] = "DarkBrown";
-            //}
-            //else
-            //{
-            //    IsolatedStorageSettings.ApplicationSettings["Theme"] = "DarkBrown";
-            //}
-
+        
+    
+            
         }
 
         void photoChooserTask_Completed(object sender, PhotoResult e)
@@ -60,42 +49,16 @@ namespace WindowsPhonePanoramaApplication1
             {
                 App.ViewModel.LoadData();
             }
-            // create database **Very Importance**
-            MainDatabase.CreateDataBase();
+          
             
-            //for ads
-            //myAds.Visibility = Visibility.Visible;
-            //Thread t = new Thread(new ThreadStart(this.ShowAds));
             
-            //t.Start();
-
-
         }
 
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           // MessageBox.Show(((Image)sender).Name.ToString());
-
-     
-            this.NavigationService.Navigate(new Uri(((Image)sender).Tag.ToString(), UriKind.Relative));
-            
-            //EnumsFunction Text = EnumsFunction.WeatherFunc   ;
-            //switch (Text)
-            //{
-            //    case EnumsFunction.WeatherFunc:
-                     
-            //        break;
-
-            //}
+            ItemViewModel2 temp = ((System.Windows.Controls.Primitives.Selector)(sender)).SelectedItem as ItemViewModel2;
+            String linkNavegation = temp.TagLink;
+            this.NavigationService.Navigate(new Uri(linkNavegation, UriKind.Relative));
         }
-        //private void ShowAds()
-        //{
-            
-        //    myAds.Visibility = Visibility.Collapsed;
-
-        //}
-
-     
-
     }
 }
