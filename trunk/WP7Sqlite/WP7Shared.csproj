@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GpsHelper.cs" />
+    <Compile Include="ImageUtilitys.cs" />
     <Compile Include="IsolatedStorageFileExtensions.cs" />
     <Compile Include="NavigationServiceExtensions.cs" />
     <Compile Include="Network.cs" />
