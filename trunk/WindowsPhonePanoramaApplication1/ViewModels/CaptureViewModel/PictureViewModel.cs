@@ -10,13 +10,13 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 
-namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
+namespace WindowsPhonePanoramaApplication1.Models.CaptureViewModel
 {
     public class PictureViewModel : NotifyingObject
     {
         #region Constants
 
-        public const string IsolatedStoragePath = "Pictures";
+        public const string IsolatedStoragePath = App.DATABASE_PICTURE;
 
         #endregion
 

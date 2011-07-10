@@ -12,12 +12,12 @@ using System.Windows.Media.Imaging;
 using System.Collections.ObjectModel;
 using WindowsPhonePanoramaApplication1.View.CaptureView;
 
-namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
+namespace WindowsPhonePanoramaApplication1.Models.CaptureViewModel
 {
     public class PictureViewViewModel : NotifyingObject
     {
         public PictureSlideView pictures = new PictureSlideView();
-        public ObservableCollection<BitmapSource> listImage=new ObservableCollection<BitmapSource>();
+        public ObservableCollection<BitmapImage> listImage = new ObservableCollection<BitmapImage>();
 
        
         public void NextImage()

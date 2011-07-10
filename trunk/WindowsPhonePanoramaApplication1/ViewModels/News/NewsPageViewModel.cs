@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 using WindowsPhonePanoramaApplication1.View.News;
 using System.Collections.ObjectModel;
 
-namespace WindowsPhonePanoramaApplication1.ViewModels.News
+namespace WindowsPhonePanoramaApplication1.Models.News
 {
     public class NewsPageViewModel : ViewModelBase
     {

@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using WindowsPhonePanoramaApplication1.View.GoogleView;
 
-namespace WindowsPhonePanoramaApplication1.ViewModels.GoogleViewModel
+namespace WindowsPhonePanoramaApplication1.Models.GoogleViewModel
 {
     public class PlaceKindViewModel:ViewModelBase
     {

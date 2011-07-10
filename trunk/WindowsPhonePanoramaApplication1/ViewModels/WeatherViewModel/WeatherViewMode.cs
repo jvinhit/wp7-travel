@@ -18,7 +18,6 @@ using System.Linq;
 
 using Microsoft.Phone.Controls;
 using WindowsPhonePanoramaApplication1.MyDatabase;
-using WindowsPhonePanoramaApplication1.MyDatabase.Weather;
 
 
 namespace WindowsPhonePanoramaApplication1
@@ -28,8 +27,8 @@ namespace WindowsPhonePanoramaApplication1
         public ObservableCollection<WeatherView> ListWeatherInstance { get; private set; }
         void LoadFromDatabase()
         {
-            var query = from c in MainDatabase.mainDB.Table<WeatherData>() select c;
-            WeatherData tempInput = (WeatherData)query.ToList<WeatherData>()[0];
+            var query = from c in MainDatabase.mainDB.Table<WeatherViewData>() select c;
+            WeatherViewData tempInput = (WeatherViewData)query.ToList<WeatherViewData>()[0];
             //ListWeatherInstance.Add(new WeatherView() { NameCity = "Ho Chi Minh", LocationWOEID = "1252431", LblCurrent_Text = "Today" });
             WeatherView temp = new WeatherView();
             temp.DateCreate = tempInput.DateCreate;
@@ -60,8 +59,8 @@ namespace WindowsPhonePanoramaApplication1
         }
         public void SaveIntoDatabase()
         {
-            MainDatabase.mainDB.Table<WeatherData>().Clear();
-            WeatherData tempInput = new WeatherData();
+            MainDatabase.mainDB.Table<WeatherViewData>().Clear();
+            WeatherViewData tempInput = new WeatherViewData();
             WeatherView temp = (WeatherView)ListWeatherInstance[0];
 
             tempInput.DateCreate = temp.DateCreate;
@@ -78,7 +77,7 @@ namespace WindowsPhonePanoramaApplication1
             tempInput.ImgWeather2_Source = temp.Uri2;
             tempInput.ImgWeather3_Source = temp.Uri3;
             
-            MainDatabase.mainDB.Table<WeatherData>().Add(tempInput);
+            MainDatabase.mainDB.Table<WeatherViewData>().Add(tempInput);
             MainDatabase.mainDB.Save();
 
         }
@@ -90,10 +89,6 @@ namespace WindowsPhonePanoramaApplication1
             
         }
         public static WeatherViewMode weatherInstance = new WeatherViewMode();
-
-
-
-
 
         public void UpdateWeather()
         {

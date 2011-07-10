@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using Microsoft.Phone;
 using AccessingWP7Devices.Assets.Serialization;
 
-namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
+namespace WindowsPhonePanoramaApplication1.Models.CaptureViewModel
 {
     [DataContract]
     public class CapturedPictureViewModel : Picture
@@ -61,15 +61,17 @@ namespace WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel
             FileName = reader.ReadString();
         }
 
-        protected override BitmapSource CreateBitmapSource()
+        protected override BitmapImage CreateBitmapSource()
         {
-            BitmapSource source = null;
+            BitmapImage source = null;
             if (ImageBytes != null)
             {
-                using (var stream = new MemoryStream(ImageBytes))
-                {
-                    source = PictureDecoder.DecodeJpeg(stream);
-                }
+                //using (var stream = new MemoryStream(ImageBytes))
+                //{
+                //    source = PictureDecoder.DecodeJpeg(stream);
+                    
+                //}
+                source = WP7Shared.ImageUtilitys.GetBitmapImageFromArrayByte(ImageBytes);
             }
 
             return source;
