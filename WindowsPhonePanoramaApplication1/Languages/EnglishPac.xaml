@@ -1,0 +1,96 @@
+﻿<!--
+Copyright (c) Microsoft Corporation.  All rights reserved.
+-->
+<!--
+Use of this source code is subject to the terms of the Microsoft
+premium shared source license agreement under which you licensed
+this source code. If you did not accept the terms of the license
+agreement, you are not authorized to use this source code.
+For the terms of the license, please see the license agreement
+signed by you and Microsoft.
+THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+-->
+
+<ResourceDictionary 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:local="clr-namespace:WindowsPhonePanoramaApplication1">
+
+    <!-- String resource that can be localized -->
+
+    <system:String x:Key="AppName">WP7Travel</system:String>
+    <system:String x:Key="HomeButton">Home</system:String>
+
+    <system:String x:Key="MainPages_1">News Update</system:String>
+    <system:String x:Key="MainPages_2">Functions</system:String>
+    <system:String x:Key="MainPages_3">News</system:String>
+    <system:String x:Key="MainPages_4">Maps</system:String>
+    <system:String x:Key="MainPages_5">Weather</system:String>
+    <system:String x:Key="MainPages_6">Currency Convert</system:String>
+    <system:String x:Key="MainPages_7">Pictures Captures</system:String>
+    <system:String x:Key="MainPages_8">Setting</system:String>
+
+    <system:String x:Key="MainPages_3_1">Lastest news....</system:String>
+    <system:String x:Key="MainPages_4_1">Location information....</system:String>
+    <system:String x:Key="MainPages_5_1">Weather Forecast....</system:String>
+    <system:String x:Key="MainPages_6_1">Currency Exchange ....</system:String>
+    <system:String x:Key="MainPages_7_1">Capture the time ....</system:String>
+    <system:String x:Key="MainPages_8_1">Advance system ....</system:String>
+
+    <system:String x:Key="CapturePictures_1">Title</system:String>
+    <system:String x:Key="CapturePictures_2">pictures</system:String>
+    <system:String x:Key="CapturePictures_3">Save</system:String>
+    <system:String x:Key="CapturePictures_4">Share</system:String>
+
+    <system:String x:Key="Currency_3">Currency</system:String>
+    <system:String x:Key="Currency_4">Amount:</system:String>
+    <system:String x:Key="Currency_5">From:</system:String>
+    <system:String x:Key="Currency_6">To:</system:String>
+    <system:String x:Key="Currency_7">Convert</system:String>
+
+
+    <system:String x:Key="GoogleMap_1">Google Map</system:String>
+    <system:String x:Key="GoogleMap_2">Choose Place</system:String>
+    <system:String x:Key="GoogleMap_4">Reset View</system:String>
+    <system:String x:Key="GoogleMap_5">Place Kinds</system:String>
+    <system:String x:Key="GoogleMap_6">OK</system:String>
+
+    <system:String x:Key="NewsPage_1">Comment</system:String>
+    <system:String x:Key="NewsPage_2">Favourite</system:String>
+    <system:String x:Key="NewsPage_3">Preview</system:String>
+    <system:String x:Key="NewsPage_4">Next</system:String>
+    <system:String x:Key="NewsPage_5">Show Comment</system:String>
+    <system:String x:Key="NewsPage_6">Show Pictures</system:String>
+    <system:String x:Key="NewsPage_7">Show Videos</system:String>
+    <system:String x:Key="NewsPage_8">Show Place</system:String>
+
+    <system:String x:Key="NewsPage_9">By Date</system:String>
+    <system:String x:Key="NewsPage_10">By Title</system:String>
+    <system:String x:Key="NewsPage_11">By Rating</system:String>
+    <system:String x:Key="NewsPage_12">Sections</system:String>
+    <system:String x:Key="NewsPage_13">Utility</system:String>
+    <system:String x:Key="NewsPage_14">Favorite</system:String>
+    <system:String x:Key="NewsPage_15">Search</system:String>
+    <system:String x:Key="NewsPage_16">Show Place</system:String>
+
+    <system:String x:Key="Setting_1">Setting</system:String>
+    <system:String x:Key="Setting_2">Theme :</system:String>
+    <system:String x:Key="Setting_3">Languages:</system:String>
+    <system:String x:Key="Setting_4">Delete data after :</system:String>
+    <system:String x:Key="Setting_5">User Name</system:String>
+    <system:String x:Key="Setting_6">Password:</system:String>
+
+    <system:String x:Key="Weather_1">Today</system:String>
+    <system:String x:Key="Weather_2">Tomorrow</system:String>
+    <system:String x:Key="Weather_3">Day after tomorrow</system:String>
+    <system:String x:Key="Weather_4">Weather forecast</system:String>
+    <system:String x:Key="Weather_5">Search</system:String>
+    <system:String x:Key="Weather_6">Currency Convert</system:String>
+    <system:String x:Key="Weather_7">Pictures Captures</system:String>
+    <system:String x:Key="Weather_8">Setting</system:String>
+
+
+</ResourceDictionary>
+
+  
