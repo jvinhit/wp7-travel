@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:models="clr-namespace:WindowsPhonePanoramaApplication1.ViewModels.CaptureViewModel">
+    xmlns:models="clr-namespace:WindowsPhonePanoramaApplication1.Models.CaptureViewModel">
 
     <models:ResourcePicture x:Key="1" ResourceUri="/WindowsPhonePanoramaApplication1;component/Images/SampleImages/1.jpg" Note="sample1" DateTaken="Monday, October 25, 2010" Position="47.639739, -122.127275" />
     <models:ResourcePicture x:Key="2" ResourceUri="/WindowsPhonePanoramaApplication1;component/Images/SampleImages/2.jpg" Note="sample2" DateTaken="Monday, October 25, 2010" Position="47.639987, -122.127501" />
