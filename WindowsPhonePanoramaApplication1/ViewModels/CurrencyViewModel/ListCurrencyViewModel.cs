@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WindowsPhonePanoramaApplication1.ViewModels.CurrencyViewModel
+namespace WindowsPhonePanoramaApplication1.Models.CurrencyViewModel
 {
     public class ListCurrencyViewModel:ViewModelBase
     {

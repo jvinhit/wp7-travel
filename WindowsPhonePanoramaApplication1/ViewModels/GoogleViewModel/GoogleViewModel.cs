@@ -20,7 +20,7 @@ using System.ComponentModel;
 using System.IO;
 
 
-namespace WindowsPhonePanoramaApplication1.ViewModels.GoogleViewModel
+namespace WindowsPhonePanoramaApplication1.Models.GoogleViewModel
 {
     public class GoogleViewModel : INotifyPropertyChanged
     {

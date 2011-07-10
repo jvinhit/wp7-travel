@@ -13,7 +13,7 @@ using System.ComponentModel;
 namespace WindowsPhonePanoramaApplication1
 {
     /// <summary>
-    /// Abstract base class for all ViewModels.
+    /// Abstract base class for all Models.
     /// Provides INotifyPropertyChanged services and Event handler services.
     /// </summary>
     public abstract class ViewModelBase : INotifyPropertyChanged
@@ -32,11 +32,5 @@ namespace WindowsPhonePanoramaApplication1
             }
         }
 
-        // Raises event when an events handler is available.
-        //protected void RaiseEvent(EventHandler<ViewModelEventArgs> handler)
-        //{
-        //    if (handler != null)
-        //        handler(this, new ViewModelEventArgs());
-        //}
     }
 }

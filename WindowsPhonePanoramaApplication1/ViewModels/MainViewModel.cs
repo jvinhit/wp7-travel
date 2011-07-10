@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 
-
-
 namespace WindowsPhonePanoramaApplication1
 {
     public class MainViewModel : INotifyPropertyChanged
@@ -23,7 +21,7 @@ namespace WindowsPhonePanoramaApplication1
         {
             this.Items1 = new ObservableCollection<ItemViewModel1>();
             this.Items2 = new ObservableCollection<ItemViewModel2>();
-            //this.ItemsWeather = new ObservableCollection<WeatherViewMode>();
+            
         }
 
         /// <summary>
@@ -34,10 +32,6 @@ namespace WindowsPhonePanoramaApplication1
 
         // weather funtion
         //public ObservableCollection<WeatherViewMode> ItemsWeather { get; private set; }
-
-
-
-
 
         private string _sampleProperty = "Sample Runtime Property Value";
         /// <summary>
@@ -60,8 +54,6 @@ namespace WindowsPhonePanoramaApplication1
             }
         }
 
-
-
         public bool IsDataLoaded
         {
             get;
@@ -74,41 +66,22 @@ namespace WindowsPhonePanoramaApplication1
         public void LoadData()
         {
             // Sample data; replace with real data
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime one", LineTwo = "Maecenas praesent accumsan bibendum", LineThree = "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime two", LineTwo = "Dictumst eleifend facilisi faucibus", LineThree = "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime three", LineTwo = "Habitant inceptos interdum lobortis", LineThree = "Habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime four", LineTwo = "Nascetur pharetra placerat pulvinar", LineThree = "Ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime five", LineTwo = "Maecenas praesent accumsan bibendum", LineThree = "Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime six", LineTwo = "Dictumst eleifend facilisi faucibus", LineThree = "Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime seven", LineTwo = "Habitant inceptos interdum lobortis", LineThree = "Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime eight", LineTwo = "Nascetur pharetra placerat pulvinar", LineThree = "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime nine", LineTwo = "Maecenas praesent accumsan bibendum", LineThree = "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime ten", LineTwo = "Dictumst eleifend facilisi faucibus", LineThree = "Suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime eleven", LineTwo = "Habitant inceptos interdum lobortis", LineThree = "Habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime twelve", LineTwo = "Nascetur pharetra placerat pulvinar", LineThree = "Ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime thirteen", LineTwo = "Maecenas praesent accumsan bibendum", LineThree = "Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime fourteen", LineTwo = "Dictumst eleifend facilisi faucibus", LineThree = "Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime fifteen", LineTwo = "Habitant inceptos interdum lobortis", LineThree = "Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat" });
-            this.Items1.Add(new ItemViewModel1() { LineOne = "runtime sixteen", LineTwo = "Nascetur pharetra placerat pulvinar", LineThree = "Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum" });
+            this.Items1.Add(new ItemViewModel1() { LineOne = "Vịnh Hạ Long", LineTwo = "Vịnh Hạ Long nằm ....", LineThree = "Vịnh Hạ Long nằm ở vùng Đông Bắc Việt Nam, là một phần phía tây Vịnh Bắc Bộ, bao gồm vùng biển của thành phố Hạ Long, thị xã Cẩm Phả và một phần của huyện đảo Vân Đồn. Phía tây nam giáp đảo Cát Bà, phía tây giáp đất liền với đường bờ biển dài 120 km, Vịnh có tổng diện tích 1553 km2 gồm 1969 hòn đảo lớn nhỏ, trong đó 989 đảo có tên và 980 đảo chưa có tên. Vùng Di sản được Thế giới công nhận có diện tích 434 km2 bao gồm 775 đảo, như một hình tam giác với ba đỉnh là đảo Đầu Gỗ (phía tây), hồ Ba Hầm (phía nam) và đảo Cống Tây (phía đông). " });
+            this.Items1.Add(new ItemViewModel1() { LineOne = "Vườn Quốc gia Phong Nha", LineTwo = "Vườn Quốc gia Phong Nha ....", LineThree = "Vịnh Hạ Long nằm ở vùng Đông Bắc Việt Nam, là một phần phía tây Vịnh Bắc Bộ, bao gồm vùng biển của thành phố Hạ Long, thị xã Cẩm Phả và một phần của huyện đảo Vân Đồn. Phía tây nam giáp đảo Cát Bà, phía tây giáp đất liền với đường bờ biển dài 120 km, Vịnh có tổng diện tích 1553 km2 gồm 1969 hòn đảo lớn nhỏ, trong đó 989 đảo có tên và 980 đảo chưa có tên. Vùng Di sản được Thế giới công nhận có diện tích 434 km2 bao gồm 775 đảo, như một hình tam giác với ba đỉnh là đảo Đầu Gỗ (phía tây), hồ Ba Hầm (phía nam) và đảo Cống Tây (phía đông). " });
+            this.Items1.Add(new ItemViewModel1() { LineOne = "Khu đền tháp Mỹ Sơn ", LineTwo = "Mỹ Sơn thuộc địa phận xã Duy....", LineThree = "Vịnh Hạ Long nằm ở vùng Đông Bắc Việt Nam, là một phần phía tây Vịnh Bắc Bộ, bao gồm vùng biển của thành phố Hạ Long, thị xã Cẩm Phả và một phần của huyện đảo Vân Đồn. Phía tây nam giáp đảo Cát Bà, phía tây giáp đất liền với đường bờ biển dài 120 km, Vịnh có tổng diện tích 1553 km2 gồm 1969 hòn đảo lớn nhỏ, trong đó 989 đảo có tên và 980 đảo chưa có tên. Vùng Di sản được Thế giới công nhận có diện tích 434 km2 bao gồm 775 đảo, như một hình tam giác với ba đỉnh là đảo Đầu Gỗ (phía tây), hồ Ba Hầm (phía nam) và đảo Cống Tây (phía đông). " });
+            this.Items1.Add(new ItemViewModel1() { LineOne = "Khu di tích trung tâm Hoàng thành ", LineTwo = "Khu di tích trung tâm Hoàn....", LineThree = "Vịnh Hạ Long nằm ở vùng Đông Bắc Việt Nam, là một phần phía tây Vịnh Bắc Bộ, bao gồm vùng biển của thành phố Hạ Long, thị xã Cẩm Phả và một phần của huyện đảo Vân Đồn. Phía tây nam giáp đảo Cát Bà, phía tây giáp đất liền với đường bờ biển dài 120 km, Vịnh có tổng diện tích 1553 km2 gồm 1969 hòn đảo lớn nhỏ, trong đó 989 đảo có tên và 980 đảo chưa có tên. Vùng Di sản được Thế giới công nhận có diện tích 434 km2 bao gồm 775 đảo, như một hình tam giác với ba đỉnh là đảo Đầu Gỗ (phía tây), hồ Ba Hầm (phía nam) và đảo Cống Tây (phía đông). " });
+            this.Items1.Add(new ItemViewModel1() { LineOne = "Đô thị cổ Hội An", LineTwo = "Hội An là một thị xã cổ ....", LineThree = "Vịnh Hạ Long nằm ở vùng Đông Bắc Việt Nam, là một phần phía tây Vịnh Bắc Bộ, bao gồm vùng biển của thành phố Hạ Long, thị xã Cẩm Phả và một phần của huyện đảo Vân Đồn. Phía tây nam giáp đảo Cát Bà, phía tây giáp đất liền với đường bờ biển dài 120 km, Vịnh có tổng diện tích 1553 km2 gồm 1969 hòn đảo lớn nhỏ, trong đó 989 đảo có tên và 980 đảo chưa có tên. Vùng Di sản được Thế giới công nhận có diện tích 434 km2 bao gồm 775 đảo, như một hình tam giác với ba đỉnh là đảo Đầu Gỗ (phía tây), hồ Ba Hầm (phía nam) và đảo Cống Tây (phía đông). " });
+         
             // function app
-            this.Items2.Add(new ItemViewModel2() { LineOne = "News", LineTwo = "Thông tin mới nhất....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/icon_news.png", IdFuntion = EnumsFunction.News.ToString(), TagLink = "/ViewPages/News/NewsPage.xaml" });
-            this.Items2.Add(new ItemViewModel2() { LineOne = "Maps", LineTwo = "Xác định vị trí, thông tin địa điểm....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/GoogleIcon.png", IdFuntion = EnumsFunction.GoogleMapFunc.ToString(), TagLink = "/ViewPages/GoogleMaps/GoogleMaps.xaml" });
-            this.Items2.Add(new ItemViewModel2() { LineOne = "Weather", LineTwo = "Dự báo thời tiết....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/WeatherIcon.png", IdFuntion = EnumsFunction.WeatherFunc.ToString(), TagLink = "/ViewPages/WeatherViews/WeatherView.xaml" });
-            this.Items2.Add(new ItemViewModel2() { LineOne = "Currency Convert", LineTwo = "Đổi tiền tệ ....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/CurrencyFunction.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/ViewPages/Currency/Currency.xaml" });
-            this.Items2.Add(new ItemViewModel2() { LineOne = "Pictures Captures", LineTwo = "Chụp lại khoảng khắc ....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/cameraFunction.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/ViewPages/Capture/PictureList.xaml" });
-
-            this.Items2.Add(new ItemViewModel2() { LineOne = "Setting", LineTwo = "Chỉnh lại hệ thống ....  ", PathIcon = "/WindowsPhonePanoramaApplication1;component/IconFunctions/settings.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/ViewPages/Setting/SettingPage.xaml" });
 
 
-
-            //weather funtion
-            //this.ItemsWeather.Add(new WeatherViewMode(){LocationWOEID="1252431", NameCity="HCMCiTy"});
-
-
-
-
-
-
+            this.Items2.Add(new ItemViewModel2() { LineOne = (String)Application.Current.Resources["MainPages_3"], LineTwo = (String)Application.Current.Resources["MainPages_3_1"], PathIcon = "/WindowsPhonePanoramaApplication1;component/Images/IconFunctions/icon_news.png", IdFuntion = EnumsFunction.News.ToString(), TagLink = "/Views/News/NewsPage.xaml" });
+            this.Items2.Add(new ItemViewModel2() { LineOne = (String)Application.Current.Resources["MainPages_4"], LineTwo = (String)Application.Current.Resources["MainPages_4_1"], PathIcon = "/WindowsPhonePanoramaApplication1;component/Images/IconFunctions/GoogleIcon.png", IdFuntion = EnumsFunction.GoogleMapFunc.ToString(), TagLink = "/Views/GoogleMaps/GoogleMaps.xaml" });
+            this.Items2.Add(new ItemViewModel2() { LineOne = (String)Application.Current.Resources["MainPages_5"], LineTwo = (String)Application.Current.Resources["MainPages_5_1"], PathIcon = "/WindowsPhonePanoramaApplication1;component/Images/IconFunctions/WeatherIcon.png", IdFuntion = EnumsFunction.WeatherFunc.ToString(), TagLink = "/Views/WeatherViews/WeatherView.xaml" });
+            this.Items2.Add(new ItemViewModel2() { LineOne = (String)Application.Current.Resources["MainPages_6"], LineTwo = (String)Application.Current.Resources["MainPages_6_1"], PathIcon = "/WindowsPhonePanoramaApplication1;component/Images/IconFunctions/CurrencyFunction.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/Views/Currency/Currency.xaml" });
+            this.Items2.Add(new ItemViewModel2() { LineOne = (String)Application.Current.Resources["MainPages_7"], LineTwo = (String)Application.Current.Resources["MainPages_7_1"], PathIcon = "/WindowsPhonePanoramaApplication1;component/Images/IconFunctions/cameraFunction.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/Views/Capture/PictureList.xaml" });
+            this.Items2.Add(new ItemViewModel2() { LineOne = (String)Application.Current.Resources["MainPages_8"], LineTwo = (String)Application.Current.Resources["MainPages_8_1"], PathIcon = "/WindowsPhonePanoramaApplication1;component/Images/IconFunctions/settings.png", IdFuntion = EnumsFunction.CurrencyConvert.ToString(), TagLink = "/Views/Setting/SettingPage.xaml" });
+            
             this.IsDataLoaded = true;
         }
 

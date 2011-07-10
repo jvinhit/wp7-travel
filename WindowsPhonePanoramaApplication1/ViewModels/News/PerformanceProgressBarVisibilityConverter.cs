@@ -10,7 +10,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Data;
 
-namespace WindowsPhonePanoramaApplication1.ViewModels.News
+namespace WindowsPhonePanoramaApplication1.Models.News
 {
     public class PerformanceProgressBarVisibilityConverter : IValueConverter
     {
