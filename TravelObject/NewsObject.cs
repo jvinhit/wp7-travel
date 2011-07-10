@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 
 namespace TravelObject
 {
@@ -23,6 +24,6 @@ namespace TravelObject
         public string Article;
         public string ShortInformation;
         public string FullInformation;
-        public List<byte[]> ImageStreams;
+        public List<BitmapSource> ImageStreams;
     }
 }
