@@ -123,7 +123,7 @@ THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
 <!-- Brown -->
 <Color x:Key="PhoneAccentColor">#FB0042FB</Color>
 
-<SolidColorBrush x:Key="PhoneForegroundBrush" Color="#DAFFFFFF"/>
+<SolidColorBrush x:Key="PhoneForegroundBrush" Color="#DA001BFF"/>
 
 
 <ImageBrush x:Key="PhoneBackgroundBrush" ImageSource="/WindowsPhonePanoramaApplication1;component/Images/Background/LightTheme/Background.jpg" />
