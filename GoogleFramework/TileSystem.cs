@@ -136,7 +136,7 @@ namespace GoogleFramework
         /// the specified pixel.
         /// </summary>
         /// <param name="pixelX">Pixel X coordinate.</param>
-        /// <param name="pixelY">Pixel Y coordinate.</param>
+        /// <param name="pixelY">Pixel Y coordinate.</param>2
         /// <param name="tileX">Output parameter receiving the tile X coordinate.</param>
         /// <param name="tileY">Output parameter receiving the tile Y coordinate.</param>
         public static void PixelXYToTileXY(int pixelX, int pixelY, out int tileX, out int tileY)
