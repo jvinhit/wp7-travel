@@ -25,47 +25,10 @@ namespace TravelObject
     public abstract class PlaceObject : INotifyPropertyChanged
     {
 
-            private string title;
-            public string Title {
-                get{
-                    return title;
-                }
-                set {
-                    if (title == value) return;
-                    title = value;
-                    RaisePropertyChanged("Title");
-                }
-            }
-            private int ratingLevel;
-
-            public int RatingLevel
-            {
-                get { return ratingLevel; }
-                set
-                {
-                    if (ratingLevel == value) return;
-                    ratingLevel = value;
-                    RaisePropertyChanged("RatingLevel");
-                }
-            }
-          private bool isFavorite;
-
-          public bool IsFavorite
-            {
-                get { return isFavorite; }
-                set
-                {
-                    if (isFavorite == value) return;
-                    isFavorite = value;
-                    RaisePropertyChanged("IsFavorite");
-                }
-            }
-
-    
-      
-
-   
-        public string Article{ get; set; }
+        private string title;
+        private int ratingLevel;
+        private bool isFavorite;
+        public string Article { get; set; }
         public string IdObject { get; set; }
         public string IdKindPlace { get; set; }
         public GeoCoordinate geoCoor { get; set; }
@@ -73,16 +36,51 @@ namespace TravelObject
         public Uri Icon { get; set; }
         public string background { get; set; }
         public String Address { get; set; }
-        public Uri ImageUrl { get; set; }
+        public BitmapImage ImageMain { get; set; }
         public string Content { get; set; }
         public Uri LinkYoutube { get; set; }
-
         public string ShorDescription { get; set; }
         public ObservableCollection<ItemComment> ListComment { get; set; }
         public string NameAuthor { get; set; }
-        
         public DateTime DatePost { get; set; }
-        public ObservableCollection<BitmapSource> listImage { get; set; }
+        public ObservableCollection<BitmapImage> listImage { get; set; }
+
+        public string Title
+        {
+            get
+            {
+                return title;
+            }
+            set
+            {
+                if (title == value) return;
+                title = value;
+                RaisePropertyChanged("Title");
+            }
+        }
+
+        public int RatingLevel
+        {
+            get { return ratingLevel; }
+            set
+            {
+                if (ratingLevel == value) return;
+                ratingLevel = value;
+                RaisePropertyChanged("RatingLevel");
+            }
+        }
+
+
+        public bool IsFavorite
+        {
+            get { return isFavorite; }
+            set
+            {
+                if (isFavorite == value) return;
+                isFavorite = value;
+                RaisePropertyChanged("IsFavorite");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanged(string propertyName)
@@ -93,6 +91,5 @@ namespace TravelObject
             }
         }
 
-      
     }
 }

@@ -16,8 +16,5 @@ namespace TravelObject
     {
         ObservableCollection<String> GetListComment();
         void MakeComment();
-        
-       
-       
     }
 }

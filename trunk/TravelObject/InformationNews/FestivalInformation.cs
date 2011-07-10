@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace TravelObject
 {
-    public class FestivalInformation:PlaceObject,IInformationObject
+    public class FestivalInformation:NewsObject,IInformationObject
     {
 
         public System.Collections.ObjectModel.ObservableCollection<string> GetListComment()
