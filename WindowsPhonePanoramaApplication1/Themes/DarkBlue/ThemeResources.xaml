@@ -19,7 +19,7 @@ THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
   <!-- Common colors -->
 
 <!-- 100 percent White -->
-<Color x:Key="PhoneForegroundColor">#FFFFFFFF</Color>
+<Color x:Key="PhoneForegroundColor">White</Color>
 
 <!-- 100 percent Black -->
 <Color x:Key="PhoneBackgroundColor">#FF000000</Color>
