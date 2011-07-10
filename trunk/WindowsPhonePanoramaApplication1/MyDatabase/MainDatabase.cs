@@ -96,16 +96,30 @@ namespace WindowsPhonePanoramaApplication1.MyDatabase
             mainDB.Save();
         }
 
-        
+        private static TravelServiceClient proxy;
         private static void CreateTablePlaceObject()
         {
+            proxy = new TravelServiceClient();
+
+            proxy.GetAllLocationInDbCompleted += new EventHandler<GetAllLocationInDbCompletedEventArgs>(proxy_GetAllLocationInDbCompleted);
+            proxy.GetAllLocationInDbAsync();
 
             //proxy = new TravelDatabaseClient();
             //proxy.GetAllNewsCompleted += new EventHandler<GetAllNewsCompletedEventArgs>(travelDb_GetAllNewsCompleted);
             //proxy.GetAllNewsAsync();
 
+
+
         }
 
+        static void proxy_GetAllLocationInDbCompleted(object sender, GetAllLocationInDbCompletedEventArgs e)
+        {
+            WcfTravelService.Models.Travel_Location[] listResult = e.Result;
+            int a = listResult.ToList<WcfTravelService.Models.Travel_Location>().Count;
+            MessageBox.Show(a.ToString());
+        }
+
+ 
   
     }
 }
