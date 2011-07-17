@@ -17,7 +17,7 @@
     shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:WindowsPhonePanoramaApplication1.MyUserControl">
     <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Key="DoubleLineLargeGridListTemplate">
-            <Grid Height="173" Margin="12,0,12,12">
+            <Grid Margin="12,0,12,12">
                 <Image Width="173" HorizontalAlignment="Left" Source="{Binding ImageMain}"/> 
 
                 <StackPanel Margin="187,-4,0,0" VerticalAlignment="Top" >
@@ -38,17 +38,17 @@
 
             <!--Panorama item one-->
             <controls:PanoramaItem Header="{StaticResource NewsPage_9}">
-                <ListBox ItemTemplate="{StaticResource DoubleLineLargeGridListTemplate}" ItemsSource="{Binding listArtical}" SelectionChanged="ListBox_SelectionChanged">
+                <ListBox Name="Sector" ItemTemplate="{StaticResource DoubleLineLargeGridListTemplate}" ItemsSource="{Binding listArtical}" SelectionChanged="ListBox_SelectionChanged">
                 </ListBox>
             </controls:PanoramaItem>
 
             <!--Panorama item two-->
-            <controls:PanoramaItem Header="{StaticResource NewsPage_10}">
+            <!--<controls:PanoramaItem Header="{StaticResource NewsPage_10}">
                                 <ListBox ItemTemplate="{StaticResource DoubleLineLargeGridListTemplate}" ItemsSource="{Binding listArtical}">
                 </ListBox>
-            </controls:PanoramaItem>
+            </controls:PanoramaItem>-->
             <controls:PanoramaItem Header="{StaticResource NewsPage_11}">
-                                <ListBox ItemTemplate="{StaticResource DoubleLineLargeGridListTemplate}" ItemsSource="{Binding listArtical}">
+                <ListBox ItemTemplate="{StaticResource DoubleLineLargeGridListTemplate}" ItemsSource="{Binding listArtical1}" SelectionChanged="ListBox_SelectionChanged">
                 </ListBox>
             </controls:PanoramaItem>
          

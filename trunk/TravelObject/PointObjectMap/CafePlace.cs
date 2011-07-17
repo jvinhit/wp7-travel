@@ -21,9 +21,6 @@ namespace TravelObject
              background = System.IO.Path.GetFileNameWithoutExtension(this.Icon.ToString());
         }
 
-
-
-
         public void GetBookings()
         {
             throw new NotImplementedException();

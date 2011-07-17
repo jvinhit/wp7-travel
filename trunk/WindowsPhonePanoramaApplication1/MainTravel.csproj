@@ -64,6 +64,7 @@
     <Reference Include="Microsoft.Xna.Framework.GamerServices" />
     <Reference Include="Microsoft.Xna.Framework.Graphics" />
     <Reference Include="Microsoft.Xna.Framework.Input.Touch" />
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL" />
     <Reference Include="SilverlightPhoneDatabase">
       <HintPath>Library Reference\SilverlightPhoneDatabase.dll</HintPath>
     </Reference>
@@ -84,6 +85,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GeneratedFile.cs" />
     <Compile Include="MyDatabase\MainDatabase.cs" />
     <Compile Include="Enums\EnumsFunction.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -132,7 +134,6 @@
     <Compile Include="Resources\Converters\ItineraryTextConverter.cs" />
     <Compile Include="Resources\Converters\LocationGeoCoordinateConverter.cs" />
     <Compile Include="Resources\Converters\PushpinTypeBrushConverter.cs" />
-    <Compile Include="Service1.cs" />
     <Compile Include="StaticResourceDictionary.cs" />
     <Compile Include="Models\CaptureViewModel\CapturedPictureViewModel.cs" />
     <Compile Include="Models\News\ArticalListViewModel.cs" />
@@ -308,13 +309,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <None Include="NLog.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
     <Content Include="Library Reference\Bewise.Phone.dll" />
     <Content Include="Library Reference\SilverlightPhoneDatabase.dll" />
     <Content Include="Library Reference\SilverlightPhoneDatabase.xml" />
-    <Resource Include="MyUserControl\ford_ads.jpg" />
     <Content Include="ServiceReferences.ClientConfig" />
+    <Resource Include="MyUserControl\ford_ads.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.png">

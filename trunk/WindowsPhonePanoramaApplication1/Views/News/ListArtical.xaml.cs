@@ -21,7 +21,12 @@ namespace WindowsPhonePanoramaApplication1.Views.News
         public ListArtical()
         {
             InitializeComponent();
+            if (ArticalListViewModel.instance.listArtical.Count == 0)
+            {
+                ArticalListViewModel.instance.UpdataDatabase();
+            }
             this.DataContext = ArticalListViewModel.instance;
+            
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -31,6 +36,7 @@ namespace WindowsPhonePanoramaApplication1.Views.News
                 NewsDetailViewModel.instance = e.AddedItems[0] as PlaceObject;
                 this.NavigationService.Navigate(new Uri("/Views/News/DetailItem.xaml", UriKind.Relative));
             }
+            Sector.SelectedIndex = -1;
         }
 
         private void HomeReturn_Click(object sender, EventArgs e)

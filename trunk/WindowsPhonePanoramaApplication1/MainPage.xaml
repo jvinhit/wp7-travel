@@ -8,11 +8,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:WindowsPhonePanoramaApplication1_MyUserControl="clr-namespace:WindowsPhonePanoramaApplication1.MyUserControl" 
     x:Class="WindowsPhonePanoramaApplication1.MainPage" 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="728" 
     d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
@@ -39,12 +40,12 @@
             <!--Panorama item one-->
             <controls:PanoramaItem Header="{StaticResource MainPages_1}" FontFamily="Trebuchet MS">
                 <!--Double line list with text wrapping-->
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Items1}" Background="Transparent" BorderThickness="1">
+                <ListBox Name="Rss" Margin="0,0,-12,0" ItemsSource="{Binding listArtical}" Background="Transparent" BorderThickness="1" MouseLeftButtonDown="Rss_MouseLeftButtonDown" SelectionChanged="Rss_SelectionChanged" Height="725" Width="444">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="0,0,0,17" Width="432">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            <StackPanel Margin="0,0,0,17" Width="432" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding ShorDescription}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -55,12 +56,28 @@
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
             <controls:PanoramaItem Header="{StaticResource MainPages_2}">
                 <!--Double line list with image placeholder and text wrapping-->
-                <ListBox ItemTemplate="{StaticResource FunctionColumn }" Margin="0,0,-12,0" ItemsSource="{Binding Items2}" SelectionChanged="ListBox_SelectionChanged"/>
+                <ListBox Name="Functions" ItemTemplate="{StaticResource FunctionColumn }" Margin="0,0,-12,0" ItemsSource="{Binding Items2}" SelectionChanged="ListBox_SelectionChanged"/>
             </controls:PanoramaItem>
         </controls:Panorama>
+        <toolkit:PerformanceProgressBar IsIndeterminate="False"
+            VerticalAlignment="Top"
+            x:Name="_performanceProgressBar" Height="19" ActualIsIndeterminate="False" OpacityMask="#FFC77070" BorderBrush="{x:Null}" Background="#FF004EFF" Margin="0,193,0,0" />
         <WindowsPhonePanoramaApplication1_MyUserControl:ControlAds Height="40" HorizontalAlignment="Left" Margin="0,147,0,0" x:Name="controlAds1" VerticalAlignment="Top" Width="480" />
     </Grid>
 
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="True" IsVisible="True" Opacity="70">
+            <shell:ApplicationBarIconButton IconUri="/Resources/AppBar/App_Update.png" Text="Update" Click="ApplicationBarIconButton_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Resources/AppBar/App_Change.png" Text="Refresh" Click="ApplicationBarIconButton_Click_1" />
+            <!--<shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>-->
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
     <!--Panorama-based applications should not show an ApplicationBar-->
+
 
 </phone:PhoneApplicationPage>

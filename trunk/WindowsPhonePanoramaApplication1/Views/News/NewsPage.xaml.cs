@@ -24,8 +24,8 @@ namespace WindowsPhonePanoramaApplication1.Views.News
 
         private void ListBoxSections_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             this.NavigationService.Navigate(new Uri("/Views/News/ListArtical.xaml", UriKind.Relative));
+            Sector.SelectedIndex = -1;
         }
 
         private void HomeReturn_Click(object sender, EventArgs e)

@@ -89,6 +89,17 @@ THE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
     <system:String x:Key="Weather_7">Chụp ảnh</system:String>
     <system:String x:Key="Weather_8">Hệ thống</system:String>
 
+    <system:String x:Key="Message_1">Xin nhập tên tài khoản trong phần cấu hình</system:String>
+
+    <system:String x:Key="Section1">Cà phê</system:String>
+    <system:String x:Key="Section2">Khách sạn</system:String>
+    <system:String x:Key="Section3">Nhà hàng</system:String>
+    <system:String x:Key="Section4">Lịch bay</system:String>
+    <system:String x:Key="Section5">Thuê xe</system:String>
+    <system:String x:Key="Section6">Du lịch Tour</system:String>
+
+    <system:String x:Key="UpdateSucc">Cập nhật thành công !!!</system:String>
+
 </ResourceDictionary>
 
   

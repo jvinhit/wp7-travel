@@ -21,6 +21,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using WindowsPhonePanoramaApplication1.MyDatabase.ViewData;
 using System.IO.IsolatedStorage;
+using WindowsPhonePanoramaApplication1.MyDatabase.Mapping;
+using WP7Shared;
+
 
 
 namespace WindowsPhonePanoramaApplication1.MyDatabase
@@ -33,9 +36,7 @@ namespace WindowsPhonePanoramaApplication1.MyDatabase
             Random rd = new Random();
             Uri uri = new Uri("/WindowsPhonePanoramaApplication1;component/Images/SampleImages/" + rd.Next(1, 5).ToString() + ".jpg", UriKind.Relative);
 
-            BitmapImage bimapimage=new BitmapImage(uri);
-        
-         
+            BitmapImage bimapimage = new BitmapImage(uri);
             return bimapimage;
         }
         public static List<BitmapImage> randomListImage()
@@ -47,7 +48,7 @@ namespace WindowsPhonePanoramaApplication1.MyDatabase
             }
             return listImage;
         }
-      
+
 
         public static Database mainDB;
         static string fileName = App.DATABASE_NAME;
@@ -65,19 +66,15 @@ namespace WindowsPhonePanoramaApplication1.MyDatabase
                 mainDB = Database.OpenDatabase(fileName);
                 mainDB.Save();
             }
-
-        
-            
-
         }
         static void CreateTable()
         {
-            
+
             CreateTableWeather();
             CreateTablePlaceObject();
         }
 
-     
+
         private static void CreateTableWeather()
         {
             //----------------------------weather
@@ -96,30 +93,38 @@ namespace WindowsPhonePanoramaApplication1.MyDatabase
             mainDB.Save();
         }
 
-        private static TravelServiceClient proxy;
+        private static Service1Client proxy;
         private static void CreateTablePlaceObject()
         {
-            proxy = new TravelServiceClient();
+            mainDB.CreateTable<PlaceDB>();
+            mainDB.Save();
+        }
+        public static void UpdateDB() {
 
-            proxy.GetAllLocationInDbCompleted += new EventHandler<GetAllLocationInDbCompletedEventArgs>(proxy_GetAllLocationInDbCompleted);
-            proxy.GetAllLocationInDbAsync();
-
-            //proxy = new TravelDatabaseClient();
-            //proxy.GetAllNewsCompleted += new EventHandler<GetAllNewsCompletedEventArgs>(travelDb_GetAllNewsCompleted);
-            //proxy.GetAllNewsAsync();
-
-
-
+            proxy = new Service1Client();
+            proxy.GetTenItemsCompleted += new EventHandler<GetTenItemsCompletedEventArgs>(proxy_GetTenItemsCompleted);
+            proxy.GetTenItemsAsync();
         }
 
-        static void proxy_GetAllLocationInDbCompleted(object sender, GetAllLocationInDbCompletedEventArgs e)
+        static void proxy_GetTenItemsCompleted(object sender, GetTenItemsCompletedEventArgs e)
         {
-            WcfTravelService.Models.Travel_Location[] listResult = e.Result;
-            int a = listResult.ToList<WcfTravelService.Models.Travel_Location>().Count;
-            MessageBox.Show(a.ToString());
+            List<WcfService1.PlaceObjectViewData> list = e.Result.ToList<WcfService1.PlaceObjectViewData>();
+            foreach (WcfService1.PlaceObjectViewData temp in list)
+            {
+                //switch (temp.Article)
+                //{
+                //    case "1":
+                //        PlaceObject t = new CafePlace();
+                //        PlaceObjectMapping.GetPlaceObject(ref t, temp);
+                //        SavePlaceObject(t);
+                //        break;
+                //}
+
+                mainDB.Table<PlaceDB>().Add(PlaceObjectMapping.getPlaceDB(temp));
+            }
+            mainDB.Save();
+            MessageBox.Show((String)Application.Current.Resources["UpdateSucc"]);
         }
 
- 
-  
     }
 }

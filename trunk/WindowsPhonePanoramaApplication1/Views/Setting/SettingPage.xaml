@@ -36,7 +36,6 @@
             <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,0,0,0" x:Name="textBlock2" Text="{StaticResource Setting_6}" VerticalAlignment="Top" />
             <TextBox Height="72" HorizontalAlignment="Left" Margin="-3,0,0,0" x:Name="textBox2" Text="*********" VerticalAlignment="Top" Width="460" />
 
-
             <Button Content="{StaticResource GoogleMap_6}" Height="72" HorizontalAlignment="Left" Margin="154,0,0,0" x:Name="button1" VerticalAlignment="Top" Width="160" Click="button1_Click" />
         </StackPanel>
 
