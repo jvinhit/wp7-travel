@@ -20,7 +20,7 @@ namespace WindowsPhonePanoramaApplication1.MyDatabase.ViewData
 
         private string title;
         private int ratingLevel;
-        private bool isFavorite;
+        private bool? isFavorite;
         public string Article { get; set; }
         public string IdObject { get; set; }
 
@@ -36,11 +36,11 @@ namespace WindowsPhonePanoramaApplication1.MyDatabase.ViewData
         public string ShorDescription { get; set; }
         public List<ItemComment> ListComment { get; set; }
         public string NameAuthor { get; set; }
-        public DateTime DatePost { get; set; }
+        public DateTime? DatePost { get; set; }
         public List<byte[]> listImage { get; set; }
         public string Title { get; set; }
-        public int RatingLevel { get; set; }
-        public bool IsFavorite { get; set; }
+        public int? RatingLevel { get; set; }
+        public bool? IsFavorite { get; set; }
 
         public PlaceObjectViewData()
         {

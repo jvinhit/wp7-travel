@@ -8,23 +8,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using System.Device.Location;
 using System.Collections.ObjectModel;
-using System.Windows.Media.Imaging;
+using System.Device.Location;
 using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace TravelObject
 {
-    public class ItemComment
+    public class PlaceDB
     {
-        public DateTime DataPost { get; set; }
-        public String Author { get; set; }
-        public String CommentString { get; set; }
-    }
-
-    public class PlaceObject : INotifyPropertyChanged
-    {
-
         private string title;
         private int ratingLevel;
         private bool isFavorite;
@@ -33,22 +25,19 @@ namespace TravelObject
         public string IdKindPlace { get; set; }
         public GeoCoordinate geoCoor { get; set; }
         public double ZoomLevel { get; set; }
-        public Uri Icon { get; set; }
+        public String Icon { get; set; }
         public string background { get; set; }
         public String Address { get; set; }
 
         public String NameImageMain { get; set; }
-        public BitmapImage ImageMain { get; set; }
         public string Content { get; set; }
-        public Uri LinkYoutube { get; set; }
+        public String LinkYoutube { get; set; }
         public string ShorDescription { get; set; }
-        public ObservableCollection<ItemComment> ListComment { get; set; }
+        public List<ItemComment> ListComment { get; set; }
         public string NameAuthor { get; set; }
         public DateTime DatePost { get; set; }
         public int numberImageForIntro { get; set; }
-        public ObservableCollection<String> listImageName { get; set; }
-        public ObservableCollection<BitmapImage> listImage { get; set; }
-
+        public List<String> listImageName { get; set; }
         public string Title
         {
             get
@@ -59,7 +48,7 @@ namespace TravelObject
             {
                 if (title == value) return;
                 title = value;
-                RaisePropertyChanged("Title");
+        
             }
         }
 
@@ -70,7 +59,7 @@ namespace TravelObject
             {
                 if (ratingLevel == value) return;
                 ratingLevel = value;
-                RaisePropertyChanged("RatingLevel");
+           
             }
         }
 
@@ -82,18 +71,8 @@ namespace TravelObject
             {
                 if (isFavorite == value) return;
                 isFavorite = value;
-                RaisePropertyChanged("IsFavorite");
+             
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void RaisePropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
     }
 }

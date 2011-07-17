@@ -13,6 +13,7 @@ using Microsoft.Phone.Controls;
 using WindowsPhonePanoramaApplication1.Models.News;
 using WindowsPhonePanoramaApplication1.View.News;
 using TravelObject;
+using System.IO.IsolatedStorage;
 
 namespace WindowsPhonePanoramaApplication1.Views.News
 {
@@ -28,8 +29,16 @@ namespace WindowsPhonePanoramaApplication1.Views.News
         {
             //update
             boxComment.Visibility = Visibility.Collapsed;
-
-            NewsDetailViewModel.instance.ListComment.Add(new ItemComment() { Author = "Me", CommentString = txtComment.Text.Trim(), DataPost = DateTime.Now });
+            string name ;
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue<string>("Username", out name);
+            if (name.Length == 0)
+                MessageBox.Show((String)Application.Current.Resources["Message_1"]);
+            else
+            {
+                NewsDetailViewModel.instance.ListComment.Add(new ItemComment() { Author = name, CommentString = txtComment.Text.Trim(), DataPost = DateTime.Now });
+                NewsDetailViewModel.UpdateDB();
+            }
+            
         }
 
         private void ShowComment(object sender, EventArgs e)

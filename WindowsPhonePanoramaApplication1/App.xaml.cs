@@ -20,13 +20,6 @@ namespace WindowsPhonePanoramaApplication1
     public partial class App : Application
     {
         //languages
-   
-        
-
-
-
-
-
         // for show ads
         public static bool IsShowAds = true;
 

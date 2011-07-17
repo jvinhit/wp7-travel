@@ -46,7 +46,6 @@ namespace WindowsPhonePanoramaApplication1.Views.Setting
                     string t = this.ThemePicker.Items[i] as string;
                     if (t == Theme)
                         this.ThemePicker.SelectedIndex = i;
-
                 }
             }
 
@@ -74,13 +73,7 @@ namespace WindowsPhonePanoramaApplication1.Views.Setting
             else
                 IsolatedStorageSettings.ApplicationSettings["Theme"] = "DarkBrown";
 
-
-                
-            
-            //IsolatedStorageSettings.ApplicationSettings["Languages"] = language.Trim();
-           
-
-
+            IsolatedStorageSettings.ApplicationSettings["Username"] = textBox1.Text.ToString();
             this.NavigationService.GoBack();
         }
     }

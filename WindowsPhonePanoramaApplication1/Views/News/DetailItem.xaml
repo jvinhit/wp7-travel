@@ -41,9 +41,9 @@
         <shell:ApplicationBar x:Name="Appbar" IsMenuEnabled="True" IsVisible="True" Opacity="70">
             <shell:ApplicationBarIconButton Click="HomeReturn_Click" IconUri="/Resources/AppBar/App_HomeMain.png" Text="{StaticResource HomeButton}" />
             <shell:ApplicationBarIconButton x:Name="favouriteIcon" Click="Favourite_Click" IconUri="/Resources/AppBar/App_Favourite.png" Text="{StaticResource NewsPage_2}" />
-            <shell:ApplicationBarIconButton Click="PrePage_Click" IconUri="/Resources/AppBar/App_Pre.png" Text="{StaticResource NewsPage_3}" />
+            <!--<shell:ApplicationBarIconButton Click="PrePage_Click" IconUri="/Resources/AppBar/App_Pre.png" Text="{StaticResource NewsPage_3}" />
 
-            <shell:ApplicationBarIconButton Click="NextPage_Click" IconUri="/Resources/AppBar/App_Next.png" Text="{StaticResource NewsPage_4}" />
+            <shell:ApplicationBarIconButton Click="NextPage_Click" IconUri="/Resources/AppBar/App_Next.png" Text="{StaticResource NewsPage_4}" />-->
 
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Click="ShowComment_Click" Text="{StaticResource NewsPage_5}" />

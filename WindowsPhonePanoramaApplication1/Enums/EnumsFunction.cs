@@ -19,4 +19,5 @@ namespace WindowsPhonePanoramaApplication1
         News,
         CapturePictures
     }
+
 }

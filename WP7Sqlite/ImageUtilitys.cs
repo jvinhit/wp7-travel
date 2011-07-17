@@ -80,6 +80,22 @@ namespace WP7Shared
               
             }
         }
+        public static BitmapImage ReadBitmapImage(String fileName)
+        {
+            BitmapImage bi = new BitmapImage();
+
+            using (IsolatedStorageFile myIsolatedStorage = IsolatedStorageFile.GetUserStoreForApplication())
+            {
+                using (IsolatedStorageFileStream fileStream = myIsolatedStorage.OpenFile(fileName, FileMode.Open, FileAccess.Read))
+                {
+                    bi.SetSource(fileStream);
+           
+                }
+            }
+
+            return bi;
+            
+        }
 
       
 
